@@ -9,7 +9,7 @@ function ServiceCRUD(props){
 
     return(    <div className="is-table radius1">
 
-    <div className="is-row flex-row">
+    <div className="is-header flex-row">
         <div></div>
         <div>Name</div>
         <div>Cost</div>

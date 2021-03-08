@@ -350,7 +350,19 @@ header{
     border-bottom-width: 1px;
 }
 
-.is-row div{
+.is-header{
+    border-bottom-style:solid ;
+    border-bottom-color:rgba(255, 255, 255, 0.26) ;
+    border-bottom-width: 1px;
+}
+
+.is-row:hover{
+    
+    background-color: rgba(255, 255, 255, 0.2);
+    
+}
+
+.is-row div,.is-header div{
     width: 150px;
     padding: 5px;
 }
@@ -439,14 +451,17 @@ header{
     top: 0;
     height: 100vh;
     width: 100vw;
+    transition: .5s;
 
 }
 
 
 .modal-child{
     
-    background-color: rgba(59, 49, 153, 0.849);
+    background-color: rgba(121, 81, 158, 0.918);
     padding: 20px;
     width: max-content;
     border-radius: 15px;
+    transition: .5s;
+    
 }
