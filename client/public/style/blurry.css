@@ -378,6 +378,7 @@ header{
     border-width: 1px;
     border-radius: 5px;
     padding: 5px;
+    transition: .3s;
 }
 
 
@@ -389,6 +390,7 @@ header{
     border-width: 1px;
     border-radius: 5px;
     padding: 5px;
+    transition: .3s;
 }
 
 
@@ -400,4 +402,51 @@ header{
     border-width: 1px;
     border-radius: 5px;
     padding: 5px;
+    transition: .3s;
+}
+
+.fa-eye:hover{
+    background-color: rgb(79, 30, 212);
+  
+}
+
+
+.fa-edit:hover{
+    background-color: rgb(170, 77, 15);
+    
+}
+
+
+.fa-trash-alt:hover{
+    background-color: rgb(100, 98, 105);
+ 
+}
+
+.titles{
+    padding: 15px;
+   
+}
+
+.crud-body{
+    width: max-content;
+}
+
+.modal{
+    position: fixed; /* Stay in place */
+    background-color: rgba(255, 255, 255, 0.513);
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+
+.modal-child{
+    
+    background-color: rgba(59, 49, 153, 0.849);
+    padding: 20px;
+    width: max-content;
+    border-radius: 15px;
 }

@@ -3,7 +3,10 @@ import Actions from "./crudActions";
 import {services} from "./test json/services.json";
 
 
-function ServiceCRUD(){
+
+function ServiceCRUD(props){
+
+
     return(    <div className="is-table radius1">
 
     <div className="is-row flex-row">
@@ -21,7 +24,7 @@ function ServiceCRUD(){
             <div>{service.name}</div>
             <div>{service.cost}</div>
             <div>{service.description}</div>
-            <Actions/>
+            <Actions actions={props}/>
         </div>
         );
     })}

@@ -6,7 +6,7 @@ function AddBtn(props){
     return(
 
         
-        <div className="button-small flex-row flex-around flex-center" data-name={props.name}>
+        <div className="button-small flex-row flex-around flex-center" onClick={props.action} data-name={props.name}>
            
            
                 <i className="fas fa-plus fa-2x"></i>

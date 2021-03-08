@@ -4,6 +4,7 @@ import Home from "./components/pages/home";
 import Patients from "./components/pages/patients";
 import Services from "./components/pages/services";
 import Appointments from "./components/pages/appointments";
+import Modal from 'react-modal';
 import './App.css';
 
 function App() {
