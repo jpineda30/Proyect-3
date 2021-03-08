@@ -45,6 +45,7 @@ a{
 .content{
     padding: 15px;
     overflow: scroll;
+    overflow-x: hidden;
 }
 .back1{
     background-color: rgba(255, 255, 255, 0.3);
@@ -113,6 +114,54 @@ i{
    
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
+button{
+    height: 25px;
+    width: 180px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.226);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+}
+
+button:hover{
+   
+    color: rgb(149, 149, 149);
+    background-color: rgba(255, 255, 255, 0.8);
+    text-shadow: black 5px 5px 5px 5px;
+   
+}
+.button{
+    height: 25px;
+    width: 180px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.226);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+}
+
+.button:hover{
+   
+    color: rgb(149, 149, 149);
+    background-color: rgba(255, 255, 255, 0.8);
+    text-shadow: black 5px 5px 5px 5px;
+   
+}
 
 .button-blue{
     height: 25px;
@@ -138,30 +187,7 @@ i{
     
 }
 
-.button-white{
-    height: 25px;
-    width: 180px;
-    padding: 10px;
-    color: rgb(255, 255, 255);
-    background-color: rgba(255, 255, 255, 0.226);
-    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
-    border-bottom-style: solid;
-    border-block-color: rgb(75, 81, 95);
-    border-bottom-width: 1px;
-    border-top-style: solid;
-    border-top-color: rgba(255, 255, 255, 0.39);
-    border-top-width: 1px;
-    z-index: 1;
-    transition: .3s;
-}
 
-.button-white:hover{
-   
-    color: rgb(149, 149, 149);
-    background-color: rgba(255, 255, 255, 0.8);
-    text-shadow: black 5px 5px 5px 5px;
-   
-}
 
 .button-purple{
     height: 25px;
@@ -259,6 +285,11 @@ input{
     border-right-style: none;
     border-bottom-style: none;
     border-width: 1px;
+    
+}
+
+input:focus{
+    outline: none;
     
 }
 

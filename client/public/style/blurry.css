@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metrophobic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+h1,a,p,button,label,input,div{
+    font-family: 'Reem Kufi', sans-serif;
+    font-family: 'Baloo Da 2', cursive;
+    font-family: 'Carme', sans-serif;
+    font-family: 'Metrophobic', sans-serif;
+    color: white;
+    
+}
+
+html{
+    background-color: black;
+    background-image: url("./wp2222453-blurry-wallpapers.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body{
+    background: linear-gradient(to top,rgba(0, 0, 0, 0.6),rgb(87, 85, 90,.6));
+    height: 100%;
+    width: 100%;
+   
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+    
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+.content{
+    padding: 15px;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+.back1{
+    background-color: rgba(255, 255, 255, 0.3);
+   
+}
+
+.inset-shadow{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    z-index: 5;
+}
+
+.card1{
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+}
+
+.radius1{
+    border-radius: 8px;
+}
+
+.radius-top{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.radius-bottom{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.menu{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.322);
+    /*background: linear-gradient(to right,rgba(255, 255, 255, 0.0),rgba(255, 255, 255, 0.3),rgba(255, 255, 255, 0.3),rgba(255, 255, 255, 0.3),rgba(255, 255, 255, 0.3),rgba(255, 255, 255, 0.3),rgba(255, 255, 255, 0.0));
+    /*background-color: rgba(255, 255, 255, 0.3);*/
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.0);
+    
+    
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.menu a{
+    color: white;
+    border-right-style: solid;
+    border-right-color: rgba(255, 255, 255, 0.1);
+    border-left-style: solid;
+    border-left-color: rgba(255, 255, 255, 0.1);
+    border-width: 1px;
+    padding-top: 0px;
+    padding-right: 15px;
+    padding-left: 15px;
+   
+    height: 50px;
+    
+}
+
+i{
+    transition: .3s;
+
+}
+
+.menu i:hover{
+   
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+button{
+    height: 25px;
+    width: 180px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.226);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+   
+}
+
+button:hover{
+   
+    color: rgb(149, 149, 149);
+    background-color: rgba(255, 255, 255, 0.8);
+    text-shadow: black 5px 5px 5px 5px;
+   
+}
+.button{
+    height: 25px;
+    width: 180px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.226);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    border-radius: 10px;
+}
+
+.button-small{
+    height: 25px;
+    width: 100px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.226);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    border-radius: 10px;
+}
+
+.button:hover,.button-small:hover{
+   
+    color: rgb(149, 149, 149);
+    background-color: rgba(255, 255, 255, 0.8);
+    text-shadow: black 5px 5px 5px 5px;
+   
+}
+
+.button-blue{
+    height: 25px;
+    width: 180px;
+    padding: 10px;
+    color: white;
+    background-color: rgb(107, 68, 216);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    
+}
+
+.button-blue:hover{
+    
+    background-color: rgb(135, 103, 223);
+    
+}
+
+
+
+.button-purple{
+    height: 25px;
+    width: 180px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(106, 7, 136, 0.6);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+}
+
+.button-purple:hover{
+   
+    color: rgb(149, 149, 149);
+    background-color: rgba(106, 7, 136, 0.8);
+    text-shadow: black 5px 5px 5px 5px;
+   
+}
+
+.button-green{
+    height: 25px;
+    width: 180px;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(28, 143, 8,.6);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+}
+
+.button-green:hover{
+   
+    color: rgb(149, 149, 149);
+    background-color: rgba(28, 143, 8, 0.8);
+    text-shadow: black 5px 5px 5px 5px;
+   
+}
+
+.button2{}
+
+.button3{
+    height: 25px;
+    width: 180px;
+    padding: 10px;
+    color: white;
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+}
+
+.button3:hover{
+    background-color: rgba(255, 255, 255, 0.212);
+    border-left-style: solid;
+    border-left-color: rgb(255, 255, 255);
+    border-left-width: 5px;
+    width: 175px;
+    
+
+}
+
+.image3{
+    height: 120px;
+    width: 200px;
+    background-color: grey;
+    
+}
+
+input{
+    height: 30px;
+    
+    
+    color: white;
+    background-color: rgba(183, 183, 184, 0.287);
+    border-radius: 8px;
+    margin: 5px;
+    transition: .3s;
+    border-top-style: solid;
+    border-top-color: rgba(240, 255, 240, 0.26);
+    border-left-style: solid;
+    border-left-color: rgba(240, 255, 240, 0.26);
+    border-right-style: none;
+    border-bottom-style: none;
+    border-width: 1px;
+    
+}
+
+input:focus{
+    outline: none;
+    
+}
+
+label{
+    height: 30px;
+    
+    
+    color: white;
+    
+    margin: 5px;
+    transition: .3s;
+    
+    
+}
+
+header{
+    height: 50px;
+    width: 100%;
+
+}
+
+
+.is-table{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    padding-left: 00px;
+    margin: 15px;
+    color: white;
+}
+
+.is-row{
+    border-bottom-style:solid ;
+    border-bottom-color:rgba(255, 255, 255, 0.26) ;
+    border-bottom-width: 1px;
+}
+
+.is-header{
+    border-bottom-style:solid ;
+    border-bottom-color:rgba(255, 255, 255, 0.26) ;
+    border-bottom-width: 1px;
+}
+
+.is-row:hover{
+    
+    background-color: rgba(255, 255, 255, 0.2);
+    
+}
+
+.is-row div,.is-header div{
+    width: 150px;
+    padding: 5px;
+}
+
+.is-row .first{
+    width: 20px;
+    height: 45px;
+    padding: 5px;
+    margin: 0;
+    padding-left: 0px;
+    background: rgba(106, 7, 136, 0.8);
+    border-right-style: solid;
+    border-right-color: rgba(32, 32, 32, 0.452);
+    border-left-style: solid;
+    border-left-color: rgba(255, 255, 255, 0.356);
+    border-width: 1px;
+    margin-right: 130px;
+}
+
+.fa-eye{
+    background-color: rgb(107, 68, 216);
+    border-right-color: rgba(32, 32, 32, 0.452);
+    border-left-style: solid;
+    border-left-color: rgba(255, 255, 255, 0.356);
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: .3s;
+}
+
+
+.fa-edit{
+    background-color: rgb(226, 109, 32);
+    border-right-color: rgba(32, 32, 32, 0.452);
+    border-left-style: solid;
+    border-left-color: rgba(255, 255, 255, 0.356);
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: .3s;
+}
+
+
+.fa-trash-alt{
+    background-color: rgb(152, 150, 158);
+    border-right-color: rgba(32, 32, 32, 0.452);
+    border-left-style: solid;
+    border-left-color: rgba(255, 255, 255, 0.356);
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: .3s;
+}
+
+.fa-eye:hover{
+    background-color: rgb(79, 30, 212);
+  
+}
+
+
+.fa-edit:hover{
+    background-color: rgb(170, 77, 15);
+    
+}
+
+
+.fa-trash-alt:hover{
+    background-color: rgb(100, 98, 105);
+ 
+}
+
+.titles{
+    padding: 15px;
+   
+}
+
+.crud-body{
+    width: max-content;
+}
+
+.modal{
+    position: fixed; /* Stay in place */
+    background-color: rgba(255, 255, 255, 0.513);
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: .5s;
+
+}
+
+
+.modal-child{
+    
+    background-color: rgba(121, 81, 158, 0.918);
+    padding: 20px;
+    width: max-content;
+    border-radius: 15px;
+    transition: .5s;
+    
+}
