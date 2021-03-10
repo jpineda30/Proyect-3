@@ -445,7 +445,7 @@ header{
 
 .modal{
     position: fixed; /* Stay in place */
-    background-color: rgba(255, 255, 255, 0.513);
+    background-color: rgba(170, 114, 235, 0.513);
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
@@ -458,10 +458,25 @@ header{
 
 .modal-child{
     
-    background-color: rgba(121, 81, 158, 0.918);
+    background-color: rgba(53, 45, 61,1);
     padding: 20px;
     width: max-content;
     border-radius: 15px;
     transition: .5s;
     
+}
+
+.close{
+    background-color: blueviolet;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bolder;
+    color: white;
+    width: 15px;
+    text-align: center;
+    float: right;
+}
+.close:hover{
+    background-color: rgb(86, 27, 141);
+
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import AddBtn from "../AddBtn";
-import AppointmentCRUD from "../appointmentCRUD";
+import AddBtn from "../general/AddBtn";
+import AppointmentCRUD from "../appointments/appointmentCRUD";
 
 function Appointments(){
 

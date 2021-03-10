@@ -1,6 +1,6 @@
 import React from "react";
-import AddBtn from "../AddBtn";
-import PatientCRUD from "../patientCRUD";
+import AddBtn from "../general/AddBtn";
+import PatientCRUD from "../patients/patientCRUD";
 
 function Patients(){
 
