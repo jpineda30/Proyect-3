@@ -1,7 +1,11 @@
+const User = require("./userSchema");
+const Patient = require("./patientsSchema");
+const Schedule = require("./scheduleSchema");
+const Service = require("./serviceSchema");
 module.exports = {
-    User: require("./User"),
-    Patient: require("./Patient"),
-    Schedule: require("./Schedule"),
-    Service: require("./Service")
+   User,
+   Patient,
+   Schedule,
+   Service
   };
   

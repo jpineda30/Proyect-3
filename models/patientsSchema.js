@@ -7,10 +7,12 @@ const patientSchema = new Schema({
 			email:{type: String, required: false},
 			sex:{type: String, required: true},
 			age:{type:Number, required: false},
-			chart:{type:String, length:60 },
+			chart:{type:String, length:60},
 			medication:{type:String, lenght:60},
 			allergies:{type:String, length:80},
-			observations:{type:String, length: 60}
+			observations:{type:String, length: 60},
+			schedule:[{ type: Schema.Types.ObjectId, ref: 'Schedule' }],
+
 });
 
 const Patient = mongoose.model("Patient", patientSchema);
