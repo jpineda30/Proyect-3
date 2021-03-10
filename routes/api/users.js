@@ -14,7 +14,12 @@ const router = require("express").Router();
   // });
   //Should match "/api/users/..."
   router.route("/signup")
-  .post(function(req,res){console.log("doing something")});
+  .post(userController.create);
+
+  router.route("/login")
+  .post(passport.authenticate("local"), function(req, res) {
+      res.json(req.user);
+    });
 
 
 
@@ -24,20 +29,15 @@ const router = require("express").Router();
 //    "date": "1615348701859"
 // }
 
-  router.route("/logout")
-  .get(function(req,res){
-    req.logout();
-    res.redirect("/");
-  });
 
   router.route("/")
   .get(userController.findAll);
 
-  // // Route for logging user out
-  // app.get("/logout", function(req, res) {
-  //   req.logout();
-  //   res.redirect("/");
-  // });
+  // Route for logging user out
+  router.route("/logout").get(function(req, res) {
+    req.logout();
+    res.redirect("/");
+  });
 
   // Route for getting some data about our user to be used client side
 

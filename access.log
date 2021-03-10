@@ -1,3 +1,7 @@
 ::1 - - [10/Mar/2021:04:05:31 +0000] "POST /api/users/signup HTTP/1.1" - - "-" "PostmanRuntime/7.26.8"
 ::1 - - [10/Mar/2021:04:19:37 +0000] "POST /api/users/signup HTTP/1.1" - - "-" "PostmanRuntime/7.26.8"
 ::1 - - [10/Mar/2021:04:23:29 +0000] "POST /api/users/signup HTTP/1.1" - - "-" "PostmanRuntime/7.26.8"
+::1 - - [10/Mar/2021:22:52:31 +0000] "POST /api/users/signup HTTP/1.1" - - "-" "PostmanRuntime/7.26.8"
+::1 - - [10/Mar/2021:23:33:23 +0000] "POST /api/users/signup HTTP/1.1" - - "-" "PostmanRuntime/7.26.8"
+::1 - - [10/Mar/2021:23:37:35 +0000] "POST /api/users/login HTTP/1.1" 400 - "-" "PostmanRuntime/7.26.8"
+::1 - - [10/Mar/2021:23:37:44 +0000] "POST /api/users/login HTTP/1.1" 400 - "-" "PostmanRuntime/7.26.8"
