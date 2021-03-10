@@ -162,9 +162,10 @@ button:hover{
 }
 
 .button-small{
-    height: 25px;
-    width: 100px;
+    height: 20px;
+    width: 70px;
     padding: 10px;
+    margin: 20px;
     color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.226);
     /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
@@ -177,6 +178,7 @@ button:hover{
     z-index: 1;
     transition: .3s;
     border-radius: 10px;
+    text-align: center;
 }
 
 .button:hover,.button-small:hover{

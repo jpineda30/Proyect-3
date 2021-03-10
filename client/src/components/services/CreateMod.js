@@ -12,7 +12,12 @@ function CreateMod(props){
         <input></input>
         <label>cost</label>
         <input></input>
-        <div className="button-small" onClick={props.close}>Exit</div>
+        <div className="flex-row flex-center">
+
+        <div className="button-small" onClick={props.toggle}>Save</div>
+        <div className="button-small" onClick={props.close}>Cancel</div> 
+
+        </div>
     </div>
      
 
