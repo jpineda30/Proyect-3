@@ -16,6 +16,14 @@ const router = require("express").Router();
   router.route("/signup")
   .post(function(req,res){console.log("doing something")});
 
+
+
+//   {
+//    "username":"test",
+//    "email":"mail@mail.com",
+//    "date": "1615348701859"
+// }
+
   router.route("/logout")
   .get(function(req,res){
     req.logout();
