@@ -24,7 +24,8 @@ const router = require("express").Router();
 
 
 //   {
-//    "username":"test",
+//    "username":"test2",
+//    "password":"1",
 //    "email":"mail@mail.com",
 //    "date": "1615348701859"
 // }
