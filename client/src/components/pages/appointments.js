@@ -14,10 +14,9 @@ function Appointments(){
             <div className="flex-col flex-center">
 
                 <h1>Appointments</h1>
-                <AddBtn/>
+                
                 <div className="flex-row flex-around fw">
-                    <WorkDay></WorkDay>
-                    <WorkDay></WorkDay>
+                    <img src="img/calendar.png"/>
                     <WorkDay></WorkDay>
                 </div>   
             
