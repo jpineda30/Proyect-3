@@ -1,0 +1,34 @@
+{
+    "appointments":[
+        {
+            "date":"25-03-2021",
+            "items":[
+                {
+                    "start":"08:00",
+                    "end":"09:00",
+                    "patient":"Peter Rios",
+                    "service":"Amputation"
+                },
+                {
+                    "start":"10:00",
+                    "end":"12:00",
+                    "patient":"Marcela Dupeyron",
+                    "service":"Massage"
+                },
+                {
+                    "start":"13:00",
+                    "end":"14:00",
+                    "patient":"Martha Jones",
+                    "service":"Hair extentions"
+                },
+                {
+                    "start":"15:00",
+                    "end":"19:00",
+                    "patient":"Alan Marque",
+                    "service":"Face Lift"
+                }
+
+            ]
+        }
+    ]
+}

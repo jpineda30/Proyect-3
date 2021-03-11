@@ -1,8 +1,8 @@
 import React from "react";
-import Actions from "./crudActions";
+import Actions from "../general/crudActions";
 
 
-function PatientCRUD(){
+function AppointmentCRUD(){
     return(    <div className="is-table radius1">
 
     <div className="is-row flex-row">
@@ -10,7 +10,6 @@ function PatientCRUD(){
         <div>Name</div>
         <div>Last Name</div>
         <div>E-mail</div>
-        <div>Phone</div>
         <div>Actions</div>
     </div>
 
@@ -19,4 +18,4 @@ function PatientCRUD(){
 );
 }
 
-export default PatientCRUD;
+export default AppointmentCRUD;

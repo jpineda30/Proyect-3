@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import AddBtn from "../AddBtn";
-import ServiceCRUD from "../serviceCRUD";
-import Modal from 'react-modal';
-import CreateMod from '../CreateMod';
+import AddBtn from "../general/AddBtn";
+import ServiceCRUD from "../services/serviceCRUD";
+import CreateMod from '../services/CreateMod';
+import EditMod from "../services/EditMod";
+import ViewMod from "../services/ViewMod";
+import DeleteMod from "../general/DeleteMod";
+import MyModal from '../general/Modal';
 
 
 class Services extends Component{
@@ -10,7 +13,8 @@ class Services extends Component{
     constructor(){
         super()
         this.state= {
-            isActive:false
+            crudActive:false,
+            action:<CreateMod close={this.closeModal}></CreateMod>
         }
     }
 
@@ -18,38 +22,48 @@ class Services extends Component{
         //Modal.setAppElement("CreateMod");
     }
 
-    toggleModal= ()=>{
+
+    toggleModalCrud= (param)=>{
+      
+
+        switch (param) {
+            case "edit":
+                this.setState({
+                    crudActive:!this.state.crudActive,
+                    action: <EditMod close={this.closeModal}></EditMod>
+                })
+                break;
+             case "create":
+                this.setState({
+                    crudActive:!this.state.crudActive,
+                    action: <CreateMod close={this.closeModal}></CreateMod>
+                })
+                break;
+                case "delete":
+                    this.setState({
+                        crudActive:!this.state.crudActive,
+                        action: <DeleteMod close={this.closeModal}></DeleteMod>
+                    })
+                    break;  
+                  default:
+                   
+                        this.setState({
+                            crudActive:!this.state.crudActive,
+                            action: <ViewMod close={this.closeModal}></ViewMod>
+                        })
+                        break;    
+        }
+        
+      
+       
+    }
+
+    closeModal = ()=>{
         this.setState({
-            isActive:!this.state.isActive
+            crudActive:false,
+            
         })
     }
-
-    state = {
-    
-       init:""
-    
-    };
-
-    handleCreate = ()=>{
-        
-        alert("Create");
-    }
-
-    handleView = ()=>{
-
-        alert("view");
-    }
-    handleEdit = ()=>{
-
-        alert("Edit");
-    }
-    handleDelete = ()=>{
-
-        alert("Delete");
-    }
-
-   
-     
 
    render(){
    
@@ -61,12 +75,13 @@ class Services extends Component{
       
            <div className="titles">
                <h1>Services</h1>
-               <AddBtn action={this.toggleModal}/>
-               <CreateMod state={this.state.isActive} toggle={this.toggleModal}/>
-              
+               <AddBtn action={this.toggleModalCrud}/>
+             
+
            </div>
-           <ServiceCRUD view={this.handleView} edit={this.handleEdit} delete={this.handleDelete}/>
-   
+           <ServiceCRUD status ={this.state.crudActive} toggle={this.toggleModalCrud}/>
+           <MyModal status ={this.state.crudActive} toggle={this.toggleModalCrud} type={this.state.action} close={this.closeModal}/>
+           
    </div>   
    
 </div>    

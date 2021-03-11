@@ -44,15 +44,14 @@ a{
     text-decoration: none;
 }
 
-.content{
-    padding: 15px;
-    overflow: scroll;
-    overflow-x: hidden;
-    height: 100%;
-    width: 100%;
-}
+
 .back1{
     background-color: rgba(255, 255, 255, 0.3);
+   
+}
+.back2{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
    
 }
 
@@ -161,10 +160,11 @@ button:hover{
     border-radius: 10px;
 }
 
-.button-small{
-    height: 25px;
+.button-medium{
+    height: 20px;
     width: 100px;
     padding: 10px;
+    margin: 20px;
     color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.226);
     /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
@@ -177,6 +177,27 @@ button:hover{
     z-index: 1;
     transition: .3s;
     border-radius: 10px;
+    text-align: center;
+}
+
+.button-small{
+    height: 20px;
+    width: 70px;
+    padding: 10px;
+    margin: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.226);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .button:hover,.button-small:hover{
@@ -205,6 +226,25 @@ button:hover{
     
 }
 
+.left-blue{
+    
+    height: 20px;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(107, 68, 216);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
 .button-blue:hover{
     
     background-color: rgb(135, 103, 223);
@@ -229,6 +269,46 @@ button:hover{
     z-index: 1;
     transition: .3s;
 }
+
+.left-purple{
+    height: 20px;
+   
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(106, 7, 136, 0.6);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.right-white{
+    height: 20px;
+   
+    padding: 5px;
+    color: rgb(63, 63, 63);
+    background-color: rgba(255, 255, 255, 0.226);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin: 0;
+}
+
 
 .button-purple:hover{
    
@@ -255,6 +335,26 @@ button:hover{
     transition: .3s;
 }
 
+.top-green{
+    height: 25px;
+   
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(28, 143, 8,.6);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    text-align: center;
+}
+
 .button-green:hover{
    
     color: rgb(149, 149, 149);
@@ -263,7 +363,7 @@ button:hover{
    
 }
 
-.button2{}
+
 
 .button3{
     height: 25px;
@@ -445,7 +545,7 @@ header{
 
 .modal{
     position: fixed; /* Stay in place */
-    background-color: rgba(255, 255, 255, 0.513);
+    background-color: rgba(170, 114, 235, 0.513);
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
@@ -458,10 +558,48 @@ header{
 
 .modal-child{
     
-    background-color: rgba(121, 81, 158, 0.918);
+    background-color: rgba(53, 45, 61,1);
     padding: 20px;
     width: max-content;
     border-radius: 15px;
     transition: .5s;
     
+}
+
+.close{
+    background-color: blueviolet;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bolder;
+    color: white;
+    width: 15px;
+    text-align: center;
+    float: right;
+}
+.close:hover{
+    background-color: rgb(86, 27, 141);
+
+}
+
+.p-1{
+    padding: 10px;
+}
+
+.fw{
+    width: 100%;
+}
+.m-0{
+    margin:0;
+}
+
+.m-1{
+    margin:10px;
+}
+.my-0{
+   margin: 0;
+}
+
+.my-1{
+    margin-top:10px;
+    margin-bottom:10px;
 }
