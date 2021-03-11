@@ -130,8 +130,10 @@ button{
     border-top-style: solid;
     border-top-color: rgba(255, 255, 255, 0.39);
     border-top-width: 1px;
+    border-color: rgba(255, 255, 255, 0.109);
     z-index: 1;
     transition: .3s;
+    border-radius: 5px;
    
 }
 
@@ -602,4 +604,41 @@ header{
 .my-1{
     margin-top:10px;
     margin-bottom:10px;
+}
+
+.calendar{
+    max-width: 800px;
+    border-radius: 8px !important;
+}
+
+
+
+
+.react-calendar button{
+    height: 40px;
+}
+
+.react-calendar__month-view__weekdays__weekday{
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(28, 143, 8,.6);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    text-align: center;
+}
+
+.react-calendar__navigation{
+    
+    border-radius: 8px !important;
+}
+
+.work-day{
+    min-width: 300px;
+    margin: 5px;
 }
