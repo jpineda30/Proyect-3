@@ -16,9 +16,12 @@ router.route("/")
       // Sending back a password, even a hashed password, isn't a good idea
       console.log(req.user);
       console.log("logged");
-       res.redirect("/"+req.user._id)
+      console.log(Schedule);
+      Schedule.findAll({id:req.user._id})
+      .then(()=> res.status(202).json(res));
       //res.status(202).json(scheduleRes);
-     
+      //Maybe eventually add the id on the url?
+      //res.redirect("/"+req.user._id)
     }
   });
 
