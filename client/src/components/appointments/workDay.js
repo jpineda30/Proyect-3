@@ -14,10 +14,9 @@ function WorkDay(props){
                                  <AddBtn2 open={props.open}/>
                             </div>
                             <div className="flex-col p-1">
-                                <Slot/>
-                                <Slot/>
-                                <Slot/>
-                                <Slot/>
+                                <Slot open={props.open} close={props.close}/>
+                                <Slot open={props.open} close={props.close}/>
+                              
                             </div>
                           </div>
 

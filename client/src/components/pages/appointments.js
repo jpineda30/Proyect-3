@@ -68,7 +68,7 @@ class Appointments extends Component{
                 
                 <div className="flex-row flex-wrap flex-jcenter">
                     
-                    <WorkDay open={this.openModal}></WorkDay>
+                    <WorkDay open={this.openModal} close={this.closeModal}></WorkDay>
                     <div className="calendar p-1 flex-col">   <Calendar /></div> 
                     <MyModal status={this.state.crudActive} toggle={this.closeModal} type={this.state.action}/>  
                     

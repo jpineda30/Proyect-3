@@ -2,11 +2,20 @@ import React from "react";
 
 
 
-function HourSlot(){
+function HourSlot(props){
+
+    function onEdit(){
+        props.open("edit")
+    }
+
+    function onDelete(){
+        props.open("delete")
+    }
+
     return(  
         <div className="flex-row flex-beteween back2 m-1">
         
-        <div>
+        <div onClick={onEdit}>
           <i className="far fa-edit fa-2x sleft"></i>
         </div>
         <div className="flex-row p-1">
@@ -31,7 +40,7 @@ function HourSlot(){
             </div>
 
         </div>
-        <div className="fh">
+        <div className="fh" onClick={onDelete}>
           <i className="fas fa-trash-alt fa-2x sright"></i>
         </div>
 
