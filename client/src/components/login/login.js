@@ -2,21 +2,23 @@ import React from "react";
 
 function LogIn(props){
 
-   
+   const logIn=()=>{
+       //login logic
+   }
 
     return(
 
         
-        <div className="back1 flex-col flex-center">
+        <div className="back2 flex-col flex-center p-3">
            
            
                 <label>User</label>
                 <input/>
                 <label>Password </label>
                 <input/> 
-                <div className="flex-row">
-                    <div className="button-medium">Login </div>
-                    <div className="button-medium">Sign Up </div>
+                <div className="flex-row ">
+                    <div className="button-purple-medium radius1 m-1" onClick={logIn}>Login </div>
+                    <div className="button-blue-medium m-1 radius1" onClick={props.open}>Sign Up </div>
                 </div>
             
         </div>    
