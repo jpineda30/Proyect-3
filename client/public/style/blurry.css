@@ -690,5 +690,14 @@ header{
     border-bottom-right-radius: 0 !important;
     height:104px !important;
     line-height: 100px;
+    background-color: rgb(85, 85, 235) !important;
+   
+
+}
+
+.sleft:hover{
+  
+    background-color: rgb(62, 62, 182) !important;
+   
 
 }
