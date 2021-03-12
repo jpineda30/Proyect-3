@@ -6,7 +6,7 @@ function DeleteMod(props){
     return(<>
     
         <div className="modal-child flex-col flex-center">
-        <h1>are you sure you want to delete this?</h1>
+        <h1>are you sure you want to delete this {props.name}?</h1>
         <div className="flex-row flex-center">
 
             <div className="button-small" onClick={props.toggle}>Delete</div>
