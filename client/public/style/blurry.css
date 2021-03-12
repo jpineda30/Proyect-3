@@ -451,12 +451,13 @@ input:focus{
 }
 
 label{
-    height: 30px;
+    height: 20px;
     
     
     color: white;
     
-    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
     transition: .3s;
     
     
@@ -704,4 +705,50 @@ header{
 
 .fh{
     height: 100%;
+}
+
+.fhvh{
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100vh;
+}
+
+.height100{
+    height: 100px;
+}
+
+.height50{
+    height: 50px;
+}
+
+.size1{
+    font-size: 50px;
+}
+
+.size2{
+    font-size: 40px;
+}
+
+.size3{
+    font-size: 30px;
+}
+
+.size4{
+    font-size: 20px;
+}
+
+.size5{
+    font-size: 10px;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.disable{
+    pointer-events: none;
 }
