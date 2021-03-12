@@ -45,7 +45,7 @@ class Appointments extends Component{
                 case "delete":
                     this.setState({
                         crudActive:true,
-                        action: <DeleteMod close={this.closeModal}></DeleteMod>
+                        action: <DeleteMod close={this.closeModal} name={"appointment"}></DeleteMod>
                     })
                     break;  
                   default:
