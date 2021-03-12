@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import AddBtn from "../general/AddBtn";
 import ServiceCRUD from "../services/serviceCRUD";
 import CreateMod from '../services/CreateMod';
-import EditMod from "../services/EditMod";
-import ViewMod from "../services/ViewMod";
 import DeleteMod from "../general/DeleteMod";
 import MyModal from '../general/Modal';
 
@@ -30,13 +28,13 @@ class Services extends Component{
             case "edit":
                 this.setState({
                     crudActive:!this.state.crudActive,
-                    action: <EditMod close={this.closeModal}></EditMod>
+                    action: <CreateMod close={this.closeModal} type={param}></CreateMod>
                 })
                 break;
              case "create":
                 this.setState({
                     crudActive:!this.state.crudActive,
-                    action: <CreateMod close={this.closeModal}></CreateMod>
+                    action: <CreateMod close={this.closeModal} type={param}></CreateMod>
                 })
                 break;
                 case "delete":
@@ -49,7 +47,7 @@ class Services extends Component{
                    
                         this.setState({
                             crudActive:!this.state.crudActive,
-                            action: <ViewMod close={this.closeModal}></ViewMod>
+                            action: <CreateMod close={this.closeModal} type={param}></CreateMod>
                         })
                         break;    
         }

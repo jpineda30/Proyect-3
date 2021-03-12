@@ -3,8 +3,6 @@ import WorkDay from "../appointments/workDay";
 import Calendar from 'react-calendar'
 import MyModal from "../general/Modal";
 import CreateMod from '../appointments/CreateMod';
-import EditMod from "../appointments/EditMod";
-import ViewMod from "../appointments/ViewMod";
 import DeleteMod from "../general/DeleteMod";
 
 
@@ -33,13 +31,13 @@ class Appointments extends Component{
             case "edit":
                 this.setState({
                     crudActive:true,
-                    action: <EditMod close={this.closeModal}></EditMod>
+                    action: <CreateMod close={this.closeModal} name={"edition"}></CreateMod>
                 })
                 break;
              case "create":
                 this.setState({
                     crudActive:true,
-                    action: <CreateMod close={this.closeModal}></CreateMod>
+                    action: <CreateMod close={this.closeModal} name="creation"></CreateMod>
                 })
                 break;
                 case "delete":
@@ -52,7 +50,7 @@ class Appointments extends Component{
                    
                         this.setState({
                             crudActive:true,
-                            action: <ViewMod close={this.closeModal}></ViewMod>
+                            action: <CreateMod close={this.closeModal}></CreateMod>
                         })
                         break;    
         }
