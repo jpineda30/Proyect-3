@@ -17,7 +17,9 @@ function MyModal(props){
               {props.type}
             </div>
         
-      </div> :null}</>  
+      </div> 
+      
+      :null}</>  
  
 
 

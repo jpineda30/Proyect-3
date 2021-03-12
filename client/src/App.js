@@ -8,7 +8,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="flex-col flex-acenter flex-around">
+    <div className="flex-col flex-acenter flex-around fh">
        <Router>
           
             <Menu />

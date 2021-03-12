@@ -1,4 +1,5 @@
 import React from "react";
+import LogIn from "../login/login"
 
 function Home(){
 
@@ -6,8 +7,9 @@ function Home(){
     return(
 
         
-        <div>
-        
+        <div className="flex-col flex-center fh">
+            
+            <LogIn/>
             
         </div>    
 
