@@ -1,23 +1,21 @@
-const {User} = require("../models");
+const {Schedule} = require("../models");
 
 module.exports = {
     findAll:function (req,res){
-        User.find(req.query)
+        Schedule.find(req.query)
         // .sort({date})
         .then(dbModel => res.json(dbModel))
         .catch(err=> res.status(422).json(err));
     },
     findById: function(req,res){
-        User.findById(req.params.id)
+        Schedule.findById(req.params.id)
         .then(dbModel=>res.json(dbModel))
         .catch(err=>res.status(422).json(err));
     },
     create: function(req,res){
         console.log(req.body);
-        User.create({
-            username:req.body.username,
-            password:req.body.password,
-            email:req.body.email
+        Schedule.create({
+          //Here goes the schedule obj
         })
         .then(dbModel => res.json(dbModel))
         .catch((err)=>{res.status(422).json(err)});
