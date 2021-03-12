@@ -130,8 +130,10 @@ button{
     border-top-style: solid;
     border-top-color: rgba(255, 255, 255, 0.39);
     border-top-width: 1px;
+    border-color: rgba(255, 255, 255, 0.109);
     z-index: 1;
     transition: .3s;
+    border-radius: 5px;
    
 }
 
@@ -140,6 +142,13 @@ button:hover{
     color: rgb(149, 149, 149);
     background-color: rgba(255, 255, 255, 0.8);
     text-shadow: black 5px 5px 5px 5px;
+   
+}
+button:focus{
+   
+   border-color: white;
+   outline: none;
+   
    
 }
 .button{
@@ -199,8 +208,32 @@ button:hover{
     border-radius: 10px;
     text-align: center;
 }
+.button-mini{
+    height: 15px;
+    width: 15px;
+    padding: 10px;
+    
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.226);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    border-radius: 10px;
+    text-align: center;
+}
+.mini{
+    height: 15px;
+    width: 15px;
 
-.button:hover,.button-small:hover{
+}
+
+.button:hover,.button-small:hover,.button-mini:hover{
    
     color: rgb(149, 149, 149);
     background-color: rgba(255, 255, 255, 0.8);
@@ -602,4 +635,73 @@ header{
 .my-1{
     margin-top:10px;
     margin-bottom:10px;
+}
+
+.calendar{
+    max-width: 800px;
+    border-radius: 8px !important;
+}
+
+
+
+
+.react-calendar button{
+    height: 40px;
+}
+
+.react-calendar__month-view__weekdays__weekday{
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(28, 143, 8,.6);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    text-align: center;
+}
+
+.react-calendar__navigation{
+    
+    border-radius: 8px !important;
+}
+
+.work-day{
+    min-width: 300px;
+    margin: 5px;
+}
+
+.sright{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    height:104px !important;
+    text-align: center;
+    line-height: 100px;
+    
+   
+    
+}
+
+.sleft{
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    height:104px !important;
+    line-height: 100px;
+    background-color: rgb(85, 85, 235) !important;
+   
+
+}
+
+.sleft:hover{
+  
+    background-color: rgb(62, 62, 182) !important;
+   
+
+}
+
+.fh{
+    height: 100%;
 }

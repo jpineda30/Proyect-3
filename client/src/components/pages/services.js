@@ -42,7 +42,7 @@ class Services extends Component{
                 case "delete":
                     this.setState({
                         crudActive:!this.state.crudActive,
-                        action: <DeleteMod close={this.closeModal}></DeleteMod>
+                        action: <DeleteMod close={this.closeModal} name={"service"}></DeleteMod>
                     })
                     break;  
                   default:
