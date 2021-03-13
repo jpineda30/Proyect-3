@@ -1,19 +1,14 @@
 const {Schedule} = require("../models");
 
 module.exports = {
-    find:function (req,res){
-        console.log(req);
-        console.log(res);
+    findSchedulesById:function (q){
+        console.log(q);
+        //console.log(res);
         // console.log(req.params);
-        // Schedule.find(req.query)
+         return Schedule.find(q);
         // // .sort({date})
-        // .then(dbModel => res.json(dbModel))
-        // .catch(err=> res.status(422).json(err));
-    },
-    findById: function(req,res){
-        Schedule.findById(req.params.id)
-        .then(dbModel=>res.json(dbModel))
-        .catch(err=>res.status(422).json(err));
+        //  .then(dbModel => res.json(dbModel))
+        //  .catch(err=> res.status(422).json(err));
     },
     create: function(req,res){
         console.log(req.body);
