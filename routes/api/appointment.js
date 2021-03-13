@@ -17,7 +17,7 @@ router.route("/")
       
       console.log("logged");
       //We gotta find all of the 
-     Schedule.find({doctor: req.user._id});
+     Schedule.findSchedulesById({doctor: req.user._id});
     // console.log(scheduleRes);
     //res.status(202).json(scheduleRes);
       //Maybe eventually add the id on the url?
