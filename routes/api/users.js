@@ -19,7 +19,7 @@ const router = require("express").Router();
 
   router.route("/login")
   .post(passport.authenticate("local"), function(req, res) {
-      res.status(202).json(req.user);
+      res.status(202).json({_id:req.user._id, username:req.user.username, email:req.user.email});
     });
 
 
