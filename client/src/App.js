@@ -1,4 +1,3 @@
-import Menu from "./components/general/menu";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/pages/home";
 import Patients from "./components/pages/patients";

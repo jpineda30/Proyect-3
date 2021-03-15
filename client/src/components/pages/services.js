@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Menu from "../general/menu";
 import AddBtn from "../general/AddBtn";
 import ServiceCRUD from "../services/serviceCRUD";
 import CreateMod from '../services/CreateMod';
@@ -67,7 +68,9 @@ class Services extends Component{
    
 
         
-       return  <div className="content flex-col flex-center">
+       return <>
+       <Menu/>
+        <div className="content flex-col flex-center">
     
        <div className="flex-col crud-body">
       
@@ -84,7 +87,7 @@ class Services extends Component{
    
 </div>    
 
-
+</>
 
    
    }

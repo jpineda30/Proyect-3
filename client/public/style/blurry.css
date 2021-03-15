@@ -638,6 +638,16 @@ header{
     
 }
 
+.modal-child-scroll{
+    background-color: rgba(53, 45, 61,1);
+    padding: 20px;
+    width: 500px;
+    border-radius: 15px;
+    transition: .5s;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
 .close{
     background-color: blueviolet;
     border-radius: 5px;
