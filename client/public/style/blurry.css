@@ -259,6 +259,25 @@ button:focus{
     
 }
 
+.button-blue-medium{
+    height: 25px;
+    width: 100px;
+    padding: 10px;
+    color: white;
+    background-color: rgb(107, 68, 216);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    text-align: center;
+    
+}
+
 .left-blue{
     
     height: 20px;
@@ -278,7 +297,7 @@ button:focus{
     border-bottom-left-radius: 8px;
 }
 
-.button-blue:hover{
+.button-blue:hover, .button-blue-medium:hover{
     
     background-color: rgb(135, 103, 223);
     
@@ -301,6 +320,25 @@ button:focus{
     border-top-width: 1px;
     z-index: 1;
     transition: .3s;
+    text-align: center;
+}
+
+.button-purple-medium{
+    height: 25px;
+    width: 100px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(106, 7, 136, 0.6);
+    /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+    border-bottom-style: solid;
+    border-block-color: rgb(75, 81, 95);
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.39);
+    border-top-width: 1px;
+    z-index: 1;
+    transition: .3s;
+    text-align: center;
 }
 
 .left-purple{
@@ -343,7 +381,7 @@ button:focus{
 }
 
 
-.button-purple:hover{
+.button-purple:hover, .button-purple-medium:hover{
    
     color: rgb(149, 149, 149);
     background-color: rgba(106, 7, 136, 0.8);
@@ -451,12 +489,13 @@ input:focus{
 }
 
 label{
-    height: 30px;
+    height: 20px;
     
     
     color: white;
     
-    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
     transition: .3s;
     
     
@@ -617,6 +656,12 @@ header{
 .p-1{
     padding: 10px;
 }
+.p-2{
+    padding: 15px;
+}
+.p-3{
+    padding: 20px;
+}
 
 .fw{
     width: 100%;
@@ -704,4 +749,51 @@ header{
 
 .fh{
     height: 100%;
+}
+
+.fhvh{
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100vh;
+}
+
+.height100{
+    height: 100px;
+}
+
+.height50{
+    height: 50px;
+}
+
+.size1{
+    font-size: 50px;
+}
+
+.size2{
+    font-size: 40px;
+}
+
+.size3{
+    font-size: 30px;
+}
+
+.size4{
+    font-size: 20px;
+}
+
+.size5{
+    font-size: 10px;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.disable{
+    pointer-events: none;
+    
 }
