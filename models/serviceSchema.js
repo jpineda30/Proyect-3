@@ -8,3 +8,7 @@ const serviceSchema = new Schema({
     details:{type:String, required:true}
 
 });
+
+const Service = mongoose.model("Service", serviceSchema);
+
+module.exports = Service;
