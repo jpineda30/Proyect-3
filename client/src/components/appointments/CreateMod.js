@@ -16,7 +16,7 @@ function CreateMod(props){
       <div className="modal-child flex-col">
         <h1 className="size4">Appointment {props.name}</h1>
 
-        <div className="flex-row my-1">
+        <div className="flex-row my-1 flex-wrap">
             <div flex-col p-1>
               <label >Start Time</label>
               <input type="time"
