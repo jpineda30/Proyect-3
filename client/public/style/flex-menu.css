@@ -56,26 +56,8 @@
   
 }
 
-.span:hover  .smooth{
-    
-    visibility: visible;
-    width: 100px;
-    transition: .3s;
-   
+.is-full{
+    height: 100%;
+    width: 100%;
 }
-.smooth{
-    padding: 8px;
-    visibility: hidden;
-    position: absolute;
-    color: white;
-    background-color: rgba(248, 88, 13, 0.801);
-    border-radius: 5%;
-    text-align: center;
-    margin-left: 5px;
-}
-
-#buttons{
-    height: 80vh;
-}
-
 

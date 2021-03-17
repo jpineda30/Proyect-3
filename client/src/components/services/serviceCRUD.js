@@ -1,6 +1,6 @@
 import React from "react";
-import Actions from "./crudActions";
-import {services} from "./test json/services.json";
+import Actions from "../general/crudActions";
+import {services} from "../test json/services.json";
 
 
 
@@ -24,7 +24,7 @@ function ServiceCRUD(props){
             <div>{service.name}</div>
             <div>{service.cost}</div>
             <div>{service.description}</div>
-            <Actions actions={props}/>
+            <Actions  status = {props.status} toggle={props.toggle}/>
         </div>
         );
     })}

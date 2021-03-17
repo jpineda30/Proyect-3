@@ -2,11 +2,15 @@ import React from "react";
 
 function AddBtn(props){
 
+    function onCreate(){
+        
+        props.action("create");
+    }
 
     return(
 
         
-        <div className="button-small flex-row flex-around flex-center" onClick={props.action} data-name={props.name}>
+        <div className="button-medium flex-row flex-around flex-center" onClick={onCreate} data-name={props.name}>
            
            
                 <i className="fas fa-plus fa-2x"></i>

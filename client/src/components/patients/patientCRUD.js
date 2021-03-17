@@ -1,5 +1,5 @@
 import React from "react";
-import Actions from "./crudActions";
+import Actions from "../general/crudActions";
 
 
 function PatientCRUD(){
