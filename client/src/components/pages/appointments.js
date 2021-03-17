@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Menu from "../general/menu";
 import WorkDay from "../appointments/workDay";
 import Calendar from 'react-calendar'
 import MyModal from "../general/Modal";
@@ -58,7 +59,9 @@ class Appointments extends Component{
  
 
  render(){
-    return <div className="flex-col scroll">
+    return <>
+    <Menu/>
+    <div className="flex-col scroll">
         
             <div className="flex-col flex-center">
 
@@ -75,6 +78,7 @@ class Appointments extends Component{
             </div>   
             
         </div>    
+    </>
 
     }
 }

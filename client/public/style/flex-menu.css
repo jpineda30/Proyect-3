@@ -50,6 +50,12 @@
     justify-content:center;
   
 }
+
+.flex-left{
+    display: flex;
+    justify-content: left;
+}
+
 .flex-acenter{
     display: flex;
     align-items:center;
