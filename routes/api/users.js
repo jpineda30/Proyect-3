@@ -22,6 +22,16 @@ const router = require("express").Router();
       res.status(202).json({_id:req.user._id, username:req.user.username, email:req.user.email});
     });
 
+    router.route("/login/isLogged")
+  .post( function(req, res) {
+    if(req.user){
+      res.status(202).json({_id:req.user._id, isLogged:true});
+    }else{
+      res.status(202).json({_id:null, isLogged: false});
+    }
+      
+    });
+
 
   // router.route("/")
   // .get(userController.findAll);
