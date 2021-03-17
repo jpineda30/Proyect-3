@@ -5,6 +5,7 @@ import PatientCRUD from "../patients/patientCRUD";
 import CreatePatMod from "../patients/createPatMod";
 import DeleteMod from "../general/DeleteMod"; 
 import MyModal from "../general/Modal";
+import ViewPatMod from "../patients/viewPatMod"
 
 
 class Patients extends Component{
@@ -41,16 +42,23 @@ class Patients extends Component{
                 case "delete":
                     this.setState({
                         crudActive:!this.state.crudActive,
-                        action: <DeleteMod close={this.closeModal} name={"service"}></DeleteMod>
+                        action: <DeleteMod close={this.closeModal} name={"patient"}></DeleteMod>
                     })
                     break;  
-                  default:
+                  case "view":
                    
                         this.setState({
                             crudActive:!this.state.crudActive,
-                            action: <CreatePatMod close={this.closeModal} type={param}></CreatePatMod>
+                            action: <ViewPatMod close={this.closeModal} type={"patient"}></ViewPatMod>
                         })
-                        break;    
+                    break;    
+                 default:
+        
+                            this.setState({
+                                crudActive:!this.state.crudActive,
+                                action: <CreatePatMod close={this.closeModal} type={param}></CreatePatMod>
+                            })
+                            break;    
         }
         
       

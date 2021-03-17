@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import ViewPatMod from "./viewPatMod"
 
 
 
@@ -47,11 +48,11 @@ function CreatePatMod(props){
       {/*save new*/}
       else if (props.type == "update") 
       {
-        //update service
+        //update patient
       }
-      else{
+      else
+      {
         //view
-        
       }
     }
     else{

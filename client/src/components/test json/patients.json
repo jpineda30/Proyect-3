@@ -1,5 +1,6 @@
 {
     "patients":[
+        
         {
             "first_name":"Adolfo",
             "last_name": "Hittler",
@@ -8,7 +9,7 @@
             "sex":"male",
             "age":"66",
             "chart":"diabetes",
-            "current_dedication":"metformina 1 per day",
+            "current_medication":"metformina 1 per day",
             "allergies":"nut allergies",
             "patient_observations": "Highly violent patient"
 
@@ -21,7 +22,7 @@
             "sex":"female",
             "age":"28",
             "chart":"denied",
-            "current_dedication":"denied",
+            "current_medication":"denied",
             "allergies":"Flower allergies",
             "patient_observations": "Cooperative patient"
 
@@ -34,7 +35,7 @@
             "sex":"male",
             "age":"21",
             "chart":"Heart Desease",
-            "current_dedication":"metropolo 1 per day",
+            "current_medication":"metropolo 1 per day",
             "allergies":"dust allergies",
             "patient_observations": "Nervous patient"
 
@@ -47,7 +48,7 @@
             "sex":"female",
             "age":"38",
             "chart":"delusional patient",
-            "current_dedication":"oxy 1 per day",
+            "current_medication":"oxy 1 per day",
             "allergies":"denied",
             "patient_observations": "Troubled patient"
 
@@ -60,7 +61,7 @@
             "sex":"male",
             "age":"46",
             "chart":"lung cancer",
-            "current_dedication":"oxy 1 per day",
+            "current_medication":"oxy 1 per day",
             "allergies":"denied",
             "patient_observations": "Good patient"
 
@@ -73,7 +74,7 @@
             "sex":"male",
             "age":"5",
             "chart":"denied",
-            "current_dedication":"denied",
+            "current_medication":"denied",
             "allergies":"denied",
             "patient_observations": "Pediatric patient"
 
@@ -86,7 +87,7 @@
             "sex":"male",
             "age":"40",
             "chart":"denied",
-            "current_dedication":"denied",
+            "current_medication":"denied",
             "allergies":"denied",
             "patient_observations": "Problematic patient"
 
