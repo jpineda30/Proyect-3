@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import LogIn from "../login/login"
 import SignUp from "../login/signup";
 import MyModal from  "../general/Modal";
-import api from "../../utils/api"
 import { Redirect } from "react-router";
 import {withRouter} from "react-router-dom";
+import API from "../../utils/API";
 
 
 class Home extends Component{
@@ -14,20 +14,12 @@ class Home extends Component{
            this.state= {
             isActive:false,
             type: <SignUp close={this.closeModal}/>,
-            isLogged:true
+            isLogged:false
 
         }
 
 
        }
-
-       /* state= {
-            isActive:false,
-            type: <SignUp close={this.closeModal}/>,
-            isLogged:true
-
-        }*/
-
 
         componentWillMount(){
             
@@ -70,6 +62,51 @@ class Home extends Component{
             console.log(this.state.isActive);
         }
 
+        login = (data)=>{
+
+            
+            if (data.user != "" && data.password != "")
+            {
+
+                //VALIDATE USER FOR LOGIN
+
+                /*
+                API.LogIn(data.user, data.password).then((response)=>{
+
+                    if(response == true)
+                    {
+                        this.setState({
+                            isLogged:true
+                        })
+                        this.props.history.push("/appointments");
+                    }
+                    else{
+                        {alert("no user")}
+                    }
+
+                })
+
+                */
+                this.setState({
+                    isLogged:true
+                })
+                this.props.history.push("/appointments");
+               
+            }
+            else
+            {alert("no user")}
+
+
+               
+            }
+
+        logOut = ()=>{
+            this.setState({
+                isLogged:false
+            })
+            this.props.history.push("/home");
+        }
+
 
     render(){
     return(
@@ -77,7 +114,7 @@ class Home extends Component{
         
         <div className="flex-col flex-center fh">
             
-            <LogIn open={this.openModal} close={this.closeModal}/>
+            <LogIn open={this.openModal} close={this.closeModal} login={this.login} logout={this.logout}/>
             <MyModal status={this.state.isActive} toggle={this.closeModal} type={this.state.type}/>
             
             
