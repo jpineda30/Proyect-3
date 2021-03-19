@@ -5,7 +5,7 @@ router.use("/api", apiR);
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {
-    res.json("whtevr");
+    res.json("Mala ruta..");
   });
   
   
