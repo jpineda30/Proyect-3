@@ -28,11 +28,13 @@ function SignUp(props){
                     //validate if user already exists
                     API.createUser(data.user, data.pass1, data.email).then((response)=>{
                         console.log(response)
+                        console.log(props)
                         //if success
-                            this.props.history.push("/appointments");
+                        props.close();
+                            //props.history.push("/home");
                         //else
                             //error message    
-                    }).catch((error)=>{alert(error)});
+                    }).catch((error)=>{console.log(error)});
                 }
                 else
                 {

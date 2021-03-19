@@ -8,8 +8,12 @@ var fs = require('fs');
 var morgan = require('morgan');
 var path = require('path');
 const app = express();
-const PORT = process.env.PORT || 3001;
+var cors = require('cors')
 
+
+
+const PORT = process.env.PORT || 3001;
+app.use(cors())
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
