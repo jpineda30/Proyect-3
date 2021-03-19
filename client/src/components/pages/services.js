@@ -13,7 +13,8 @@ class Services extends Component{
         super()
         this.state= {
             crudActive:false,
-            action:<CreateMod close={this.closeModal}></CreateMod>
+            action:<CreateMod close={this.closeModal}></CreateMod>,
+            services:{}
         }
     }
 
@@ -62,6 +63,10 @@ class Services extends Component{
             crudActive:false,
             
         })
+    }
+
+    getServices = ()=>{
+        
     }
 
    render(){
