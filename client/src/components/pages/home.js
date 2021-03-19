@@ -13,7 +13,7 @@ class Home extends Component{
            super(props);
            this.state= {
             isActive:false,
-            type: <SignUp close={this.closeModal}/>,
+            type: <SignUp close={this.closeModal} history={props.history}/>,
             isLogged:false
 
         }
@@ -94,6 +94,7 @@ class Home extends Component{
                
             }
             else
+
             {alert("no user")}
 
 
@@ -107,6 +108,10 @@ class Home extends Component{
             this.props.history.push("/home");
         }
 
+        sendSignup=()=>{
+            return <SignUp close={this.closeModal} history={this.props.history}/>
+        }
+
 
     render(){
     return(
@@ -115,7 +120,7 @@ class Home extends Component{
         <div className="flex-col flex-center fh">
             
             <LogIn open={this.openModal} close={this.closeModal} login={this.login} logout={this.logout}/>
-            <MyModal status={this.state.isActive} toggle={this.closeModal} type={this.state.type}/>
+            <MyModal status={this.state.isActive} toggle={this.closeModal} type={this.sendSignup()}/>
             
             
         </div>    

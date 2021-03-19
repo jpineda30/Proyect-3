@@ -10,6 +10,8 @@ import DeleteMod from "../general/DeleteMod";
 
 class Appointments extends Component{
 
+
+
     constructor(){
         super()
         this.state= {
@@ -19,6 +21,7 @@ class Appointments extends Component{
     }
 
 
+   
 
     closeModal = ()=>{
         this.setState({

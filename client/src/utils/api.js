@@ -7,8 +7,10 @@ export default {
   },
   // Gets the post with the given id
   createUser: function(username,password,email) {
-    return axios.post("http://localhost:3001/users", {
-      username,password,email
+    return axios.post("http://localhost:3001/api/users/signup", {
+
+      username:username,password,email
+
       });
   },
   login: function(username,password){

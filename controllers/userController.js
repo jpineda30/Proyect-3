@@ -2,9 +2,9 @@ const {User} = require("../models");
 
 module.exports = {
     findAll:function (req,res){
-        User.find(req.query)
+        User.find()
         // .sort({date})
-        .then(dbModel => res.json(dbModel))
+        .then(dbModel => send(dbModel))
         .catch(err=> res.status(422).json(err));
     },
     findById: function(req,res){
@@ -13,6 +13,7 @@ module.exports = {
         .catch(err=>res.status(422).json(err));
     },
     create: function(req,res){
+        console.log("CREATION");
         console.log(req.body);
         User.create({
             username:req.body.username,
