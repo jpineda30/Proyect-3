@@ -1,25 +1,30 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/pages/home";
-import Patients from "./components/pages/patients";
-import Services from "./components/pages/services";
-import Appointments from "./components/pages/appointments";
+import Wrapper from "./components/general/wrapper"
 import './App.css';
+import { StoreProvider, useStoreContext } from "./utils/globalState";
+
+
+
 
 function App() {
+
+
+  const {isLogged} = useStoreContext();
+  
+  
+  const main=() => <Home userState={isLogged}/>;
+  
+  
+
+ 
+
   return (
     <div className="flex-col flex-acenter fh">
-       <Router> 
-         
-            <Switch>      
-                <Route exact path="/" component={Home} />
-                <Route exact path="/home" component={Home} />
-                <Route exact path="/services" component={Services} />
-                <Route exact path="/appointments" component={Appointments} />
-                <Route exact path="/patients" component={Patients} />
-            </Switch>
-            
-         
-      </Router>
+     <StoreProvider>
+        <Wrapper isLogged={isLogged}/>
+      </StoreProvider>
+     
     </div>
   );
 }
