@@ -54,7 +54,7 @@ function Home(props){
         }
 
 
-        console.log(isLogged)
+        
     
     return(
 
@@ -63,7 +63,7 @@ function Home(props){
           
             <LogIn open={openModal} close={closeModal} login={login} logout={logout}/>
             <MyModal status={state.isActive} toggle={closeModal} type={sendSignup()}/>
-            <div onClick={login} className="button-blue"/>
+            
             
             
         </div>    

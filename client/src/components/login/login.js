@@ -1,25 +1,35 @@
-import React, { useRef } from "react";
+import React, { useRef,useState } from "react";
 import { useStoreContext } from "../../utils/globalState";
+import Redirect from "react-router-dom";
 
 function LogIn(props){
 
-    const {login, isLogged } = useStoreContext();
+    //let user = useRef();
+   //let Password = useRef();
 
-    let user = useRef();
-    let Password = useRef();
+   const [user,setUser] = useState("");
+   const [password,setPassword] = useState("");
 
+
+   const {login} = useStoreContext();
 
    const validateUser=()=>{
-        let data = {
 
-            "user":user.current.value,
-            "password":Password.current.value
-        }    
+          if(user != "" && password != "")
+          { 
+              login(user, password);
+          }
+          else
+          {
+              alert("no empty fields");
+          }
+          
 
-        props.login();
+       
         
 
    }
+   
 
     return(
 
@@ -28,9 +38,9 @@ function LogIn(props){
            
            
                 <label>User</label>
-                <input ref={user}/>
+                <input onChange={(e)=>{setUser(e.target.value)}}/>
                 <label>Password </label>
-                <input ref={Password}/> 
+                <input onChange={(e)=>{setPassword(e.target.value)}}/> 
                 <div className="flex-row ">
                     <div className="button-purple-medium radius1 m-1" onClick={validateUser}>Login </div>
                     <div className="button-blue-medium m-1 radius1" onClick={props.open}>Sign Up </div>
