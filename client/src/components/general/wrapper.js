@@ -41,15 +41,15 @@ function Wrapper(props){
                 </Route>
                 
                 <Route exact path="/services">
-                    {isLogged ? <Services></Services>: main}
+                    {isLogged ? <Services></Services>: <Redirect to="/"/>}
                 </Route>
 
                 <Route exact path="/appointments">
-                    {isLogged ? <Appointments></Appointments>: main}
+                    {isLogged ? <Appointments></Appointments>: <Redirect to="/"/>}
                 </Route>
 
                 <Route exact path="/patients">
-                    {isLogged ? <Patients></Patients>: main}
+                    {isLogged ? <Patients></Patients>: <Redirect to="/"/>}
                 </Route>
 
                 
