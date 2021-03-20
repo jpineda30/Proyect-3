@@ -13,11 +13,30 @@ function Menu(){
 
     return(
         <header className="flex-row flex-center menu">
-      <Link to="/" className={location.pathname === "/"  ? "fas fa-home fa-2x" : "fas fa-home fa-2x"}></Link>
-      <Link to="/appointments" className={location.pathname === "/appointments"  ? "fas fa-calendar-week fa-2x" : "fas fa-calendar-week fa-2x"}></Link>
-      <Link to="/patients" className={location.pathname === "/patients"  ? "fas fa-address-book fa-2x" : "fas fa-address-book fa-2x"}></Link>
-      <Link to="/services" className={location.pathname === "/services"  ? "fas fa-store-alt fa-2x" : "fas fa-store-alt fa-2x"}></Link>
-      <a className="fas fa-door-closed fa-2x" onClick={logout}/>
+      <Link to="/" className={location.pathname === "/"  ? "flex-col flex-center menu-b" : "flex-col flex-center menu-b"}>
+        <i className="fas fa-home fa-2x"/>
+        <label className="menu-title">Home</label>
+      </Link>
+
+      <Link to="/appointments" className={location.pathname === "/appointments"  ? "flex-col flex-center menu-b" : "flex-col flex-center menu-b"}>
+         <i className="fas fa-calendar-week fa-2x"/>
+         <label className="menu-title">Schedule</label>
+      </Link>
+
+      <Link to="/patients" className={location.pathname === "/patients"  ? "flex-col flex-center menu-b" : "flex-col flex-center menu-b"}>
+         <i className="fas fa-address-book fa-2x"/>
+         <label className="menu-title">Patients</label>
+      </Link>
+
+      <Link to="/services" className={location.pathname === "/services"  ? "flex-col flex-center menu-b" : "flex-col flex-center menu-b"}>
+      <i className="fas fa-store-alt fa-2x"/>
+         <label className="menu-title">Services</label>
+      </Link>
+
+      <a className="flex-col flex-center menu-b" onClick={logout}>
+          <i className="fas fa-door-closed out"/>
+          <label className="menu-title">Log out</label>
+      </a>
        
     </header>
     );

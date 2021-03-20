@@ -113,7 +113,7 @@ i{
 
 }
 
-.menu i:hover{
+.menu a:hover{
    
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
@@ -806,4 +806,12 @@ header{
 .disable{
     pointer-events: none;
     
+}
+
+.menu-title{
+    font-size: 10px;
+}
+
+.out{
+    color: rgb(206, 206, 206) !important;
 }
