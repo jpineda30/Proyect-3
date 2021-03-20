@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
+import { useStoreContext } from "../../utils/globalState";
 
 function LogIn(props){
 
-
+    const {login, isLogged } = useStoreContext();
 
     let user = useRef();
     let Password = useRef();
@@ -14,12 +15,9 @@ function LogIn(props){
             "user":user.current.value,
             "password":Password.current.value
         }    
+
+        props.login();
         
-        
-    props.login(data);
-        
-        
-    
 
    }
 

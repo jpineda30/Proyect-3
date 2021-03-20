@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import LogIn from "../login/login"
 import SignUp from "../login/signup";
 import MyModal from  "../general/Modal";
 import { Redirect } from "react-router";
 import {withRouter} from "react-router-dom";
 import API from "../../utils/API";
+import { useStoreContext } from "../../utils/globalState";
 
 
 function Home(props){
 
+    const {login, isLogged } = useStoreContext();
+    
     const closeModal = ()=>{
         setState({
             ...state,
@@ -17,20 +20,17 @@ function Home(props){
         console.log(state.isActive);
     }
 
-        const [state,setState]= useState(
+    const [state,setState]= useState(
             {
 
                 isActive:false,
                 type: <SignUp close={closeModal} history={props.history}/>,
-                isLogged:false
+                
     
             }
         );
 
-
-    
-
-      const  openModal = ()=>{
+    const  openModal = ()=>{
             setState({
                 ...state,
                 isActive:true,
@@ -39,47 +39,7 @@ function Home(props){
             console.log(state.isActive);
         }
 
-      
-
-      const  login = (data)=>{
-
-            
-            if (data.user != "" && data.password != "")
-            {
-
-                //VALIDATE USER FOR LOGIN
-
-                /*
-                API.LogIn(data.user, data.password).then((response)=>{
-
-                    if(response == true)
-                    {
-                        this.setState({
-                            isLogged:true
-                        })
-                        this.props.history.push("/appointments");
-                    }
-                    else{
-                        {alert("no user")}
-                    }
-
-                })
-
-                */
-                setState({
-                    ...state,
-                    isLogged:true
-                })
-                props.history.push("/appointments");
-               
-            }
-            else
-
-            {alert("no user")}
-
-
-               
-            }
+    
 
      const logout = ()=>{
             setState({
@@ -94,14 +54,16 @@ function Home(props){
         }
 
 
+        console.log(isLogged)
     
     return(
 
         
         <div className="flex-col flex-center fh">
-            
+          
             <LogIn open={openModal} close={closeModal} login={login} logout={logout}/>
             <MyModal status={state.isActive} toggle={closeModal} type={sendSignup()}/>
+            <div onClick={login} className="button-blue"/>
             
             
         </div>    
