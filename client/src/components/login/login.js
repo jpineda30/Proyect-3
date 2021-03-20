@@ -1,6 +1,7 @@
 import React, { useRef,useState } from "react";
 import { useStoreContext } from "../../utils/globalState";
 import Redirect from "react-router-dom";
+import API from "../../utils/API";
 
 function LogIn(props){
 
@@ -13,11 +14,25 @@ function LogIn(props){
 
    const {login} = useStoreContext();
 
-   const validateUser=()=>{
+   const validateUser= async ()=>{
 
           if(user != "" && password != "")
           { 
-              login(user, password);
+
+
+            var response = await API.login(user,password);
+
+            console.log(response);
+
+            if(response.data.username)
+            {
+                login();
+            }
+            else
+            {alert("you should kill yourself")}
+            //login(user,password)
+
+        
           }
           else
           {
@@ -40,7 +55,7 @@ function LogIn(props){
                 <label>User</label>
                 <input onChange={(e)=>{setUser(e.target.value)}}/>
                 <label>Password </label>
-                <input onChange={(e)=>{setPassword(e.target.value)}}/> 
+                <input type="password" onChange={(e)=>{setPassword(e.target.value)}}/> 
                 <div className="flex-row ">
                     <div className="button-purple-medium radius1 m-1" onClick={validateUser}>Login </div>
                     <div className="button-blue-medium m-1 radius1" onClick={props.open}>Sign Up </div>

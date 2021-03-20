@@ -13,20 +13,10 @@ function Wrapper(props){
         
     const main=() => <Home userState={props.isLogged}/>;
 
-        function validation(object)
-            { 
-                let redirection = object;
+ 
+            console.log(isLogged);
+            
 
-                console.log("validation " + props.isLogged);
-
-                if(props.isLogged == false)
-                { 
-                    redirection = main;
-                }
-                
-                return redirection;
-            }
-  
     return(
        
         

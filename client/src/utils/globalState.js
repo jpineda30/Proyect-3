@@ -1,4 +1,5 @@
 import React, { createContext, useReducer, useContext } from "react";
+import API from "./API";
 
 const INITIAL_STATE = {
   isLogged:false,
@@ -12,11 +13,12 @@ const reducer = (state, action) => {
   switch (action.type) {
   case "LOGIN":
 
-    return {
-      ...state,
-      isLogged:true,
-      UserId:action.data.userId
-    };
+          return {
+            ...state,
+            isLogged:true,
+            UserId:""
+          };
+
 
     case "LOGOUT":
 
