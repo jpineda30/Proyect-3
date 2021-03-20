@@ -12,11 +12,11 @@ const { Provider } = StoreContext;
 const reducer = (state, action) => {
   switch (action.type) {
   case "LOGIN":
-
+    
           return {
             ...state,
             isLogged:true,
-            UserId:""
+            UserId:action.data.userId
           };
 
 
@@ -37,9 +37,9 @@ const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
 
   
-    const login = (userId, password)=>{
+    const login = (userId)=>{
     
-      dispatch({ type: "LOGIN", data:{userId,password} })
+      dispatch({ type: "LOGIN", data:{userId} })
     }
 
     const logout= ()=>{

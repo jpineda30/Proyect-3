@@ -26,7 +26,7 @@ function LogIn(props){
 
             if(response.data.username)
             {
-                login();
+                login(response.data._id);
             }
             else
             {alert("you should kill yourself")}

@@ -13,22 +13,22 @@ function Menu(){
 
     return(
         <header className="flex-row flex-center menu">
-      <Link to="/" className={location.pathname === "/"  ? "flex-col flex-center menu-b" : "flex-col flex-center menu-b"}>
+      <Link to="/" className="flex-col flex-center menu-b">
         <i className="fas fa-home fa-2x"/>
         <label className="menu-title">Home</label>
       </Link>
 
-      <Link to="/appointments" className={location.pathname === "/appointments"  ? "flex-col flex-center menu-b" : "flex-col flex-center menu-b"}>
+      <Link to="/appointments" className="flex-col flex-center menu-b">
          <i className="fas fa-calendar-week fa-2x"/>
          <label className="menu-title">Schedule</label>
       </Link>
 
-      <Link to="/patients" className={location.pathname === "/patients"  ? "flex-col flex-center menu-b" : "flex-col flex-center menu-b"}>
+      <Link to="/patients" className="flex-col flex-center menu-b">
          <i className="fas fa-address-book fa-2x"/>
          <label className="menu-title">Patients</label>
       </Link>
 
-      <Link to="/services" className={location.pathname === "/services"  ? "flex-col flex-center menu-b" : "flex-col flex-center menu-b"}>
+      <Link to="/services" className="flex-col flex-center menu-b">
       <i className="fas fa-store-alt fa-2x"/>
          <label className="menu-title">Services</label>
       </Link>
