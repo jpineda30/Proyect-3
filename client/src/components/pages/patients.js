@@ -5,7 +5,8 @@ import PatientCRUD from "../patients/patientCRUD";
 import CreatePatMod from "../patients/createPatMod";
 import DeleteMod from "../general/DeleteMod"; 
 import MyModal from "../general/Modal";
-import ViewPatMod from "../patients/viewPatMod"
+import ViewPatMod from "../patients/viewPatMod";
+import API from "../utils/API";
 
 
 class Patients extends Component{
@@ -16,11 +17,47 @@ class Patients extends Component{
             crudActive:false,
             action:<CreatePatMod close={this.closeModal}></CreatePatMod>
         }
-    }
+    };
+
 
     componentWillUnmount(){
+
+
         //Modal.setAppElement("CreateMod");
     }
+
+
+    state ={
+        patients: []
+    };
+    componentDidMount() {
+        this.getSavedPatients(param);
+    };
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+          [name]: value
+        });
+      };
+
+    getSavedPatients= (param) => {
+        API.getSavedPatients(param)
+          .then(res =>
+            this.setState({
+              patients: res.data
+            })
+          )
+          .catch(err => console.log(err));
+      };
+    
+      handlePatientDelete = id => {
+        API.deletePatient(id).then(res => this.getSavedPatients(param));
+      };
+
+      handlePatientEdit = id => {
+          API.editPatient(id).then(res =>this.getSavedPatients())
+      }
 
 
     toggleModalCrud= (param)=>{

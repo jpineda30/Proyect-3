@@ -641,12 +641,33 @@ header{
 .modal-child-scroll{
     background-color: rgba(53, 45, 61,1);
     padding: 20px;
-    width: 500px;
+    width: 600px;
     border-radius: 15px;
     transition: .5s;
     overflow: scroll;
     overflow-x: hidden;
+    scroll-padding-top: 15px;
+    scroll-margin-top: 30px;
+    top: 15px;
 }
+
+.modal-child-scroll::-webkit-scrollbar-track {
+    background: #74747400; 
+    border-radius: 10px;
+    top: 15px;
+  }
+
+.modal-child-scroll::-webkit-scrollbar {
+    width: 10px;
+    top: 10px;
+
+  }
+
+.modal-child-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom,rgba(231, 201, 201, 0),rgba(170, 114, 235, 0.513), rgba(0, 0, 0, 0));
+    border-radius: 10px;
+    margin-top: 20px;
+  }
 
 .close{
     background-color: blueviolet;

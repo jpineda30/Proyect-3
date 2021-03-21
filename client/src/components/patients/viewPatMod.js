@@ -1,7 +1,7 @@
 import React from "react";
 import Pdf from "react-to-pdf";
+import API from "../utils/API";
 /* import { patients } from "../test json/patients.json"; */
-
 const ref = React.createRef()
 
 
@@ -18,7 +18,7 @@ function ViewPatMod(props){
       <div className="flex-col flex-left modal-child-scroll">
 <div>
       <Pdf targetRef={ref} filename="services.pdf">
-      {({ toPdf })=> <button className="button flex-row flex-around flex-center" onClick={toPdf}><i className="fas fa-file-pdf" ></i>
+      {({ toPdf })=> <button className="button-blue flex-row flex-around flex-center" onClick={toPdf}><i className="fas fa-file-pdf" ></i>
       <p className="has-text-white">Generate PDF</p></button>}
       </Pdf>
 </div>
@@ -86,6 +86,7 @@ function ViewPatMod(props){
 
         </div>
     </div>
+  
 
     )}
   /* )} */
