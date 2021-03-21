@@ -13,8 +13,8 @@ export default {
 
       });
   },
-  login: function(username,password){
-    return axios.post("/api/users/login", {
+  login:function(username,password){
+    return axios.post("http://localhost:3001/api/users/login", {
         username: username,
         password: password
       });
