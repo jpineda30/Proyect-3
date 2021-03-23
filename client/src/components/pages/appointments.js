@@ -16,8 +16,14 @@ class Appointments extends Component{
         super()
         this.state= {
             crudActive:false,
-            action:<CreateMod close={this.closeModal}></CreateMod>
+            action:<CreateMod close={this.closeModal}></CreateMod>,
+            date: new Date(),
         }
+    }
+
+    onChange = date => {
+        alert(date);
+        this.setState({ date })
     }
 
 
@@ -73,7 +79,7 @@ class Appointments extends Component{
                 <div className="flex-row flex-wrap flex-jcenter">
                     
                     <WorkDay open={this.openModal} close={this.closeModal}></WorkDay>
-                    <div className="calendar p-1 flex-col">   <Calendar /></div> 
+                    <div className="calendar p-1 flex-col">   <Calendar onChange={this.onChange} value={this.state.date} /></div> 
                     <MyModal status={this.state.crudActive} toggle={this.closeModal} type={this.state.action}/>  
                     
                 </div>   
