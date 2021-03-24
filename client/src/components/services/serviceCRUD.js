@@ -8,7 +8,7 @@ const ref = React.createRef()
 
 function ServiceCRUD(props){
 
-
+console.log(props.services);
     return(    
 
 
@@ -36,7 +36,7 @@ function ServiceCRUD(props){
         <div>Actions</div>
     </div>
     
-    {services.map((service)=>{
+    {props.services.map((service)=>{
         return(
             <div>
 
@@ -45,8 +45,8 @@ function ServiceCRUD(props){
 
             <div className="first"></div>
             <div>{service.name}</div>
-            <div>{service.cost}</div>
-            <div>{service.description}</div>
+            <div>{service.price}</div>
+            <div>{service.details}</div>
             <Actions  status = {props.status} toggle={props.toggle}/>
            </div>
 
