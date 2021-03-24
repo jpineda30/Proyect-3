@@ -7,17 +7,17 @@ function CrudActions(props){
 
     function onDelete(){
         
-        props.toggle("delete");
+        props.toggle("delete",props.ide);
     }
 
     function onEdit(){
         
-        props.toggle("edit");
+        props.toggle("edit",props.ide);
     }
 
     function onView(){
         
-        props.toggle("view");
+        props.toggle("view",props.ide);
     }
 
     return(
