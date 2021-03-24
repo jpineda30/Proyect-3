@@ -4,7 +4,7 @@ import SignUp from "../login/signup";
 import MyModal from  "../general/Modal";
 import { Redirect } from "react-router";
 import {withRouter} from "react-router-dom";
-import API from "../../utils/API";
+
 import { useStoreContext } from "../../utils/globalState";
 
 
