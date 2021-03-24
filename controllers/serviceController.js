@@ -18,8 +18,10 @@ module.exports = {
                 price:req.body.price,
                 details:req.body.details
           }
-        )
-        .then(dbModel => res.json(dbModel))
-        .catch((err)=>{res.status(422).json(err)});
+        ).catch((err)=>{res.status(422).json(err)});
+    },
+    update: function(q, u,o){
+        Service.updateOne(q,u,o)
+        .catch((err)=>{status= err});
     }
 };
