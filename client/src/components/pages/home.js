@@ -15,7 +15,7 @@ function Home(props){
     const closeModal = ()=>{
         setState({
             ...state,
-            isActive:false
+            isActive:true
         });
         console.log(state.isActive);
     }

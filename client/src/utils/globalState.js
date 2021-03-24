@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useContext } from "react";
-import API from "./API";
+
 
 const INITIAL_STATE = {
   isLogged:false,

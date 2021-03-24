@@ -13,7 +13,7 @@ var cors = require('cors')
 
 
 const PORT = process.env.PORT || 3001;
-app.use(cors())
+//app.use(cors())
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

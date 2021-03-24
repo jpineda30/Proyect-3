@@ -1,4 +1,4 @@
-var db = require("../../models");
+//var db = require("../../models");
 var passport = require("../../config/passport.js");
 const {Schedule} = require("../../controllers/index");
 //const ScheduleC = require("../../controllers")
