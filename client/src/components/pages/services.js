@@ -38,17 +38,17 @@ function Services() {
             setServices(res.data);
         });        
     }, []);
-    const toggleModalCrud= (param)=>{
+    const toggleModalCrud= (param, id)=>{
       
 
         switch (param) {
                 case "delete":
                     setCRUDActive(!crudActive);
-                    setAction(<DeleteMod close={closeModal} name={"service"}></DeleteMod>);
+                    setAction(<DeleteMod close={closeModal} name={"service"} ide={id}></DeleteMod>);
                     break;  
                   default:
                     setCRUDActive(!crudActive);
-                    setAction(<CreateMod close={closeModal} type={param} addService= {addService}></CreateMod>);
+                    setAction(<CreateMod close={closeModal} type={param} addService= {addService} ide={id}></CreateMod>);
                     break;    
         }
     };
