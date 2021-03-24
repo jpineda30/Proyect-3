@@ -47,7 +47,7 @@ console.log(props.services);
             <div>{service.name}</div>
             <div>{service.price}</div>
             <div>{service.details}</div>
-            <Actions  status = {props.status} toggle={props.toggle}/>
+            <Actions  status = {props.status} toggle={props.toggle} ide={service._id}/>
            </div>
 
         </div>

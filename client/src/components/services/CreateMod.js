@@ -10,7 +10,28 @@ function CreateMod(props){
   var edition = false;
 
   if(props.type == "view")
-  {visibility = "hidden"; edition=true}
+  {
+    visibility = "hidden"; edition=true
+
+    getById(props.ide);
+
+  }
+
+  if(props.type == "edit")
+  {
+    
+    getById(props.ide);
+
+  }
+
+
+  const getById = (id)=>{
+
+    //api call then populate fields
+
+    
+
+  };
  
 
   const saveService = ()=>{
