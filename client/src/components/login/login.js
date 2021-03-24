@@ -1,42 +1,73 @@
-import React, { useRef } from "react";
+import React, { useRef,useState } from "react";
+import { useStoreContext } from "../../utils/globalState";
+import Logo from "../general/logo";
+import Redirect from "react-router-dom";
+import API from "../../utils/API";
 
 function LogIn(props){
 
+    //let user = useRef();
+   //let Password = useRef();
+
+   const [user,setUser] = useState("");
+   const [password,setPassword] = useState("");
 
 
-    let user = useRef();
-    let Password = useRef();
+   const {login} = useStoreContext();
+
+   const validateUser= async ()=>{
+
+          if(user != "" && password != "")
+          { 
 
 
-   const validateUser=()=>{
-        let data = {
+            var response = await API.login(user,password);
 
-            "user":user.current.value,
-            "password":Password.current.value
-        }    
+            console.log(response);
+
+            if(response.data.username)
+            {
+                login(response.data._id);
+            }
+            else
+            {alert("you should kill yourself")}
+            //login(user,password)
+
         
+          }
+          else
+          {
+              alert("no empty fields");
+          }
+          
+
+       
         
-    props.login(data);
-        
-        
-    
 
    }
+   
 
     return(
 
         
-        <div className="back2 flex-col flex-center p-3">
+        <div className="flex-col flex-center">
+
            
            
-                <label>User</label>
-                <input ref={user}/>
-                <label>Password </label>
-                <input ref={Password}/> 
-                <div className="flex-row ">
-                    <div className="button-purple-medium radius1 m-1" onClick={validateUser}>Login </div>
-                    <div className="button-blue-medium m-1 radius1" onClick={props.open}>Sign Up </div>
-                </div>
+                
+           <div className="back2 flex-col flex-center p-3">
+           
+           <Logo/>
+           <label>User</label>
+           <input onChange={(e)=>{setUser(e.target.value)}}/>
+           <label>Password </label>
+           <input type="password" onChange={(e)=>{setPassword(e.target.value)}}/> 
+           <div className="flex-row ">
+               <div className="button-purple-medium radius1 m-1" onClick={validateUser}>Login </div>
+               <div className="button-blue-medium m-1 radius1" onClick={props.open}>Sign Up </div>
+           </div>
+       
+   </div>    
             
         </div>    
 

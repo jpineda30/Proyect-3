@@ -1,25 +1,14 @@
 {
-<<<<<<< HEAD
   "name": "proyect-3",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "proxy":"http://localhost:3001",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start"
-=======
-  "name": "proyect3",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
->>>>>>> ro
   },
   "repository": {
     "type": "git",
@@ -32,7 +21,6 @@
   },
   "homepage": "https://github.com/jpineda30/Proyect-3#readme",
   "dependencies": {
-<<<<<<< HEAD
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "concurrently": "^6.0.0",
@@ -45,14 +33,6 @@
     "morgan": "^1.10.0",
     "node-os": "0.0.5",
     "os": "^0.1.1",
-=======
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
-    "mongoose": "^5.12.1",
-    "morgan": "^1.10.0",
->>>>>>> ro
     "passport": "^0.4.1",
     "passport-local": "^1.0.0"
   }
