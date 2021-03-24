@@ -1,21 +1,32 @@
+var db = require("../../models");
 var passport = require("../../config/passport.js");
 const {Service} = require("../../controllers/index");
+//const ScheduleC = require("../../controllers")
+//console.log(ScheduleC);
 const router = require("express").Router();
 
-router.route("/create")
-.post(Service.create)
+router.route("/")
+.get(
+    function(req, res) {
+        console.log("checking");
+    if (!req.user) {
 
-router.route("/").get(
-    function(req,res){
-        ///Do qe need to check the user is logged?
-        console.log("checking user is logged");
-        if(!req.user){
-            res.status(418).json({"message":"You're not logged..."});
-        } else {
-            //Regresar la respuesta
-            Service.findAll().then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));;
-        }
-    })
+      // The user is not logged in, send back an empty object
+      res.status(404).json({});
+    } else {      
+      console.log("logged");
+      //Findall
+     Service.findServiceById({})      
+       .then(dbModel => res.json(dbModel))
+      .catch(err=> res.status(422).json(err));
+    }
+  });
 
-module.exports = router;
+  router.route("/create")
+  .post(
+      //Podriamos revisar si el usuario esta loggeado para crear el servicio.
+      Service.create
+
+  )
+
+  module.exports = router;

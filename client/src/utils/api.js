@@ -7,13 +7,13 @@ export default {
   },
   // Gets the post with the given id
   createUser: function(username,password,email) {
-    return axios.post("/api/users/", {
-        username: username,
-        password: password,
-        email:email
+    return axios.post("/api/users/signup", {
+
+      username:username,password,email
+
       });
   },
-  login: function(username,password){
+  login:function(username,password){
     return axios.post("/api/users/login", {
         username: username,
         password: password
@@ -21,5 +21,29 @@ export default {
   },
   isLogged: function(){
     return axios.get("/api/users/isLogged");
+  },
+
+
+
+
+  ///////////////
+  ////Services///
+  /////////////
+
+  getServices: function () {
+    return axios.get("/api/service");
+  },
+
+  createService: function (body) {
+    console.log("THISISASERVICECREATION");
+    console.log(body);
+    return axios.post("api/service/create", {
+      name:body.name,
+      price:body.price,
+      details:body.details
+    })
   }
+
+
+
 };

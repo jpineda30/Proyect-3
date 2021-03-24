@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Menu from "../general/menu";
 import WorkDay from "../appointments/workDay";
 import Calendar from 'react-calendar'
 import MyModal from "../general/Modal";
@@ -9,15 +10,24 @@ import DeleteMod from "../general/DeleteMod";
 
 class Appointments extends Component{
 
+
+
     constructor(){
         super()
         this.state= {
             crudActive:false,
-            action:<CreateMod close={this.closeModal}></CreateMod>
+            action:<CreateMod close={this.closeModal}></CreateMod>,
+            date: new Date(),
         }
     }
 
+    onChange = date => {
+        alert(date);
+        this.setState({ date })
+    }
 
+
+   
 
     closeModal = ()=>{
         this.setState({
@@ -58,7 +68,9 @@ class Appointments extends Component{
  
 
  render(){
-    return <div className="flex-col scroll">
+    return <>
+    <Menu/>
+    <div className="flex-col scroll">
         
             <div className="flex-col flex-center">
 
@@ -67,7 +79,7 @@ class Appointments extends Component{
                 <div className="flex-row flex-wrap flex-jcenter">
                     
                     <WorkDay open={this.openModal} close={this.closeModal}></WorkDay>
-                    <div className="calendar p-1 flex-col">   <Calendar /></div> 
+                    <div className="calendar p-1 flex-col">   <Calendar onChange={this.onChange} value={this.state.date} /></div> 
                     <MyModal status={this.state.crudActive} toggle={this.closeModal} type={this.state.action}/>  
                     
                 </div>   
@@ -75,6 +87,7 @@ class Appointments extends Component{
             </div>   
             
         </div>    
+    </>
 
     }
 }

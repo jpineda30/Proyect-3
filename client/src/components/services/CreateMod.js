@@ -1,5 +1,5 @@
 import React, {useRef } from "react";
-
+import API from "../../utils/API";
 
 function CreateMod(props){
 
@@ -18,8 +18,8 @@ function CreateMod(props){
     
     let service = {
       name:serviceName.current.value,
-      cost:serviceCost.current.value,
-      desciption:serviceDescription.current.value
+      price:parseInt(serviceCost.current.value),
+      details:serviceDescription.current.value
     }
 
     if(service.name != "" && service.cost != "")
@@ -27,7 +27,12 @@ function CreateMod(props){
       console.log(service);
 
       if(props.type == "create")
-      {/*save new*/}
+      {
+        API.createService(service).then(service=>{
+          props.addService(service.data);
+        })
+        props.close();
+      }
       else if (props.type == "update") 
       {
         //update service

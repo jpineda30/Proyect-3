@@ -4,6 +4,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Metrophobic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@300&display=swap');
+
+/*exo*/
+
+.text-logo{
+    font-family: 'Patrick Hand', cursive;
+    font-family: 'Mali', cursive;
+    
+    margin:0 !important;
+    padding:0 !important;
+    font-weight: bolder;
+}
+
+.text-purple
+{
+    color: rgb(80, 16, 92);
+    
+}
+
 h1,a,p,button,label,input,div{
     font-family: 'Reem Kufi', sans-serif;
     font-family: 'Baloo Da 2', cursive;
@@ -113,7 +133,7 @@ i{
 
 }
 
-.menu i:hover{
+.menu a:hover{
    
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
@@ -638,6 +658,16 @@ header{
     
 }
 
+.modal-child-scroll{
+    background-color: rgba(53, 45, 61,1);
+    padding: 20px;
+    width: 500px;
+    border-radius: 15px;
+    transition: .5s;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
 .close{
     background-color: blueviolet;
     border-radius: 5px;
@@ -795,5 +825,25 @@ header{
 
 .disable{
     pointer-events: none;
+    
+}
+
+.menu-title{
+    font-size: 10px;
+}
+
+.out{
+    color: rgb(206, 206, 206) !important;
+}
+
+
+.logo{
+    width: 90px;
+    height: 70px;
+    
+    background-image: url(../img/logo5.png);
+    background-size: 100% 100%;
+   
+   
     
 }

@@ -1,84 +1,69 @@
-import React, { Component } from "react";
+import React, { useContext, useState } from "react";
 import LogIn from "../login/login"
 import SignUp from "../login/signup";
 import MyModal from  "../general/Modal";
-import api from "../../utils/api"
 import { Redirect } from "react-router";
 import {withRouter} from "react-router-dom";
+import API from "../../utils/API";
+import { useStoreContext } from "../../utils/globalState";
 
 
-class Home extends Component{
+function Home(props){
 
-       constructor(props){
-           super(props);
-           this.state= {
-            isActive:false,
-            type: <SignUp close={this.closeModal}/>,
-            isLogged:true
+    const {login, isLogged } = useStoreContext();
+    
+    const closeModal = ()=>{
+        setState({
+            ...state,
+            isActive:true
+        });
+        console.log(state.isActive);
+    }
 
-        }
+    const [state,setState]= useState(
+            {
 
-
-       }
-
-       /* state= {
-            isActive:false,
-            type: <SignUp close={this.closeModal}/>,
-            isLogged:true
-
-        }*/
-
-
-        componentWillMount(){
-            
-
-            //Redirect when logged        
-           // this.props.history.push("/appointments");
-
-           /* api.isLogged().then((res)=>{
-
-                if(res.data)
-                { 
-                    this.setState({
-                     isLogged:true,
-                    
-                                });
-                    <Redirect to="/appointments"  />           
-                                
+                isActive:false,
+                type: <SignUp close={closeModal} history={props.history}/>,
+                
+    
             }
-                else{
-                    console.log("not logged")
-                }
-               
+        );
 
-            });*/
-
-        } 
-
-        openModal = ()=>{
-            this.setState({
+    const  openModal = ()=>{
+            setState({
+                ...state,
                 isActive:true,
-                type:<SignUp close={this.closeModal}/>
+                type:<SignUp close={closeModal}/>
             });
-            console.log(this.state.isActive);
+            console.log(state.isActive);
         }
 
-        closeModal = ()=>{
-            this.setState({
-                isActive:false
-            });
-            console.log(this.state.isActive);
+    
+
+     const logout = ()=>{
+            setState({
+                ...state,
+                isLogged:false
+            })
+            props.history.push("/home");
+        }
+
+      const  sendSignup=()=>{
+            return <SignUp close={closeModal} history={props.history}/>
         }
 
 
-    render(){
+        
+    
     return(
 
         
         <div className="flex-col flex-center fh">
+          
+            <LogIn open={openModal} close={closeModal} login={login} logout={logout}/>
+            <MyModal status={state.isActive} toggle={closeModal} type={sendSignup()}/>
             
-            <LogIn open={this.openModal} close={this.closeModal}/>
-            <MyModal status={this.state.isActive} toggle={this.closeModal} type={this.state.type}/>
             
             
         </div>    
@@ -86,6 +71,6 @@ class Home extends Component{
 
 
     )}
-}
+
 
 export default withRouter(Home);

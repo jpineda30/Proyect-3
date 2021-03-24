@@ -1,12 +1,52 @@
-import React from "react";
+import React, {useRef} from "react";
+import API from "../../utils/API";
+import {withRouter} from "react-router-dom";
+
 
 function SignUp(props){
 
+    let user = useRef();
+    let email= useRef();
+    let pass1 = useRef();
+    let pass2 = useRef();
     
 
-   const signUp=()=>{
-       //SignUp logic
-   }
+    const SignUp=()=>{
+        
+        let data = {
+            "user" : user.current.value,
+            "email": email.current.value,
+            "pass1" : pass1.current.value,
+            "pass2" : pass2.current.value
+            
+        }
+    
+            if(data.user != "" && data.email !="" && data.pass1 != "" && data.pass2 != "" )
+            {
+                if(data.pass1 === data.pass2)
+                {
+                    //validate if user already exists
+                    API.createUser(data.user, data.pass1, data.email).then((response)=>{
+                        console.log(response)
+                        console.log(props)
+                        //if success
+                        props.close();
+                            //props.history.push("/home");
+                        //else
+                            //error message    
+                    }).catch((error)=>{console.log(error)});
+                }
+                else
+                {
+                    alert("validation password does not match")
+                }
+            }
+            else
+            { alert("validation no empty fields")}    
+
+
+        }
+    
 
     return(
 
@@ -15,16 +55,16 @@ function SignUp(props){
            
            
                 <label>User Name</label>
-                <input type="text"/>
+                <input ref={user} type="text"/>
 
                 <label>Email</label>
-                <input type="text"/>
+                <input ref={email} type="text"/>
 
                 <label>Password </label>
-                <input type="password"/> 
+                <input ref={pass1} type="password"/> 
 
                 <label>Repeat Password </label>
-                <input type="password"/> 
+                <input ref={pass2} type="password"/> 
 
 
                 <div className="flex-row ">
