@@ -2,7 +2,7 @@ import React from "react";
 
 function CrudActions(props) {
   function onDelete() {
-    props.toggle("delete", props.service);
+    props.toggle("delete", props.service._id);
   }
 
   function onEdit() {
