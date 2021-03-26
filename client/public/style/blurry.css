@@ -561,14 +561,17 @@ header{
 }
 
 .is-row div div:hover{
-    
+    z-index: 99;
     border-radius: 8px;
     height: max-content;
     padding: 5px;
-    min-width: max-content;
-    max-width: 400px;
+    
+    width: fit-content ;
+   
+    word-wrap: break-word;
+    
     background: rgba(255, 255, 255, 0.8);
-    z-index: 99;
+   
     position: absolute;
     color: grey;
     
