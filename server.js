@@ -8,7 +8,7 @@ var fs = require('fs');
 var morgan = require('morgan');
 var path = require('path');
 const app = express();
-var cors = require('cors')
+//var cors = require('cors')
 
 
 
