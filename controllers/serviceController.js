@@ -18,10 +18,21 @@ module.exports = {
                 price:req.body.price,
                 details:req.body.details
           }
-        ).catch((err)=>{res.status(422).json(err)});
+        ).then(serviceCreated => {res.status(202).json(serviceCreated)})
+        .catch((err)=>{res.status(422).json(err)});
     },
-    update: function(q, u,o){
-        Service.updateOne(q,u,o)
+    update: function(req,res){
+        if(!req.user){
+            res.status(404).json({message:"Not logged in."})
+          } else{
+        Service.updateOne(
+            {_id:req.body._id},{
+              $set:{name:req.body.name, price:req.body.price, details:req.body.details}
+            },{
+              upsert:false,
+            })
+        .then((serviceUpdated) => {res.status(202).json(serviceUpdated)})
         .catch((err)=>{status= err});
+          }
     }
 };

@@ -24,27 +24,13 @@ router.route("/")
 
   router.route("/update")
   .post(
-    function(req,res){
-      if(!req.user){
-        res.status(404).json({})
-      } else{
-        Service.update(
-          {_id:req.body._id},{
-            $set:{name:req.body.name, price:req.body.price, details:req.body.details}
-          },{
-            upsert:false,
-          }
-        )
-        // .then(dbModel => res.json(dbModel))
-        // .catch(err=> res.status(422).json(err));
-      }
-    }
+        Service.update
   )
 
   router.route("/create")
   .post(
       //Podriamos revisar si el usuario esta loggeado para crear el servicio.
       Service.create
-  ).then(dbRes => res.json(dbRes))
+  )
 
   module.exports = router;

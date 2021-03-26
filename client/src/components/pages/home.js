@@ -10,41 +10,49 @@ import { useStoreContext } from "../../utils/globalState";
 function Home(props){
 
     const {login, isLogged } = useStoreContext();
+    const [isActive, setActive] = useState(false);
+
     
     const closeModal = ()=>{
-        setState({
-            ...state,
-            isActive:true
-        });
-        console.log(state.isActive);
+        
+        setActive(false);
+        // setState({
+        //     ...state,
+        //     isActive:true
+        // });
+        // console.log(state.isActive);
     }
+    
+    const [action, setAction] = useState(<SignUp close={closeModal}/>);
+    // const [state,setState]= useState(
+    //         {
 
-    const [state,setState]= useState(
-            {
-
-                isActive:false,
-                type: <SignUp close={closeModal} history={props.history}/>,
+    //             isActive:false,
+    //             type: <SignUp close={closeModal} history={props.history}/>,
                 
     
-            }
-        );
+    //         }
+    //     );
 
     const  openModal = ()=>{
-            setState({
-                ...state,
-                isActive:true,
-                type:<SignUp close={closeModal}/>
-            });
-            console.log(state.isActive);
+        setActive(true)
+        setAction(<SignUp close={closeModal}/>)
+            // setState({
+            //     ...state,
+            //     isActive:true,
+            //     type:<SignUp close={closeModal}/>
+            // });
+            // console.log(state.isActive);
         }
 
     
 
      const logout = ()=>{
-            setState({
-                ...state,
-                isLogged:false
-            })
+         isLogged(false);
+            // setState({
+            //     ...state,
+            //     isLogged:false
+            // })
             props.history.push("/home");
         }
 
@@ -61,7 +69,7 @@ function Home(props){
         <div className="flex-col flex-center fh">
           
             <LogIn open={openModal} close={closeModal} login={login} logout={logout}/>
-            <MyModal status={state.isActive} toggle={closeModal} type={sendSignup()}/>
+            <MyModal status={isActive} toggle={closeModal} type={sendSignup()}/>
             
             
             
