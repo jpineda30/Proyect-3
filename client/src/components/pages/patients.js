@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+/* import React, { useState, useEffect} from "react"; */
+import React, {Component} from "react"
 import Menu from "../general/menu";
 import AddBtn from "../general/AddBtn";
 import PatientCRUD from "../patients/patientCRUD";
@@ -6,7 +7,79 @@ import CreatePatMod from "../patients/createPatMod";
 import DeleteMod from "../general/DeleteMod"; 
 import MyModal from "../general/Modal";
 import ViewPatMod from "../patients/viewPatMod";
-import API from "../utils/API";
+import API from "../../utils/API";
+
+
+
+/* 
+function Patients() {
+
+
+    const  closeModal = ()=>{
+
+        setCRUDActive(false);
+  
+    };
+
+
+    const addPatient = (patient) => {
+        setPatients([...patient,patient]);
+    }
+
+
+
+    const [patients, setPatients] = useState([]);
+    const [action, setAction] = useState(<CreatePatMod close={closeModal}></CreatePatMod>);
+    const [crudActive, setCRUDActive] = useState(false);
+
+
+    useEffect(()=>{
+        //Modal.setAppElement("CreateMod");
+        //Load Services
+        API.getPatients().then(res=> {
+            setPatients(res.data);
+        });        
+    }, []);
+    const toggleModalCrud= (param, id)=>{
+      
+
+        switch (param) {
+                case "delete":
+                    setCRUDActive(!crudActive);
+                    setAction(<DeleteMod close={closeModal} name={"patient"} ide={id}></DeleteMod>);
+                    break;  
+                  default:
+                    setCRUDActive(!crudActive);
+                    setAction(<CreatePatMod close={closeModal} type={param} addPatient= {addPatient} ide={id}></CreatePatMod>);
+                    break;    
+        }
+    };
+   
+        
+       return <>
+       <Menu/>
+        <div className="content flex-col flex-center">
+    
+       <div className="flex-col crud-body">
+      
+           <div className="titles">
+               <h1>Patients</h1>
+               <AddBtn action={toggleModalCrud}/>
+             
+
+           </div>
+           <PatientCRUD status ={crudActive} toggle={toggleModalCrud} patients = {patients} />
+           <MyModal status ={crudActive} toggle={toggleModalCrud} type={action} close={closeModal}/>
+           
+   </div>   
+   
+</div>    
+
+</>
+}
+ */
+
+
 
 
 class Patients extends Component{
@@ -26,7 +99,7 @@ class Patients extends Component{
         //Modal.setAppElement("CreateMod");
     }
 
-
+/* 
     state ={
         patients: []
     };
@@ -57,7 +130,7 @@ class Patients extends Component{
 
       handlePatientEdit = id => {
           API.editPatient(id).then(res =>this.getSavedPatients())
-      }
+      } */
 
 
     toggleModalCrud= (param)=>{

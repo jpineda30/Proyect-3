@@ -683,8 +683,9 @@ header{
     
 }
 
-.modal-child-scroll{
-    background-color: rgba(53, 45, 61,1);
+
+.modal-child-scroll {
+    background-color: rgb(233, 223, 243);
     padding: 20px;
     width: 600px;
     border-radius: 15px;
@@ -695,6 +696,12 @@ header{
     scroll-margin-top: 30px;
     top: 15px;
 }
+
+.modal-child-scroll h1, .modal-child-scroll div, .modal-child-scroll p, .modal-child-scroll label {
+    color: rgb(0, 0, 0);
+    margin-left: 15px;
+}
+
 
 .modal-child-scroll::-webkit-scrollbar-track {
     background: #74747400; 
