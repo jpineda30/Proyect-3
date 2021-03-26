@@ -1,32 +1,26 @@
-.scroll::-webkit-scrollbar {
+.content::-webkit-scrollbar {
     width: 10px;
   }
 
   /* Track */
-  .scroll::-webkit-scrollbar-track {
-    background: #747474; 
+  .content::-webkit-scrollbar-track {
+    background: #74747400; 
   }
    
   /* Handle */
-  .scroll::-webkit-scrollbar-thumb {
-    background-color:rgba(0, 35, 102);
+  .content::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color:rgba(163, 163, 163, 0.424);
   
   }
   
   /* Handle on hover */
-  .scroll::-webkit-scrollbar-thumb:hover {
-    background: rgb(1, 24, 68);
+  .content::-webkit-scrollbar-thumb:hover {
+    background: rgb(163, 163, 163, 1);
   }
 
 
-  .scroll{
-    overflow: scroll;
-    height: 95vh;
-    width: 100%;
-    padding: 10px;
-    
-    
-  }
+  
 
   body,html{
 
