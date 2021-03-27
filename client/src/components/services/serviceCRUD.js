@@ -9,18 +9,6 @@ function ServiceCRUD(props) {
   console.log(props.services);
   return (
     <div>
-      <Pdf targetRef={ref} filename="services.pdf">
-        {({ toPdf }) => (
-          <button
-            className="button flex-row flex-around flex-center"
-            onClick={toPdf}
-          >
-            <i className="fas fa-file-pdf"></i>
-            <p className="has-text-white">Generate PDF</p>
-          </button>
-        )}
-      </Pdf>
-
       <div ref={ref} className="is-table radius1">
         <div className="is-header flex-row">
           <div></div>
@@ -33,26 +21,6 @@ function ServiceCRUD(props) {
         {props.services.map((service) => {
           return (
             <div>
-<<<<<<< HEAD
-
-                
-            <div className="is-row flex-row">
-
-            <div className="first"></div>
-            <div>{service.name}</div>
-            <div>{service.price}</div>
-            <div><div className="hoverDetails">{service.details}</div></div>
-            <Actions  status = {props.status} toggle={props.toggle} ide={service._id} name= {service.name} description={service.description} price={service.price}/>
-           </div>
-
-        </div>
-        );
-    })}
-   
-</div>
-</div>
-);
-=======
               <div className="is-row flex-row">
                 <div className="first"></div>
                 <div>{service.name}</div>
@@ -64,7 +32,7 @@ function ServiceCRUD(props) {
                   status={props.status}
                   toggle={props.toggle}
                   ide={service._id}
-                  service={service}
+                  object={service}
                 />
               </div>
             </div>
@@ -73,7 +41,6 @@ function ServiceCRUD(props) {
       </div>
     </div>
   );
->>>>>>> master
 }
 
 export default ServiceCRUD;

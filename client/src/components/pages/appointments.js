@@ -5,7 +5,7 @@ import Calendar from "react-calendar";
 import MyModal from "../general/Modal";
 import CreateMod from "../appointments/CreateMod";
 import DeleteMod from "../general/DeleteMod";
-import API from "../../utils/API";
+import API from "../../utils/API-";
 
 class Appointments extends Component {
   constructor() {
