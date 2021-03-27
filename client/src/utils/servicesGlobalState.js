@@ -1,12 +1,11 @@
 import React, { createContext, useReducer, useContext } from "react";
 
 const INITIAL_STATE = {
-  isLogged: false,
-  UserId: "",
+  services: {},
 };
 
 const StoreContext = createContext(INITIAL_STATE);
-const { Provider } = StoreContext;
+const { Provider } = StoreServiceContext;
 
 const reducer = (state, action) => {
   switch (action.type) {

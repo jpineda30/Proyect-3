@@ -882,3 +882,49 @@ header{
     overflow: scroll;
     top:0;
 }
+
+.floating-list{
+    background: rgb(137, 43, 226,1) !important;
+    top:-50px;
+    padding: 8px;
+    position: static;
+   
+    border-radius: 8px;
+    overflow: auto;
+ 
+    max-height: 200px;
+    z-index: 9998;
+  
+    
+    
+}
+
+.violet{
+    background: rgb(137, 43, 226,1) !important;
+    
+}
+
+.floating-list::-webkit-scrollbar {
+    display: none;
+}
+
+.floating-list-wraper{
+    height: 0px;
+    
+    
+    
+}
+
+.floating-list p{
+    z-index: 9999;
+    height: 15px;
+    padding: 5px;
+    margin: 0;
+    border-radius: 8px;
+}
+.floating-list p:hover{
+    background-color: rgb(82, 17, 143);
+}
+.floating-list:hover{
+    background-color: rgb(115, 27, 197);
+}
