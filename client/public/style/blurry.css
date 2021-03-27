@@ -881,6 +881,8 @@ header{
     width: 100%;
     overflow: scroll;
     top:0;
+<<<<<<< HEAD
+=======
 }
 
 .floating-list{
@@ -927,4 +929,5 @@ header{
 }
 .floating-list:hover{
     background-color: rgb(115, 27, 197);
+>>>>>>> master
 }
