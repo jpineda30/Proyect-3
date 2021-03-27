@@ -560,20 +560,21 @@ header{
     
 }
 
-/*.is-row div div:hover{*/
-.hoverDetails:hover{
-    
-    border-radius: 8px;
-    padding: 5px;
-    min-height:max-content;
-    /*max-width: 400px;*/
-    background: rgba(255, 255, 255, 0.8);
+.is-row div div:hover{
     z-index: 99;
+    border-radius: 8px;
+    height: max-content;
+    padding: 5px;
+    
+    width: fit-content ;
+   
+    word-wrap: break-word;
+    
+    background: rgba(255, 255, 255, 0.8);
+   
+    position: absolute;
     color: grey;
-    display:flex;
-    position:fixed;
-    flex-wrap:wrap;
-
+    
 }
 
 .is-row div,.is-header div{
@@ -880,4 +881,53 @@ header{
     width: 100%;
     overflow: scroll;
     top:0;
+<<<<<<< HEAD
+=======
+}
+
+.floating-list{
+    background: rgb(137, 43, 226,1) !important;
+    top:-50px;
+    padding: 8px;
+    position: static;
+   
+    border-radius: 8px;
+    overflow: auto;
+ 
+    max-height: 200px;
+    z-index: 9998;
+  
+    
+    
+}
+
+.violet{
+    background: rgb(137, 43, 226,1) !important;
+    
+}
+
+.floating-list::-webkit-scrollbar {
+    display: none;
+}
+
+.floating-list-wraper{
+    height: 0px;
+    
+    
+    
+}
+
+.floating-list p{
+    z-index: 9999;
+    height: 15px;
+    padding: 5px;
+    margin: 0;
+    border-radius: 8px;
+}
+.floating-list p:hover{
+    background-color: rgb(82, 17, 143);
+}
+.floating-list:hover{
+    background-color: rgb(115, 27, 197);
+>>>>>>> master
 }
