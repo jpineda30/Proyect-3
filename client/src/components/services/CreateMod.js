@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import API from "../../utils/API";
 
 function CreateMod(props) {
@@ -11,16 +11,18 @@ function CreateMod(props) {
 	if (props.type == "view") {
 		visibility = "hidden";
 		edition = true;
-
-		getById(props.ide);
 	}
 
-	if (props.type == "edit") {
-		getById(props.ide);
-	}
+	useEffect(() => {
+		if (props.type == "edit" || props.type == "view") {
+			getById();
+		}
+	}, []);
 
-	const getById = (id) => {
-		//api call then populate fields
+	const getById = () => {
+		serviceName.current.value = props.ide.name;
+		serviceCost.current.value = props.ide.price;
+		serviceDescription.current.value = props.ide.details;
 	};
 
 	const saveService = () => {
