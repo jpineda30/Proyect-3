@@ -33,38 +33,20 @@ function ServiceCRUD(props) {
         {props.services.map((service) => {
           return (
             <div>
-<<<<<<< HEAD
-
-                
-            <div className="is-row flex-row">
-
-            <div className="first"></div>
-            <div>{service.name}</div>
-            <div>{service.price}</div>
-            <div><div className="hoverDetails">{service.details}</div></div>
-            <Actions  status = {props.status} toggle={props.toggle} ide={service._id} name= {service.name} description={service.description} price={service.price}/>
-           </div>
-
-        </div>
-        );
-    })}
-   
-</div>
-</div>
-);
-=======
               <div className="is-row flex-row">
                 <div className="first"></div>
                 <div>{service.name}</div>
                 <div>{service.price}</div>
                 <div>
-                  <div>{service.details}</div>
+                  <div className="hoverDetails">{service.details}</div>
                 </div>
                 <Actions
                   status={props.status}
                   toggle={props.toggle}
                   ide={service._id}
-                  service={service}
+                  name={service.name}
+                  description={service.description}
+                  price={service.price}
                 />
               </div>
             </div>
@@ -73,7 +55,6 @@ function ServiceCRUD(props) {
       </div>
     </div>
   );
->>>>>>> master
 }
 
 export default ServiceCRUD;
