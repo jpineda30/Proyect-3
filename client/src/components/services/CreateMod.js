@@ -28,7 +28,7 @@ function CreateMod(props) {
 
   const saveService = () => {
     let service = {
-      _id: props.ide.object._id,
+      _id: props.ide ? props.ide.object._id : "",
       name: serviceName.current.value,
       price: parseInt(serviceCost.current.value),
       details: serviceDescription.current.value,

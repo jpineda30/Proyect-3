@@ -36,7 +36,12 @@ function Services() {
       case "delete":
         setCRUDActive(!crudActive);
         setAction(
-          <DeleteMod close={closeModal} name={"service"} ide={id}></DeleteMod>
+          <DeleteMod
+            close={closeModal}
+            name={"service"}
+            ide={id}
+            reload={loadServices}
+          ></DeleteMod>
         );
         break;
       default:
