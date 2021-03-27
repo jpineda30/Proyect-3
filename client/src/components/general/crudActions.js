@@ -12,12 +12,12 @@ function CrudActions(props){
 
     function onEdit(){
         
-        props.toggle("edit",props.ide);
+        props.toggle("edit",props);
     }
 
     function onView(){
         
-        props.toggle("view",props.ide);
+        props.toggle("view",props);
     }
 
     return(

@@ -554,9 +554,35 @@ header{
     
 }
 
+.is-row div div{
+    
+   transition: .3s;
+    
+}
+
+/*.is-row div div:hover{*/
+.hoverDetails:hover{
+    
+    border-radius: 8px;
+    padding: 5px;
+    min-height:max-content;
+    /*max-width: 400px;*/
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 99;
+    color: grey;
+    display:flex;
+    position:fixed;
+    flex-wrap:wrap;
+
+}
+
 .is-row div,.is-header div{
     width: 150px;
+    
+    
+    overflow: hidden;
     padding: 5px;
+    max-height: 45px;
 }
 
 .is-row .first{
@@ -632,6 +658,7 @@ header{
 }
 
 .crud-body{
+    height: 95vh;
     width: max-content;
 }
 
@@ -846,4 +873,11 @@ header{
    
    
     
+}
+
+.content{
+    
+    width: 100%;
+    overflow: scroll;
+    top:0;
 }

@@ -1,10 +1,13 @@
-import React, {useRef } from "react";
+import React, {useRef, useState } from "react";
 import API from "../../utils/API";
 
 function CreateMod(props){
 
-  const serviceName = useRef();
+
+  const [serviceName,setServiceName] = useState();
+
   const serviceCost = useRef();
+
   const serviceDescription = useRef();
   var visibility = "visible"
   var edition = false;
@@ -13,26 +16,40 @@ function CreateMod(props){
   {
     visibility = "hidden"; edition=true
 
-    getById(props.ide);
+    getById(props.ide.ide);
 
   }
 
-  if(props.type == "edit")
-  {
+  function createPage(props){
     
-    getById(props.ide);
-
   }
 
+  
 
-  const getById = (id)=>{
+  const getById = (props)=>{
 
+    console.log(props);
     //api call then populate fields
-
-    
+    let serviceToUpdate = {
+      _id: props.ide,
+      name: props.name,
+      price:parseInt(props.price),
+      details:props.details
+    }    
 
   };
  
+  if(props.type == "edit")
+  {
+    
+    getById(props.ide)
+    //setServiceName(props.ide.name);
+    // API.updateService(serviceToUpdate);
+    
+
+  }
+
+
 
   const saveService = ()=>{
 

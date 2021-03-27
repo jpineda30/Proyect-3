@@ -46,8 +46,8 @@ console.log(props.services);
             <div className="first"></div>
             <div>{service.name}</div>
             <div>{service.price}</div>
-            <div>{service.details}</div>
-            <Actions  status = {props.status} toggle={props.toggle} ide={service._id}/>
+            <div><div className="hoverDetails">{service.details}</div></div>
+            <Actions  status = {props.status} toggle={props.toggle} ide={service._id} name= {service.name} description={service.description} price={service.price}/>
            </div>
 
         </div>

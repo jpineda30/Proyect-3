@@ -23,7 +23,7 @@ module.exports = {
     },
     update: function(req,res){
         if(!req.user){
-            res.status(404).json({message:"Not logged in."})
+            res.status(200).json({message:"Not logged in."})
           } else{
         Service.updateOne(
             {_id:req.body._id},{

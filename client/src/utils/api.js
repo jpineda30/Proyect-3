@@ -35,14 +35,25 @@ export default {
   },
 
   createService: function (body) {
-    console.log("THISISASERVICECREATION");
-    console.log(body);
     return axios.post("api/service/create", {
       name:body.name,
       price:body.price,
       details:body.details
     })
+  },
+
+  updateService: function(body) {
+    console.log(body);
+
+    return axios.post("api/service/update",{
+      //_id:_id,
+      name:body.name,
+      price:body.price,
+      details:body.details
+    })
   }
+  
+
 
 
 

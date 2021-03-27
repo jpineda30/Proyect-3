@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import LogIn from "../login/login"
 import SignUp from "../login/signup";
 import MyModal from  "../general/Modal";
@@ -13,6 +13,8 @@ function Home(props){
     const [isActive, setActive] = useState(false);
 
     
+   
+
     const closeModal = ()=>{
         
         setActive(false);
