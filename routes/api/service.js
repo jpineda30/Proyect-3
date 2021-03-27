@@ -21,6 +21,8 @@ router.route("/").get(function (req, res) {
 
 router.route("/update").post(Service.update);
 
+router.route("/delete").post(Service.delete);
+
 router.route("/create").post(
 	//Podriamos revisar si el usuario esta loggeado para crear el servicio.
 	Service.create
