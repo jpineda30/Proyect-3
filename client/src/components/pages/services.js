@@ -8,73 +8,73 @@ import MyModal from "../general/Modal";
 import API from "../../utils/API";
 
 function Services() {
-  const closeModal = () => {
-    setCRUDActive(false);
-  };
+	const closeModal = () => {
+		setCRUDActive(false);
+	};
 
-  const addService = (service) => {
-    setServices([...services, service]);
-  };
+	const addService = (service) => {
+		setServices([...services, service]);
+	};
 
-  const [services, setServices] = useState([]);
-  const [action, setAction] = useState(
-    <CreateMod close={closeModal}></CreateMod>
-  );
-  const [crudActive, setCRUDActive] = useState(false);
+	const [services, setServices] = useState([]);
+	const [action, setAction] = useState(
+		<CreateMod close={closeModal}></CreateMod>
+	);
+	const [crudActive, setCRUDActive] = useState(false);
 
-  useEffect(() => {
-    //Modal.setAppElement("CreateMod");
-    //Load Services
-    API.getServices().then((res) => {
-      setServices(res.data);
-    });
-  }, []);
-  const toggleModalCrud = (param, id) => {
-    switch (param) {
-      case "delete":
-        setCRUDActive(!crudActive);
-        setAction(
-          <DeleteMod close={closeModal} name={"service"} ide={id}></DeleteMod>
-        );
-        break;
-      default:
-        setCRUDActive(!crudActive);
-        setAction(
-          <CreateMod
-            close={closeModal}
-            type={param}
-            addService={addService}
-            ide={id}
-          ></CreateMod>
-        );
-        break;
-    }
-  };
+	useEffect(() => {
+		//Modal.setAppElement("CreateMod");
+		//Load Services
+		API.getServices().then((res) => {
+			setServices(res.data);
+		});
+	}, []);
+	const toggleModalCrud = (param, id) => {
+		switch (param) {
+			case "delete":
+				setCRUDActive(!crudActive);
+				setAction(
+					<DeleteMod close={closeModal} name={"service"} ide={id}></DeleteMod>
+				);
+				break;
+			default:
+				setCRUDActive(!crudActive);
+				setAction(
+					<CreateMod
+						close={closeModal}
+						type={param}
+						addService={addService}
+						ide={id}
+					></CreateMod>
+				);
+				break;
+		}
+	};
 
-  return (
-    <>
-      <Menu />
-      <div className="content flex-col flex-center">
-        <div className="flex-col crud-body">
-          <div className="titles">
-            <h1>Services</h1>
-            <AddBtn action={toggleModalCrud} />
-          </div>
-          <ServiceCRUD
-            status={crudActive}
-            toggle={toggleModalCrud}
-            services={services}
-          />
-          <MyModal
-            status={crudActive}
-            toggle={toggleModalCrud}
-            type={action}
-            close={closeModal}
-          />
-        </div>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<Menu />
+			<div className="content flex-col flex-center">
+				<div className="flex-col crud-body">
+					<div className="titles">
+						<h1>Services</h1>
+						<AddBtn action={toggleModalCrud} />
+					</div>
+					<ServiceCRUD
+						status={crudActive}
+						toggle={toggleModalCrud}
+						services={services}
+					/>
+					<MyModal
+						status={crudActive}
+						toggle={toggleModalCrud}
+						type={action}
+						close={closeModal}
+					/>
+				</div>
+			</div>
+		</>
+	);
 }
 
 // class Services extends Component{
