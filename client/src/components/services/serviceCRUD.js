@@ -9,18 +9,6 @@ function ServiceCRUD(props) {
   console.log(props.services);
   return (
     <div>
-      <Pdf targetRef={ref} filename="services.pdf">
-        {({ toPdf }) => (
-          <button
-            className="button flex-row flex-around flex-center"
-            onClick={toPdf}
-          >
-            <i className="fas fa-file-pdf"></i>
-            <p className="has-text-white">Generate PDF</p>
-          </button>
-        )}
-      </Pdf>
-
       <div ref={ref} className="is-table radius1">
         <div className="is-header flex-row">
           <div></div>
@@ -44,9 +32,7 @@ function ServiceCRUD(props) {
                   status={props.status}
                   toggle={props.toggle}
                   ide={service._id}
-                  name={service.name}
-                  description={service.description}
-                  price={service.price}
+                  object={service}
                 />
               </div>
             </div>

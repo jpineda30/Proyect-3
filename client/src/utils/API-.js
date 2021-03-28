@@ -43,10 +43,15 @@ export default {
     console.log(body);
 
     return axios.post("api/service/update", {
-      //_id:_id,
+      _id: body._id,
       name: body.name,
       price: body.price,
       details: body.details,
+    });
+  },
+  deleteService: function (body) {
+    return axios.post("api/service/delete", {
+      _id: body,
     });
   },
 };

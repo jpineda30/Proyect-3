@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import API from "../../utils/API";
+import API from "../../utils/API-";
 
 function CreateMod(props) {
   const serviceName = useRef();
@@ -14,27 +14,27 @@ function CreateMod(props) {
   }
 
   useEffect(() => {
+    console.log(props);
     if (props.type == "edit" || props.type == "view") {
       getById();
     }
   }, []);
 
   const getById = () => {
-    serviceName.current.value = props.ide.name;
-    serviceCost.current.value = props.ide.price;
-    serviceDescription.current.value = props.ide.details;
+    serviceName.current.value = props.ide.object.name;
+    serviceCost.current.value = props.ide.object.price;
+    serviceDescription.current.value = props.ide.object.details;
   };
 
   const saveService = () => {
     let service = {
+      _id: props.ide ? props.ide.object._id : "",
       name: serviceName.current.value,
       price: parseInt(serviceCost.current.value),
       details: serviceDescription.current.value,
     };
 
     if (service.name != "" && service.cost != "") {
-      console.log(service);
-
       if (props.type == "create") {
         API.createService(service).then((service) => {
           props.addService(service.data);
@@ -42,6 +42,12 @@ function CreateMod(props) {
         props.close();
       } else if (props.type == "update") {
         //update service
+      } else if (props.type == "edit") {
+        API.updateService(service).then((response) => {
+          console.log(response);
+          props.reload();
+          props.close();
+        });
       } else {
         //view
       }
