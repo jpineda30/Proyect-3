@@ -54,4 +54,48 @@ export default {
       _id: body,
     });
   },
+
+  ///////////////
+  ////PATIENTS///
+  /////////////
+
+  getPatients: function () {
+    return axios.get("/api/patient");
+  },
+
+  createPatient: function (body) {
+    return axios.post("api/patient/create", {
+      first_name: body.first_name,
+      last_name: body.last_name,
+      email: body.email,
+      sex: body.sex,
+      age: body.age,
+      chart: body.chart,
+      medication: body.medication,
+      allergies: body.allergies,
+      observations: body.observations,
+    });
+  },
+
+  updatePatient: function (body) {
+    console.log(body);
+
+    return axios.post("api/patient/update", {
+      _id: body._id,
+      first_name: body.first_name,
+      last_name: body.last_name,
+      email: body.email,
+      sex: body.sex,
+      age: body.age,
+      chart: body.chart,
+      medication: body.medication,
+      allergies: body.allergies,
+      observations: body.observations,
+    });
+  },
+  deletePatient: function (body) {
+    return axios.post("api/patient/delete", {
+      _id: body,
+    });
+  },
 };

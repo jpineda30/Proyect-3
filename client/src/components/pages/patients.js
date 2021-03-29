@@ -1,18 +1,94 @@
-/* import React, { useState, useEffect} from "react"; */
-import React, {Component} from "react"
+import React, { useState, useEffect } from "react";
 import Menu from "../general/menu";
 import AddBtn from "../general/AddBtn";
 import PatientCRUD from "../patients/patientCRUD";
 import CreatePatMod from "../patients/createPatMod";
-import DeleteMod from "../general/DeleteMod"; 
+import DeleteMod from "../general/DeleteMod";
 import MyModal from "../general/Modal";
 import ViewPatMod from "../patients/viewPatMod";
-import API from "../../utils/API";
+import API from "../../utils/API-";
 
-
-
-/* 
 function Patients() {
+  const closeModal = () => {
+    setCRUDActive(false);
+  };
+
+  const addPatient = (patient) => {
+    setPatients([...patients, patient]);
+  };
+
+  const [patients, setPatients] = useState([]);
+  const [action, setAction] = useState(
+    <CreatePatMod close={closeModal}></CreatePatMod>
+  );
+  const [crudActive, setCRUDActive] = useState(false);
+
+  useEffect(() => {
+    loadPatients();
+  }, []);
+
+  const loadPatients = () => {
+    API.getPatients().then((res) => {
+      setPatients(res.data);
+    });
+  };
+  const toggleModalCrud = (param, id) => {
+    switch (param) {
+      case "delete":
+        setCRUDActive(!crudActive);
+        setAction(
+          <DeleteMod
+            close={closeModal}
+            name={"patient"}
+            ide={id}
+            reload={loadPatients}
+          ></DeleteMod>
+        );
+        break;
+      default:
+        setCRUDActive(!crudActive);
+        setAction(
+          <CreatePatMod
+            close={closeModal}
+            type={param}
+            addService={addPatient}
+            ide={id}
+            reload={loadPatients}
+          ></CreatePatMod>
+        );
+        break;
+    }
+  };
+
+  return (
+    <>
+      <Menu />
+      <div className="content flex-col flex-center">
+        <div className="flex-col crud-body">
+          <div className="titles">
+            <h1>Patients</h1>
+            <AddBtn action={toggleModalCrud} />
+          </div>
+          <PatientCRUD
+            status={crudActive}
+            toggle={toggleModalCrud}
+            patients={patients}
+          />
+          <MyModal
+            status={crudActive}
+            toggle={toggleModalCrud}
+            type={action}
+            close={closeModal}
+          />
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Patients;
+
+/* function Patients() {
 
 
     const  closeModal = ()=>{
@@ -77,29 +153,22 @@ function Patients() {
 
 </>
 }
- */
 
 
-
-
-class Patients extends Component{
-
-    constructor(){
-        super()
-        this.state= {
-            crudActive:false,
-            action:<CreatePatMod close={this.closeModal}></CreatePatMod>
-        }
+class Patients extends Component {
+  constructor() {
+    super();
+    this.state = {
+      crudActive: false,
+      action: <CreatePatMod close={this.closeModal}></CreatePatMod>,
     };
+  }
 
+  componentWillUnmount() {
+    //Modal.setAppElement("CreateMod");
+  }
 
-    componentWillUnmount(){
-
-
-        //Modal.setAppElement("CreateMod");
-    }
-
-/* 
+  
     state ={
         patients: []
     };
@@ -130,88 +199,87 @@ class Patients extends Component{
 
       handlePatientEdit = id => {
           API.editPatient(id).then(res =>this.getSavedPatients())
-      } */
+      } 
 
-
-    toggleModalCrud= (param)=>{
-      
-
-        switch (param) {
-            case "edit":
-                this.setState({
-                    crudActive:!this.state.crudActive,
-                    action: <CreatePatMod close={this.closeModal} type={param}></CreatePatMod>
-                })
-                break;
-             case "create":
-                this.setState({
-                    crudActive:!this.state.crudActive,
-                    action: <CreatePatMod close={this.closeModal} type={param}></CreatePatMod>
-                })
-                break;
-                case "delete":
-                    this.setState({
-                        crudActive:!this.state.crudActive,
-                        action: <DeleteMod close={this.closeModal} name={"patient"}></DeleteMod>
-                    })
-                    break;  
-                  case "view":
-                   
-                        this.setState({
-                            crudActive:!this.state.crudActive,
-                            action: <ViewPatMod close={this.closeModal} type={"patient"}></ViewPatMod>
-                        })
-                    break;    
-                 default:
-        
-                            this.setState({
-                                crudActive:!this.state.crudActive,
-                                action: <CreatePatMod close={this.closeModal} type={param}></CreatePatMod>
-                            })
-                            break;    
-        }
-        
-      
-       
-    }
-
-    closeModal = ()=>{
+  toggleModalCrud = (param) => {
+    switch (param) {
+      case "edit":
         this.setState({
-            crudActive:false,
-            
-        })
+          crudActive: !this.state.crudActive,
+          action: (
+            <CreatePatMod close={this.closeModal} type={param}></CreatePatMod>
+          ),
+        });
+        break;
+      case "create":
+        this.setState({
+          crudActive: !this.state.crudActive,
+          action: (
+            <CreatePatMod close={this.closeModal} type={param}></CreatePatMod>
+          ),
+        });
+        break;
+      case "delete":
+        this.setState({
+          crudActive: !this.state.crudActive,
+          action: (
+            <DeleteMod close={this.closeModal} name={"patient"}></DeleteMod>
+          ),
+        });
+        break;
+      case "view":
+        this.setState({
+          crudActive: !this.state.crudActive,
+          action: (
+            <ViewPatMod close={this.closeModal} type={"patient"}></ViewPatMod>
+          ),
+        });
+        break;
+      default:
+        this.setState({
+          crudActive: !this.state.crudActive,
+          action: (
+            <CreatePatMod close={this.closeModal} type={param}></CreatePatMod>
+          ),
+        });
+        break;
     }
+  };
 
-   render(){
-   
+  closeModal = () => {
+    this.setState({
+      crudActive: false,
+    });
+  };
 
-        
-       return  <>
-       <Menu/>
-       <div className="content flex-col flex-center">
-    
-       <div className="flex-col crud-body">
-      
-           <div className="titles">
-               <h1>Patients</h1>
-               <AddBtn action={this.toggleModalCrud}/>
-             
-
-           </div>
-           <PatientCRUD status ={this.state.crudActive} toggle={this.toggleModalCrud}/>
-           <MyModal status ={this.state.crudActive} toggle={this.toggleModalCrud} type={this.state.action} close={this.closeModal}/>
-           
-   </div>   
-   
-</div>    
-
-
-</>
-   
-   }
+  render() {
+    return (
+      <>
+        <Menu />
+        <div className="content flex-col flex-center">
+          <div className="flex-col crud-body">
+            <div className="titles">
+              <h1>Patients</h1>
+              <AddBtn action={this.toggleModalCrud} />
+            </div>
+            <PatientCRUD
+              status={this.state.crudActive}
+              toggle={this.toggleModalCrud}
+            />
+            <MyModal
+              status={this.state.crudActive}
+              toggle={this.toggleModalCrud}
+              type={this.state.action}
+              close={this.closeModal}
+            />
+          </div>
+        </div>
+      </>
+    );
+  }
 }
 
-export default Patients;
+export default Patients; */
 
 /* 
 

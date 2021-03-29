@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import API from "../../utils/API";
+import React, { useEffect, useRef } from "react";
+import API from "../../utils/API-";
 import ViewPatMod from "./viewPatMod";
 
 function CreatePatMod(props) {
@@ -20,21 +20,32 @@ function CreatePatMod(props) {
   if (props.type == "view") {
     visibility = "hidden";
     edition = true;
-
-    getById(props.ide);
-
-    return ViewPatMod;
   }
 
-  if (props.type == "edit") {
-    getById(props.ide);
-  }
+  useEffect(() => {
+    console.log("patients = " + props);
+    if (props.type == "edit" || props.type == "view") {
+      getById();
+    }
+  }, []);
 
-  const getById = (id) => {};
+  const getById = () => {
+    patientName.current.value = props.ide.object.first_name;
+    patientLastName.current.value = props.ide.last_name;
+    patientEmail.current.value = props.ide.email;
+    patientPhone.current.value = props.ide.phone_number;
+    patientSex.current.value = props.ide.sex;
+    patientAge.current.value = props.ide.age;
+    patientChart.current.value = props.ide.chart;
+    patientMedication.current.value = props.ide.current_medication;
+    patientAllergies.current.value = props.ide.allergies;
+    patientObservations.current.value = props.ide.patient_observations;
+  };
 
   const savePatient = () => {
     let patient = {
-      name: patientName.current.value,
+      _id: props.ide ? props.ide.object._id : "",
+      first_name: patientName.current.value,
       last_name: patientLastName.current.value,
       email: patientEmail.current.value,
       phone_number: patientPhone.current.value,
@@ -46,18 +57,23 @@ function CreatePatMod(props) {
       patient_observations: patientObservations.current.value,
     };
 
-    if (patient.name != "" && patient.last_name != "") {
-      console.log(patient);
-
+    if (patient.first_name != "" && patient.last_name != "") {
       if (props.type == "create") {
-        /*save new*/
-      } else if (props.type == "update") {
-        //update patient
+        API.createPatient(patient).then((patient) => {
+          props.addPatient(patient.data);
+        });
+        props.close();
+      } else if (props.type == "edit") {
+        API.updatePatient(patient).then((response) => {
+          console.log("you are editing a Patient " + response);
+          props.reload();
+          props.close();
+        });
       } else {
-        //view
+        return ViewPatMod; //Patients Chart view
       }
     } else {
-      alert("You need to input something!!!");
+      alert("you can´t leave empty inputs");
     }
   };
 
