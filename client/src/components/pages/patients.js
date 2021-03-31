@@ -51,7 +51,7 @@ function Patients() {
           <CreatePatMod
             close={closeModal}
             type={param}
-            addService={addPatient}
+            addPatient={addPatient}
             ide={id}
             reload={loadPatients}
           ></CreatePatMod>
@@ -111,7 +111,7 @@ export default Patients;
 
     useEffect(()=>{
         //Modal.setAppElement("CreateMod");
-        //Load Services
+        //Load Patients
         API.getPatients().then(res=> {
             setPatients(res.data);
         });        

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import API from "../../utils/API-";
-import ViewPatMod from "./viewPatMod";
+/* import ViewPatMod from "./viewPatMod"; */
 
 function CreatePatMod(props) {
   const patientName = useRef();
@@ -31,15 +31,15 @@ function CreatePatMod(props) {
 
   const getById = () => {
     patientName.current.value = props.ide.object.first_name;
-    patientLastName.current.value = props.ide.last_name;
-    patientEmail.current.value = props.ide.email;
-    patientPhone.current.value = props.ide.phone_number;
-    patientSex.current.value = props.ide.sex;
-    patientAge.current.value = props.ide.age;
-    patientChart.current.value = props.ide.chart;
-    patientMedication.current.value = props.ide.current_medication;
-    patientAllergies.current.value = props.ide.allergies;
-    patientObservations.current.value = props.ide.patient_observations;
+    patientLastName.current.value = props.ide.object.last_name;
+    patientEmail.current.value = props.ide.object.email;
+    patientPhone.current.value = props.ide.object.phone_number;
+    patientSex.current.value = props.ide.object.sex;
+    patientAge.current.value = props.ide.object.age;
+    patientChart.current.value = props.ide.object.chart;
+    patientMedication.current.value = props.ide.object.medication;
+    patientAllergies.current.value = props.ide.object.allergies;
+    patientObservations.current.value = props.ide.object.observations;
   };
 
   const savePatient = () => {
@@ -52,17 +52,23 @@ function CreatePatMod(props) {
       sex: patientSex.current.value,
       age: patientAge.current.value,
       chart: patientChart.current.value,
-      current_medication: patientMedication.current.value,
+      medication: patientMedication.current.value,
       allergies: patientAllergies.current.value,
-      patient_observations: patientObservations.current.value,
+      observations: patientObservations.current.value,
     };
 
-    if (patient.first_name != "" && patient.last_name != "") {
+    if (
+      patient.first_name != "" &&
+      patient.last_name != "" &&
+      patient.phone_number != ""
+    ) {
       if (props.type == "create") {
         API.createPatient(patient).then((patient) => {
           props.addPatient(patient.data);
         });
         props.close();
+      } else if (props.type == "update") {
+        //update patient
       } else if (props.type == "edit") {
         API.updatePatient(patient).then((response) => {
           console.log("you are editing a Patient " + response);
@@ -70,7 +76,8 @@ function CreatePatMod(props) {
           props.close();
         });
       } else {
-        return ViewPatMod; //Patients Chart view
+        /* return ViewPatMod;  */
+        //Patients Chart view
       }
     } else {
       alert("you can´t leave empty inputs");

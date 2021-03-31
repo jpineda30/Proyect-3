@@ -70,7 +70,7 @@ function ViewPatMod(props) {
 
         <div className="flex-col ">
           <label className="">Current Medication</label>
-          <p>{/* patient.current_medication */}</p>
+          <p>{/* patient.medication */}</p>
         </div>
 
         <div className="flex-col ">
@@ -80,7 +80,7 @@ function ViewPatMod(props) {
 
         <div className="flex-col ">
           <label className="">Observations</label>
-          <p>{/* patient.patient_observations */}</p>
+          <p>{/* patient.observations */}</p>
         </div>
       </div>
 

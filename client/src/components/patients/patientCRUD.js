@@ -29,7 +29,7 @@ function PatientCRUD(props) {
 
                 <div>{patient.phone_number}</div>
 
-                <div>{patient.patient_observations}</div>
+                <div>{patient.observations}</div>
 
                 <Actions
                   status={props.status}
