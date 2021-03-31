@@ -1,15 +1,12 @@
 import React from "react";
-import Pdf from "react-to-pdf";
 import Actions from "../general/crudActions";
 import { services } from "../test json/services.json";
-
-const ref = React.createRef();
 
 function ServiceCRUD(props) {
   console.log(props.services);
   return (
     <div>
-      <div ref={ref} className="is-table radius1">
+      <div className="is-table radius1">
         <div className="is-header flex-row">
           <div></div>
           <div>Name</div>
@@ -26,7 +23,7 @@ function ServiceCRUD(props) {
                 <div>{service.name}</div>
                 <div>{service.price}</div>
                 <div>
-                  <div>{service.details}</div>
+                  <div className="hoverDetails">{service.details}</div>
                 </div>
                 <Actions
                   status={props.status}

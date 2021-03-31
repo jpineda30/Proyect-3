@@ -40,6 +40,8 @@ function CreateMod(props) {
           props.addService(service.data);
         });
         props.close();
+      } else if (props.type == "update") {
+        //update service
       } else if (props.type == "edit") {
         API.updateService(service).then((response) => {
           console.log(response);

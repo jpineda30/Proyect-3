@@ -19,6 +19,13 @@ function DeleteMod(props) {
           props.reload();
         });
         break;
+      case "patient":
+        api.deletePatient(props.ide).then((res) => {
+          console.log("you´re deliting a patient" + res);
+          props.close();
+          props.reload();
+        });
+        break;
 
       default:
         break;

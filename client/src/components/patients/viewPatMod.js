@@ -1,32 +1,41 @@
 import React from "react";
 import Pdf from "react-to-pdf";
+
 /* import { patients } from "../test json/patients.json"; */
+const ref = React.createRef();
 
-const ref = React.createRef()
+function ViewPatMod(props) {
+  /*     console.log({patients});
 
+  // VIEW PATIENTS BI ID
 
-function ViewPatMod(props){
-/*     console.log({patients});
-
-  
+  getById()
  
   {patients.map((patient)=>{
       */
-    return(
-      /* <Onclick={patient_id}/> */
+  return (
+    /* <Onclick={patient_id}/> */
 
-      <div className="flex-col flex-left modal-child-scroll">
-<div>
-      <Pdf targetRef={ref} filename="services.pdf">
-      {({ toPdf })=> <button className="button flex-row flex-around flex-center" onClick={toPdf}><i className="fas fa-file-pdf" ></i>
-      <p className="has-text-white">Generate PDF</p></button>}
-      </Pdf>
-</div>
+    <div className="flex-col flex-left modal-child-scroll">
+      <div>
+        <Pdf targetRef={ref} filename="Patient_Chart.pdf">
+          {({ toPdf }) => (
+            <button
+              className="button-blue flex-row flex-around flex-center"
+              onClick={toPdf}
+            >
+              <i className="fas fa-file-pdf"></i>
+              <p className="has-text-white">Generate PDF</p>
+            </button>
+          )}
+        </Pdf>
+      </div>
 
-        <h1 ref={ref}>Patient {props.type}</h1>
+      <div ref={ref}>
+        <h1>Patient {props.type}</h1>
         <div className="flex-col ">
           <label className="">Patient Name</label>
-        <p>test</p>
+          <p>test</p>
         </div>
 
         <div className="flex-col ">
@@ -34,24 +43,20 @@ function ViewPatMod(props){
           <p>{/* {patient.last_name} */}test</p>
         </div>
 
-
         <div className="flex-col ">
           <label className="">email</label>
           <p>{/* {patient.email} */}test</p>
         </div>
-
 
         <div className="flex-col  ">
           <label className="">Phone Number</label>
           <p>{/* patient.phone_number */}test</p>
         </div>
 
-
         <div className="flex-col my-1 ">
           <label className="">Age</label>
           <p>{/* patient.age */}test</p>
         </div>
-
 
         <div className="flex-col ">
           <label className="">Sex</label>
@@ -65,7 +70,7 @@ function ViewPatMod(props){
 
         <div className="flex-col ">
           <label className="">Current Medication</label>
-          <p>{/* patient.current_medication */}</p>
+          <p>{/* patient.medication */}</p>
         </div>
 
         <div className="flex-col ">
@@ -73,22 +78,20 @@ function ViewPatMod(props){
           <p>{/* patient.allergies */}</p>
         </div>
 
-
         <div className="flex-col ">
           <label className="">Observations</label>
-          <p>{/* patient.patient_observations */}</p>
+          <p>{/* patient.observations */}</p>
         </div>
+      </div>
 
-        
-        <div className="flex-row flex-center">
-
-        <div className="button-small" onClick={props.close}>Cancel</div> 
-
+      <div className="flex-row flex-center">
+        <div className="button-blue" onClick={props.close}>
+          Cancel
         </div>
+      </div>
     </div>
+  );
+}
+/* )} */
 
-    )}
-  /* )} */
-
-
-export default ViewPatMod
+export default ViewPatMod;

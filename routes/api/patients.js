@@ -1,6 +1,6 @@
 var db = require("../../models");
 var passport = require("../../config/passport.js");
-const { Service } = require("../../controllers/index");
+const { Patient } = require("../../controllers/index");
 //const ScheduleC = require("../../controllers")
 //console.log(ScheduleC);
 const router = require("express").Router();
@@ -13,20 +13,20 @@ router.route("/").get(function (req, res) {
   } else {
     console.log("logged");
     //Findall
-    Service.findServiceById({})
+    Patient.findPatientById({})
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   }
 });
 
 router.route("/create");
-router.route("/update").post(Service.update);
+router.route("/update").post(Patient.update);
 
-router.route("/delete").post(Service.delete);
+router.route("/delete").post(Patient.delete);
 
 router.route("/create").post(
   //Podriamos revisar si el usuario esta loggeado para crear el servicio.
-  Service.create
+  Patient.create
 );
 
 module.exports = router;
