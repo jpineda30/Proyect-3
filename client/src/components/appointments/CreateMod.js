@@ -1,14 +1,25 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import ServiceList from "./serviceList";
 import moment from "moment";
+import API from "../../utils/API-";
 
 function CreateMod(props) {
   const [service, setService] = useState();
-  const [serviceName, setServiceName] = useState();
+
   const [serviceState, setServiceState] = useState(false);
+  const [services, setServices] = useState({});
+  const [servicesTemp, setServicesTemp] = useState({});
 
   const startTime = useRef();
   const endTime = useRef();
+  const serviceInput = useRef();
+
+  useEffect(() => {
+    API.getServices().then((res) => {
+      setServices(res.data);
+      setServicesTemp(res.data);
+    });
+  }, []);
 
   const saveAppointment = () => {
     if (service && startTime.current.value && endTime.current.value) {
@@ -28,6 +39,24 @@ function CreateMod(props) {
   };
   const serviceListOn = () => {
     setServiceState(true);
+  };
+
+  const serviceHandler = () => {
+    let value = serviceInput.current.value;
+    console.log(value);
+    if (value != "") handleServiceChange(value);
+  };
+
+  const handleServiceChange = (value) => {
+    var result = services.filter((item) =>
+      item.name.toLowerCase().includes(value)
+    );
+
+    setServicesTemp(result);
+  };
+
+  const setServiceName = (val) => {
+    serviceInput.current.value = val;
   };
 
   //const saveInput = ()=>{}
@@ -51,14 +80,21 @@ function CreateMod(props) {
       <label>Patient Name</label>
       <input type="text" />
       <label>Service Name</label>
+
+      <input
+        onClick={serviceListOn}
+        onChange={serviceHandler}
+        ref={serviceInput}
+        type="text"
+      />
+
       <ServiceList
         visible={serviceState}
         off={serviceListOff}
         set={setService}
         setName={setServiceName}
-        services={props.services}
+        services={servicesTemp}
       />
-      <input onClick={serviceListOn} value={serviceName} type="text" />
 
       <div className="flex-row flex-center">
         <div className="button-small" onClick={saveAppointment}>
