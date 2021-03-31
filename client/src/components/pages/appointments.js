@@ -14,16 +14,7 @@ class Appointments extends Component {
       crudActive: false,
       action: <CreateMod close={this.closeModal}></CreateMod>,
       date: new Date(),
-      services: {},
     };
-  }
-
-  componentDidMount() {
-    API.getServices().then((res) => {
-      this.setState({
-        services: res.data,
-      });
-    });
   }
 
   convertDate(date) {
