@@ -49,6 +49,7 @@ export default {
       details: body.details,
     });
   },
+
   deleteService: function (body) {
     return axios.post("api/service/delete", {
       _id: body,
@@ -95,9 +96,14 @@ export default {
       observations: body.observations,
     });
   },
+
   deletePatient: function (body) {
     return axios.post("api/patient/delete", {
       _id: body,
     });
+  },
+
+  createAppointment: function (body) {
+    return axios.post("api/appointment/create", {});
   },
 };
