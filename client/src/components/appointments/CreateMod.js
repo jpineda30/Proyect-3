@@ -6,6 +6,10 @@ import API from "../../utils/API-";
 /* import { useStoreContext } from "../../utils/globalState"; */
 
 function CreateMod(props) {
+  // date
+
+  let formatCalendarDate = moment.utc(props.day).format("L");
+
   //ids
 
   const [service, setService] = useState();
@@ -54,7 +58,7 @@ function CreateMod(props) {
         alert("start must be before end");
       } else {
         let pack = {
-          day: props.day,
+          day: formatCalendarDate,
           patient: patient,
           service: service,
           start: startTime.current.value,
