@@ -46,7 +46,7 @@ class Appointments extends Component {
     });
   };
 
-  openModal = (param) => {
+  openModal = (param, day) => {
     switch (param) {
       case "edit":
         this.setState({
@@ -62,8 +62,8 @@ class Appointments extends Component {
           action: (
             <CreateMod
               close={this.closeModal}
-              services={this.state.services}
               name="creation"
+              day={day}
             ></CreateMod>
           ),
         });

@@ -1,33 +1,65 @@
 import React, { useRef, useState, useEffect } from "react";
 import ServiceList from "./serviceList";
+import PatientList from "./patientList";
 import moment from "moment";
 import API from "../../utils/API-";
 
 function CreateMod(props) {
+  //ids
   const [service, setService] = useState();
+  const [patient, setPatient] = useState();
 
+  //dropdowns
   const [serviceState, setServiceState] = useState(false);
+  const [patientState, setPatientState] = useState(false);
+
+  //get list
   const [services, setServices] = useState({});
   const [servicesTemp, setServicesTemp] = useState({});
+  const [patients, setPatients] = useState({});
+  const [patientsTemp, setPatientsTemp] = useState({});
+
+  //time
 
   const startTime = useRef();
   const endTime = useRef();
   const serviceInput = useRef();
+  const patientInput = useRef();
 
   useEffect(() => {
     API.getServices().then((res) => {
       setServices(res.data);
       setServicesTemp(res.data);
     });
+
+    API.getPatients().then((res) => {
+      setPatients(res.data);
+      setPatientsTemp(res.data);
+    });
   }, []);
 
   const saveAppointment = () => {
-    if (service && startTime.current.value && endTime.current.value) {
+    if (
+      patient &&
+      service &&
+      startTime.current.value &&
+      endTime.current.value
+    ) {
       let start = moment(startTime.current.value, "h:mma");
       let end = moment(endTime.current.value, "h:mma");
 
       if (end.isBefore(start)) {
         alert("start must be before end");
+      } else {
+        let pack = {
+          day: props.day,
+          patient: patient,
+          service: service,
+          start: startTime.current.value,
+          end: endTime.current.value,
+        };
+        console.log(pack);
+        props.close();
       }
     } else {
       alert("no empty fields");
@@ -39,6 +71,13 @@ function CreateMod(props) {
   };
   const serviceListOn = () => {
     setServiceState(true);
+  };
+
+  const patientListOff = () => {
+    setPatientState(false);
+  };
+  const patientListOn = () => {
+    setPatientState(true);
   };
 
   const serviceHandler = () => {
@@ -55,8 +94,26 @@ function CreateMod(props) {
     setServicesTemp(result);
   };
 
+  const patientHandler = () => {
+    let value = patientInput.current.value;
+
+    if (value != "") handlePatientChange(value);
+  };
+
+  const handlePatientChange = (value) => {
+    var result = patients.filter((item) =>
+      item.name.toLowerCase().includes(value)
+    );
+
+    setPatientsTemp(result);
+  };
+
   const setServiceName = (val) => {
     serviceInput.current.value = val;
+  };
+
+  const setPatientName = (val) => {
+    patientInput.current.value = val;
   };
 
   //const saveInput = ()=>{}
@@ -78,7 +135,19 @@ function CreateMod(props) {
       </div>
 
       <label>Patient Name</label>
-      <input type="text" />
+      <input
+        ref={patientInput}
+        type="text"
+        onClick={patientListOn}
+        onChange={patientHandler}
+      />
+      <PatientList
+        visible={patientState}
+        off={patientListOff}
+        set={setPatient}
+        setName={setPatientName}
+        patients={patientsTemp}
+      />
       <label>Service Name</label>
 
       <input
