@@ -3,9 +3,11 @@ import ServiceList from "./serviceList";
 import PatientList from "./patientList";
 import moment from "moment";
 import API from "../../utils/API-";
+/* import { useStoreContext } from "../../utils/globalState"; */
 
 function CreateMod(props) {
   //ids
+
   const [service, setService] = useState();
   const [patient, setPatient] = useState();
 
@@ -58,7 +60,7 @@ function CreateMod(props) {
           start: startTime.current.value,
           end: endTime.current.value,
         };
-        console.log(pack);
+        API.createAppointment(pack);
         props.close();
       }
     } else {
