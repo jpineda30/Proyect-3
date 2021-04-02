@@ -104,6 +104,6 @@ export default {
   },
 
   createAppointment: function (body) {
-    return axios.post("api/appointment/create", {});
+    return axios.post("api/appointment/create", body);
   },
 };
