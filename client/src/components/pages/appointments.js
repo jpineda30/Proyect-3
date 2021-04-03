@@ -76,7 +76,12 @@ class Appointments extends Component {
 				this.setState({
 					crudActive: true,
 					action: (
-						<DeleteMod close={this.closeModal} name={"appointment"}></DeleteMod>
+						<DeleteMod
+							reload={this.loadDates}
+							close={this.closeModal}
+							name={"appointment"}
+							ide={day}
+						></DeleteMod>
 					),
 				});
 				break;
