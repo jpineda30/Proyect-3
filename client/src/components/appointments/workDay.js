@@ -41,6 +41,7 @@ function WorkDay(props) {
 						? props.slots.map((appointment) => {
 								return (
 									<Slot
+										appointmentId={appointment._id}
 										open={props.open}
 										close={props.close}
 										patient={
