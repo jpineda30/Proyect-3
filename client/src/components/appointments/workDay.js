@@ -5,52 +5,53 @@ import API from "../../utils/API-";
 import moment from "moment";
 
 function WorkDay(props) {
-	const [appointments, setAppointments] = useState([]);
+  const [appointments, setAppointments] = useState([]);
 
-	// console.log(props.date);
+  // console.log(props.date);
 
-	useEffect(() => {
-		//get props.date and find in data base
-		/* API.getAppByID().then((result) => {
+  useEffect(() => {
+    //get props.date and find in data base
+    /* API.getAppByID().then((result) => {
       setAppointments(result);
     });*/
-		if (props.date !== null) {
-			let formatCalendarDate = moment.utc(props.date).format("L");
-			//console.log(formatCalendarDate);
-			let body = {
-				day: formatCalendarDate,
-			};
+    // if (props.date !== null) {
+    //   let formatCalendarDate = moment.utc(props.date).format("L");
+    //   //console.log(formatCalendarDate);
+    //   let body = {
+    //     day: formatCalendarDate,
+    //   };
+    //   API.getAppointmentsByDate(body).then((res) => {
+    //     //	console.log("INSIDE APPOINTMENTSBYDATE");
+    //     // console.log(res);
+    //     setAppointments(res.data);
+    //   });
+    // }
+  }, []);
 
-			API.getAppointmentsByDate(body).then((res) => {
-				//	console.log("INSIDE APPOINTMENTSBYDATE");
-				// console.log(res);
-				setAppointments(res.data);
-			});
-		}
-	}, [props.test]);
-
-	return (
-		<div>
-			<div className="flex-col back2 work-day">
-				<div className="top-green flex-row flex-acenter flex-between">
-					<p className="mini"></p>
-					<p>{props.date ? props.date : "00/00/0000"}</p>
-					<AddBtn2 open={props.open} date={props.date} />
-				</div>
-				<div className="flex-col p-1 dates-scroll">
-					{appointments.map((appointment) => {
-						return (
-							<Slot
-								open={props.open}
-								close={props.close}
-								patient={appointment.patient}
-								service={appointment.service}
-								start={appointment.startT}
-								end={appointment.endT}
-							/>
-						);
-					})}
-					{/* <Slot
+  return (
+    <div>
+      <div className="flex-col back2 work-day">
+        <div className="top-green flex-row flex-acenter flex-between">
+          <p className="mini"></p>
+          <p>{props.date ? props.date : "00/00/0000"}</p>
+          <AddBtn2 open={props.open} date={props.date} />
+        </div>
+        <div className="flex-col p-1 dates-scroll">
+          {props.slots
+            ? props.slots.map((appointment) => {
+                return (
+                  <Slot
+                    open={props.open}
+                    close={props.close}
+                    patient={appointment.patient}
+                    service={appointment.service}
+                    start={appointment.startT}
+                    end={appointment.endT}
+                  />
+                );
+              })
+            : null}
+          {/* <Slot
 						open={props.open}
 						close={props.close}
 						patient={"Marcela Dupeyron"}
@@ -58,10 +59,10 @@ function WorkDay(props) {
 						start={"10:00 AM"}
 						end={"11:00 AM"}
 					/> */}
-				</div>
-			</div>
-		</div>
-	);
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default WorkDay;

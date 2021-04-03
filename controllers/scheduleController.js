@@ -29,14 +29,14 @@ module.exports = {
 
   create: function (req, res) {
     console.log(req.body);
-    let { start: startT, end: endT, day, patient, service } = req.body;
+    //let { start: startT, end: endT, day, patient, service } = req.body;
 
     Schedule.create({
-      startT,
-      endT,
-      day,
-      patient,
-      service,
+      startT: req.body.startT,
+      endT: req.body.endT,
+      day: req.body.day,
+      patient: req.body.patient,
+      service: req.body.service,
       //Here goes the schedule obj
       /*       day: props.day,
       patient: patient,
