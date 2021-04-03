@@ -21,22 +21,29 @@ module.exports = {
   },
   findAppointmentByDay: function (q) {
     // return Schedule.find(q);
-    //console.log(q);
-    return Schedule.find(q);
+
+    // Schedule.find({ day: q })
+    // 	.populate("service")
+    // 	.then((appointment) => {
+    // 		console.log(appointment);
+    // 		return appointment;
+    // 	}); // key to populate
+
+    return Schedule.find({ day: q }).populate("service").populate("patient");
     // 	.then((dbModel) => res.json(dbModel))
     // 	.catch((err) => res.status(422).json(err));
   },
 
   create: function (req, res) {
     console.log(req.body);
-    //let { start: startT, end: endT, day, patient, service } = req.body;
+    let { start: startT, end: endT, day, patient, service } = req.body;
 
     Schedule.create({
-      startT: req.body.startT,
-      endT: req.body.endT,
-      day: req.body.day,
-      patient: req.body.patient,
-      service: req.body.service,
+      startT,
+      endT,
+      day,
+      patient,
+      service,
       //Here goes the schedule obj
       /*       day: props.day,
       patient: patient,

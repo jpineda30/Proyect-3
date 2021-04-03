@@ -18,9 +18,13 @@ router.route("/day").post(function (req, res) {
 });
 
 router.route("/month").get(function (req, res) {
-  if (!req.user) {
-    res.status(404).json({});
-  }
+  console.log("Appointment checking");
+
+  console.log("logged");
+  //Findall
+  Schedule.findAppointmentByDay(req.body.day)
+    .then((dbModel) => res.json(dbModel))
+    .catch((err) => res.status(422).json(err));
 });
 
 router.route("/all").get(Schedule.findAllAppointment);
