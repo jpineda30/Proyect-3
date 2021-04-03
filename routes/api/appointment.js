@@ -6,8 +6,6 @@ const { Schedule } = require("../../controllers/index");
 const router = require("express").Router();
 
 router.route("/day").post(function (req, res) {
-  console.log("Testing this bitch", req.body.day);
-
   if (!req.user) {
     res.status(404).json({ message: "Not Logged in" });
   } else {
