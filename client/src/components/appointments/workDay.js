@@ -2,38 +2,66 @@ import React, { useState, useEffect } from "react";
 import Slot from "./hourSlot";
 import AddBtn2 from "../general/AddBtn2";
 import API from "../../utils/API-";
+import moment from "moment";
 
 function WorkDay(props) {
-  const [appointments, setAppointments] = useState();
+	const [appointments, setAppointments] = useState([]);
 
-  useEffect(() => {
-    //get props.date and find in data base
-    /* API.getAppByID().then((result) => {
+	// console.log(props.date);
+
+	useEffect(() => {
+		//get props.date and find in data base
+		/* API.getAppByID().then((result) => {
       setAppointments(result);
     });*/
-  }, []);
+		if (props.date !== null) {
+			let formatCalendarDate = moment.utc(props.date).format("L");
+			//console.log(formatCalendarDate);
+			let body = {
+				day: formatCalendarDate,
+			};
 
-  return (
-    <div>
-      <div className="flex-col back2 work-day">
-        <div className="top-green flex-row flex-acenter flex-between">
-          <p className="mini"></p>
-          <p>{props.date ? props.date : "00/00/0000"}</p>
-          <AddBtn2 open={props.open} date={props.date} />
-        </div>
-        <div className="flex-col p-1 dates-scroll">
-          <Slot
-            open={props.open}
-            close={props.close}
-            patient={"Marcela Dupeyron"}
-            service={"Head amputation"}
-            start={"10:00 AM"}
-            end={"11:00 AM"}
-          />
-        </div>
-      </div>
-    </div>
-  );
+			API.getAppointmentsByDate(body).then((res) => {
+				//	console.log("INSIDE APPOINTMENTSBYDATE");
+				// console.log(res);
+				setAppointments(res.data);
+			});
+		}
+	}, [props.test]);
+
+	return (
+		<div>
+			<div className="flex-col back2 work-day">
+				<div className="top-green flex-row flex-acenter flex-between">
+					<p className="mini"></p>
+					<p>{props.date ? props.date : "00/00/0000"}</p>
+					<AddBtn2 open={props.open} date={props.date} />
+				</div>
+				<div className="flex-col p-1 dates-scroll">
+					{appointments.map((appointment) => {
+						return (
+							<Slot
+								open={props.open}
+								close={props.close}
+								patient={appointment.patient}
+								service={appointment.service}
+								start={appointment.startT}
+								end={appointment.endT}
+							/>
+						);
+					})}
+					{/* <Slot
+						open={props.open}
+						close={props.close}
+						patient={"Marcela Dupeyron"}
+						service={"Head amputation"}
+						start={"10:00 AM"}
+						end={"11:00 AM"}
+					/> */}
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default WorkDay;
