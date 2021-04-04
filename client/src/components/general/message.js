@@ -1,6 +1,7 @@
 import React from "react";
 
 function Message(props) {
+  console.log(props);
   if (props.on) {
     setTimeout(() => {
       props.timer();
