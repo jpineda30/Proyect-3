@@ -55,7 +55,10 @@ function CreateMod(props) {
       let end = moment(endTime.current.value, "h:mma");
 
       if (end.isBefore(start)) {
-        alert("start must be before end");
+        props.message(
+          "error",
+          "The end time must be greater than the start time"
+        );
       } else {
         let pack = {
           day: formatCalendarDate,
@@ -68,7 +71,7 @@ function CreateMod(props) {
         props.close();
       }
     } else {
-      alert("no empty fields");
+      props.message("error", "All the fields must be filled");
     }
   };
 
