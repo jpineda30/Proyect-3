@@ -56,4 +56,19 @@ module.exports = {
         res.status(422).json(err);
       });
   },
+  delete: function (req, res) {
+    console.log("Deleting Appointment: ");
+    console.log(req.body);
+    if (!req.user) {
+      res.status(200).json({ message: "Not logged in." });
+    } else {
+      Schedule.deleteOne({ _id: req.body })
+        .then((appointmentDeleted) => {
+          res.status(202).json({ message: "Success" });
+        })
+        .catch((err) => {
+          throw err;
+        });
+    }
+  },
 };

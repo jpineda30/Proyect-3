@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import API from "../../utils/API-";
-/* import ViewPatMod from "./viewPatMod"; */
+import ViewPatMod from "./viewPatMod";
 
 function CreatePatMod(props) {
   const patientName = useRef();
@@ -60,7 +60,13 @@ function CreatePatMod(props) {
     if (
       patient.first_name != "" &&
       patient.last_name != "" &&
-      patient.phone_number != ""
+      patient.phone_number != "" &&
+      patient.sex != "" &&
+      patient.allergies != "" &&
+      patient.age != "" &&
+      patient.chart != "" &&
+      patient.medication != "" &&
+      patient.observations != ""
     ) {
       if (props.type == "create") {
         API.createPatient(patient).then((patient) => {
@@ -75,8 +81,8 @@ function CreatePatMod(props) {
           props.reload();
           props.close();
         });
-      } else {
-        /* return ViewPatMod;  */
+      } else if (props.type === "view") {
+        return ViewPatMod(props);
         //Patients Chart view
       }
     } else {
