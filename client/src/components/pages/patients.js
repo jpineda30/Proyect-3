@@ -45,6 +45,12 @@ function Patients() {
           ></DeleteMod>
         );
         break;
+      case "view":
+        setCRUDActive(!crudActive);
+        setAction(
+          <ViewPatMod close={closeModal} name={"patient"} ide={id}></ViewPatMod>
+        );
+        break;
       default:
         setCRUDActive(!crudActive);
         setAction(
