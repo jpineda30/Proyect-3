@@ -289,7 +289,7 @@ button:focus {
 }
 
 .left-blue {
-  height: 20px;
+  min-height: 20px;
   padding: 5px;
   color: rgb(255, 255, 255);
   background-color: rgb(107, 68, 216);
@@ -348,7 +348,7 @@ button:focus {
 }
 
 .left-purple {
-  height: 20px;
+  min-height: 20px;
 
   padding: 5px;
   color: rgb(255, 255, 255);
@@ -367,7 +367,7 @@ button:focus {
 }
 
 .right-white {
-  height: 20px;
+  min-height: 20px;
 
   padding: 5px;
   color: rgb(63, 63, 63);
@@ -774,21 +774,25 @@ header {
 }
 
 .work-day {
+  min-width: 350px;
+  max-width: 95vw;
   margin: 5px;
 }
 
 .sright {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
-  height: 84px !important;
+ 
+  min-height: 84px !important;
   text-align: center;
   line-height: 76px;
+  
 }
 
 .sleft {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-  height: 84px !important;
+  min-height: 84px !important;
   line-height: 76px;
   background-color: rgb(85, 85, 235) !important;
 }
@@ -956,4 +960,16 @@ header {
 
 .success p{
 color: rgb(6, 75, 0);
+}
+
+@media screen and (max-width: 400px){
+  .mobil-text{
+    font-size: 15px;
+  }
+  .p1{
+    padding: 1px;
+  }
+  .hour-slot{
+    width: 90vw;
+  }
 }

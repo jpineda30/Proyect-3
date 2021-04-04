@@ -7,6 +7,7 @@ import DeleteMod from "../general/DeleteMod";
 import MyModal from "../general/Modal";
 import ViewPatMod from "../patients/viewPatMod";
 import API from "../../utils/API-";
+import Message from "../general/message";
 
 function Patients() {
   const closeModal = () => {
@@ -26,6 +27,27 @@ function Patients() {
   useEffect(() => {
     loadPatients();
   }, []);
+  ////////////////message handling
+
+  //import Message from "../general/message";
+  //message={sendMessage}
+
+  const [message, setMessage] = useState(<Message />);
+  const [messageState, setMessageStatus] = useState(false);
+
+  const sendMessage = (type, text) => {
+    setMessage(
+      <Message on={true} type={type} text={text} timer={closeMessage} />
+    );
+    setMessageStatus(true);
+  };
+
+  const closeMessage = () => {
+    setMessage(<Message />);
+    setMessageStatus(false);
+    clearTimeout();
+  };
+  //////////////////////
 
   const loadPatients = () => {
     API.getPatients().then((res) => {
@@ -42,6 +64,7 @@ function Patients() {
             name={"patient"}
             ide={id}
             reload={loadPatients}
+            message={sendMessage}
           ></DeleteMod>
         );
         break;
@@ -60,6 +83,7 @@ function Patients() {
             addPatient={addPatient}
             ide={id}
             reload={loadPatients}
+            message={sendMessage}
           ></CreatePatMod>
         );
         break;
@@ -88,6 +112,7 @@ function Patients() {
           />
         </div>
       </div>
+      {message}
     </>
   );
 }

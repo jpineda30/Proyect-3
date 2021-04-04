@@ -67,8 +67,17 @@ function CreateMod(props) {
           start: startTime.current.value,
           end: endTime.current.value,
         };
-        API.createAppointment(pack);
-        props.close();
+        if (props.type == "create") {
+          API.createAppointment(pack);
+          props.message("success", "Appointment saved");
+          props.close();
+        } else if (props.type == "edit") {
+          /*props.message(
+            "success",
+            "Appointment saved"
+          );
+          props.close();*/
+        }
       }
     } else {
       props.message("error", "All the fields must be filled");
