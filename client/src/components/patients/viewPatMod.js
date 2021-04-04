@@ -1,21 +1,16 @@
 import React from "react";
 import Pdf from "react-to-pdf";
 
-/* import { patients } from "../test json/patients.json"; */
 const ref = React.createRef();
 
 function ViewPatMod(props) {
-  /*     console.log({patients});
-
+  console.log("estamos tratando de ver" + props);
+  console.log(props);
   // VIEW PATIENTS BI ID
+  /*   getById(); */
 
-  getById()
- 
-  {patients.map((patient)=>{
-      */
+  /*  props.patients.map((patient) => { */
   return (
-    /* <Onclick={patient_id}/> */
-
     <div className="flex-col flex-left modal-child-scroll">
       <div>
         <Pdf targetRef={ref} filename="Patient_Chart.pdf">
@@ -35,52 +30,52 @@ function ViewPatMod(props) {
         <h1>Patient {props.type}</h1>
         <div className="flex-col ">
           <label className="">Patient Name</label>
-          <p>test</p>
+          <p>{props.ide.object.first_name}</p>
         </div>
 
         <div className="flex-col ">
           <label className="">Patient Last Name</label>
-          <p>{/* {patient.last_name} */}test</p>
+          <p>{props.ide.object.last_name}</p>
         </div>
 
         <div className="flex-col ">
-          <label className="">email</label>
-          <p>{/* {patient.email} */}test</p>
+          <label className="">Email</label>
+          <p>{props.ide.object.email}</p>
         </div>
 
         <div className="flex-col  ">
           <label className="">Phone Number</label>
-          <p>{/* patient.phone_number */}test</p>
+          <p>{props.ide.object.phone_number}</p>
         </div>
 
         <div className="flex-col my-1 ">
           <label className="">Age</label>
-          <p>{/* patient.age */}test</p>
+          <p>{props.ide.object.age}</p>
         </div>
 
         <div className="flex-col ">
           <label className="">Sex</label>
-          <p>{/* patient.sex */}test</p>
+          <p>{props.ide.object.sex}</p>
         </div>
 
         <div className="flex-col ">
           <label className="">Current Diseases</label>
-          <p>{/* patient.chart */}test</p>
+          <p>{props.ide.object.chart}</p>
         </div>
 
         <div className="flex-col ">
           <label className="">Current Medication</label>
-          <p>{/* patient.medication */}</p>
+          <p>{props.ide.object.medication}</p>
         </div>
 
         <div className="flex-col ">
           <label className="">Allergies</label>
-          <p>{/* patient.allergies */}</p>
+          <p>{props.ide.object.allergies}</p>
         </div>
 
         <div className="flex-col ">
           <label className="">Observations</label>
-          <p>{/* patient.observations */}</p>
+          <p>{props.ide.object.observations}</p>
         </div>
       </div>
 
@@ -92,6 +87,5 @@ function ViewPatMod(props) {
     </div>
   );
 }
-/* )} */
 
 export default ViewPatMod;
