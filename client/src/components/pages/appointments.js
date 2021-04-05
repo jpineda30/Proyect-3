@@ -58,6 +58,36 @@ class Appointments extends Component {
     });
   };
 
+  validateDate = (start, end) => {
+    let i = 0;
+    let error = false;
+
+    for (i = 0; i < this.state.slots.length; i++) {
+      if (
+        start.isBefore(moment(this.state.slots[i].startT, "h:mma")) &&
+        end.isBefore(moment(this.state.slots[i].startT, "h:mma"))
+      ) {
+      } else {
+        if (end.isSame(moment(this.state.slots[i].startT, "h:mma"))) {
+        } else {
+          if (
+            start.isAfter(moment(this.state.slots[i].endT, "h:mma")) &&
+            end.isAfter(moment(this.state.slots[i].endT, "h:mma"))
+          ) {
+            console.log("2");
+          } else {
+            if (start.isSame(moment(this.state.slots[i].endT, "h:mma"))) {
+            } else {
+              error = true;
+            }
+          }
+        }
+      }
+    }
+
+    return error;
+  };
+
   openModal = (param, day) => {
     switch (param) {
       case "edit":
@@ -85,6 +115,7 @@ class Appointments extends Component {
               name="creation"
               day={this.state.date}
               reload={this.loadDates}
+              validate={this.validateDate}
             ></CreateMod>
           ),
         });
@@ -124,6 +155,7 @@ class Appointments extends Component {
           //serviceios
           slots: res.data,
         });
+        console.log(this.state.slots);
       })
       .catch((err) => {
         console.log(err);
