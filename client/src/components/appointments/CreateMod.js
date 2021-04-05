@@ -72,6 +72,16 @@ function CreateMod(props) {
     } //
   }, []);
 
+  const validation = async (start, end) => {
+    let status = await props.validate(start, end);
+    return status;
+  };
+
+  const validateEdition = async (start, end, day, id) => {
+    let status = await props.validate(start, end, day, id);
+    return status;
+  };
+
   const saveAppointment = () => {
     if (
       patient &&
@@ -98,10 +108,16 @@ function CreateMod(props) {
         };
         console.log(pack);
         if (props.name == "creation") {
-          API.createAppointment(pack);
-          props.reload();
-          props.message("success", "Appointment saved");
-          props.close();
+          validation(start, end).then((response) => {
+            if (response) {
+              props.message("error", "Overlaping slots");
+            } else {
+              API.createAppointment(pack);
+              props.reload();
+              props.message("success", "Appointment saved");
+              props.close();
+            }
+          });
         } else if (props.name == "edition") {
           API.updateAppointment(pack);
           props.reload();
