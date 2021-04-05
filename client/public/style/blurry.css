@@ -1009,6 +1009,26 @@ color: rgb(6, 75, 0);
     width: 15vw;
   }
 
+    .size4{
+      font-size: 13px;
+    }
+
+    .modal-child{
+      width: 95vw;
+      height: 90vh;
+      top: -20px;
+      padding: 3px;
+    }
+
+    .modal{
+      background-color: blueviolet;
+    }
+
+    h1{
+      font-size: 20px;
+      padding: 3px;
+      margin: 0;
+    }
    
    
 
