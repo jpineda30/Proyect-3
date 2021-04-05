@@ -521,11 +521,11 @@ header {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.is-row div div {
+.is-row div div{
   transition: 0.3s;
 }
 
-.is-row div div:hover {
+.is-row div div:hover  {
   z-index: 99;
   border-radius: 8px;
   height: max-content;
@@ -541,13 +541,14 @@ header {
   color: grey;
 }
 
-.is-row div,
-.is-header div {
+.is-row-child,.mobil-off {
   width: 150px;
 
   overflow: hidden;
   padding: 5px;
   max-height: 45px;
+  line-height: 40px;
+  text-align: center;
 }
 
 .is-row .first {
@@ -670,7 +671,7 @@ header {
 
 .crud-body {
   height: 95vh;
-  width: max-content;
+  width: 100vw;
 }
 
 .modal {
@@ -868,8 +869,9 @@ header {
 }
 
 .content {
-  width: 100%;
-  overflow: scroll;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
   top: 0;
 }
 
@@ -962,7 +964,7 @@ header {
 color: rgb(6, 75, 0);
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
   .mobil-text{
     font-size: 15px;
   }
@@ -973,22 +975,39 @@ color: rgb(6, 75, 0);
     width: 90vw;
   }
 
- 
-
-  .react-calendar__month-view__days .button{
-    width: 75px !important;
+  .mobil-off{
+    
+    width: 0 !important;
+    visibility: hidden;
   }
 
-  .button{
-    width: 75px !important;
-  }
+  
+.is-row .first {
+  margin-right: 10px;
+}
 
-  .calendar{
-    width: 100vw;
-  }
+.is-row{
+  display: flex;
+  justify-content:space-between;
+}
 
-  .react-calendar{
-    width: 95vw;
-  }
+.fa-trash-alt, .fa-eye, .fa-edit{
+  width: 50px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.first{
+  width: 5px !important;
+}
+
+.is-row-child{
+  z-index: 999;
+}
+
+   
+   
+
+
   
 }
