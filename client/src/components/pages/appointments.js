@@ -101,6 +101,8 @@ class Appointments extends Component {
               info={day}
               day={this.state.date}
               reload={this.loadDates}
+              change={this.onChange}
+              validate={this.validateDate}
             ></CreateMod>
           ),
         });

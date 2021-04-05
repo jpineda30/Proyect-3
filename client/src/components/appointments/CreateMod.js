@@ -119,10 +119,16 @@ function CreateMod(props) {
             }
           });
         } else if (props.name == "edition") {
-          API.updateAppointment(pack);
-          props.reload();
-          props.message("success", "Appointment saved");
-          props.close();
+          validation(start, end).then((response) => {
+            if (response) {
+              props.message("error", "Overlaping slots");
+            } else {
+              API.updateAppointment(pack);
+              props.reload();
+              props.message("success", "Appointment saved");
+              props.close();
+            }
+          });
         }
       }
     } else {
@@ -148,6 +154,11 @@ function CreateMod(props) {
     let value = serviceInput.current.value;
     console.log(value);
     if (value != "") handleServiceChange(value);
+  };
+
+  const changeDate = (date) => {
+    setStartDate(date);
+    props.change(date);
   };
 
   const handleServiceChange = (value) => {
@@ -187,8 +198,9 @@ function CreateMod(props) {
       <div className="flex-row flex-between flex-acenter fw">
         <h1 className="size4">Appointment {props.name}</h1>
         <DatePicker
+          className={visible}
           selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          onChange={(date) => changeDate(date)}
         />
       </div>
 
