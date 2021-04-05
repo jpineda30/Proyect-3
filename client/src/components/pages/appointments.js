@@ -22,6 +22,11 @@ class Appointments extends Component {
     };
   }
 
+  componentDidMount() {
+    let formatCalendarDate = moment.utc(this.state.date).format("L");
+    this.loadDates();
+  }
+
   convertDate(date) {
     var yyyy = date.getFullYear().toString();
     var mm = (date.getMonth() + 1).toString();
@@ -65,6 +70,7 @@ class Appointments extends Component {
               name={"edition"}
               info={day}
               day={day.day}
+              reload={this.loadDates}
             ></CreateMod>
           ),
         });
@@ -78,6 +84,7 @@ class Appointments extends Component {
               close={this.closeModal}
               name="creation"
               day={day}
+              reload={this.loadDates}
             ></CreateMod>
           ),
         });
@@ -105,12 +112,12 @@ class Appointments extends Component {
     }
   };
 
-  loadDates = () => {
+  loadDates = async () => {
     let formatCalendarDate = moment.utc(this.state.date).format("L");
 
     let pack = { day: formatCalendarDate };
 
-    API.getAppointmentsByDate(pack)
+    let res = API.getAppointmentsByDate(pack)
       .then((res) => {
         console.log(res);
         this.setState({

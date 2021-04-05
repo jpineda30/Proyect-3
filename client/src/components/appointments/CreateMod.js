@@ -81,12 +81,15 @@ function CreateMod(props) {
           start: startTime.current.value,
           end: endTime.current.value,
         };
+        console.log(pack);
         if (props.name == "creation") {
           API.createAppointment(pack);
+          props.reload();
           props.message("success", "Appointment saved");
           props.close();
         } else if (props.name == "edition") {
           API.updateAppointment(pack);
+          props.reload();
           props.message("success", "Appointment saved");
           props.close();
         }
