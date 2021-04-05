@@ -981,29 +981,33 @@ color: rgb(6, 75, 0);
     visibility: hidden;
   }
 
+    
+  .is-row .first {
+    margin-right: 10px;
+  }
+
+  .is-row{
+    display: flex;
+    justify-content:space-between;
+  }
+
+  .fa-trash-alt, .fa-eye, .fa-edit{
+    width: 50px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  .first{
+    width: 5px !important;
+  }
+
+  .is-row-child{
   
-.is-row .first {
-  margin-right: 10px;
-}
+  }
 
-.is-row{
-  display: flex;
-  justify-content:space-between;
-}
-
-.fa-trash-alt, .fa-eye, .fa-edit{
-  width: 50px;
-  line-height: 40px;
-  text-align: center;
-}
-
-.first{
-  width: 5px !important;
-}
-
-.is-row-child{
-  z-index: 999;
-}
+  button{
+    width: 15vw;
+  }
 
    
    
