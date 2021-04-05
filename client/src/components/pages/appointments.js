@@ -119,7 +119,6 @@ class Appointments extends Component {
 
     let res = API.getAppointmentsByDate(pack)
       .then((res) => {
-        console.log(res);
         this.setState({
           //Luego cambiar esto para tomar en cuenta multiples
           //serviceios
@@ -127,7 +126,7 @@ class Appointments extends Component {
         });
       })
       .catch((err) => {
-        console.log("bazinga!");
+        console.log(err);
       });
   };
 

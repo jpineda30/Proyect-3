@@ -9,6 +9,8 @@ function HourSlot(props) {
       end: props.end,
       service: props.service,
       patient: props.patient,
+      serviceId: props.serviceId,
+      patientId: props.patientId,
     };
     props.open("edit", pack);
   }

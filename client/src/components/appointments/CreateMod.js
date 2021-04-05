@@ -54,6 +54,8 @@ function CreateMod(props) {
       endTime.current.value = props.info.end;
       serviceInput.current.value = props.info.service;
       patientInput.current.value = props.info.patient;
+      setService(props.info.serviceId);
+      setPatient(props.info.patientId);
     }
   }, []);
 
