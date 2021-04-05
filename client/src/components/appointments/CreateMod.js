@@ -3,12 +3,29 @@ import ServiceList from "./serviceList";
 import PatientList from "./patientList";
 import moment from "moment";
 import API from "../../utils/API-";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 /* import { useStoreContext } from "../../utils/globalState"; */
 
 function CreateMod(props) {
   // date
 
-  let formatCalendarDate = moment.utc(props.day).format("L");
+  const [startDate, setStartDate] = useState(props.day);
+
+  let id = "";
+
+  if (props.info) {
+    id = props.info._id;
+  }
+
+  var visible = "hidden";
+
+  if (props.name == "edition") {
+    visible = "visible";
+  }
+
+  let formatCalendarDate = moment(props.day).format("L");
 
   //ids
 
@@ -42,6 +59,17 @@ function CreateMod(props) {
       setPatients(res.data);
       setPatientsTemp(res.data);
     });
+
+    if (props.name == "edition") {
+      startTime.current.value = props.info.start;
+      endTime.current.value = props.info.end;
+      serviceInput.current.value = props.info.service;
+      patientInput.current.value = props.info.patient;
+      setService(props.info.serviceId);
+      setPatient(props.info.patientId);
+
+      //console.log(moment(props.day).format("DD MM YYYY").replaceAll(" ", "/"));
+    } //
   }, []);
 
   const saveAppointment = () => {
@@ -61,14 +89,25 @@ function CreateMod(props) {
         );
       } else {
         let pack = {
-          day: formatCalendarDate,
+          _id: id,
+          day: moment(startDate).format("L"),
           patient: patient,
           service: service,
           start: startTime.current.value,
           end: endTime.current.value,
         };
-        API.createAppointment(pack);
-        props.close();
+        console.log(pack);
+        if (props.name == "creation") {
+          API.createAppointment(pack);
+          props.reload();
+          props.message("success", "Appointment saved");
+          props.close();
+        } else if (props.name == "edition") {
+          API.updateAppointment(pack);
+          props.reload();
+          props.message("success", "Appointment saved");
+          props.close();
+        }
       }
     } else {
       props.message("error", "All the fields must be filled");
@@ -129,7 +168,13 @@ function CreateMod(props) {
 
   return (
     <div className="modal-child flex-col">
-      <h1 className="size4">Appointment {props.name}</h1>
+      <div className="flex-row flex-between flex-acenter fw">
+        <h1 className="size4">Appointment {props.name}</h1>
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+        />
+      </div>
 
       <div className="flex-row my-1 flex-wrap">
         <div flex-col p-1>

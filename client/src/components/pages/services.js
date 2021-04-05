@@ -6,6 +6,7 @@ import CreateMod from "../services/CreateMod";
 import DeleteMod from "../general/DeleteMod";
 import MyModal from "../general/Modal";
 import API from "../../utils/API-";
+import Message from "../general/message";
 
 function Services() {
   const closeModal = () => {
@@ -26,6 +27,28 @@ function Services() {
     loadServices();
   }, []);
 
+  ////////////////message handling
+
+  //import Message from "../general/message";
+  //message={sendMessage}
+
+  const [message, setMessage] = useState(<Message />);
+  const [messageState, setMessageStatus] = useState(false);
+
+  const sendMessage = (type, text) => {
+    setMessage(
+      <Message on={true} type={type} text={text} timer={closeMessage} />
+    );
+    setMessageStatus(true);
+  };
+
+  const closeMessage = () => {
+    setMessage(<Message />);
+    setMessageStatus(false);
+    clearTimeout();
+  };
+  //////////////////////
+
   const loadServices = () => {
     API.getServices().then((res) => {
       setServices(res.data);
@@ -41,6 +64,7 @@ function Services() {
             name={"service"}
             ide={id}
             reload={loadServices}
+            message={sendMessage}
           ></DeleteMod>
         );
         break;
@@ -53,6 +77,7 @@ function Services() {
             addService={addService}
             ide={id}
             reload={loadServices}
+            message={sendMessage}
           ></CreateMod>
         );
         break;
@@ -81,6 +106,7 @@ function Services() {
           />
         </div>
       </div>
+      {message}
     </>
   );
 }

@@ -22,6 +22,11 @@ class Appointments extends Component {
     };
   }
 
+  componentDidMount() {
+    let formatCalendarDate = moment.utc(this.state.date).format("L");
+    this.loadDates();
+  }
+
   convertDate(date) {
     var yyyy = date.getFullYear().toString();
     var mm = (date.getMonth() + 1).toString();
@@ -63,6 +68,9 @@ class Appointments extends Component {
               message={this.sendMessage}
               close={this.closeModal}
               name={"edition"}
+              info={day}
+              day={this.state.date}
+              reload={this.loadDates}
             ></CreateMod>
           ),
         });
@@ -75,7 +83,8 @@ class Appointments extends Component {
               message={this.sendMessage}
               close={this.closeModal}
               name="creation"
-              day={day}
+              day={this.state.date}
+              reload={this.loadDates}
             ></CreateMod>
           ),
         });
@@ -103,13 +112,13 @@ class Appointments extends Component {
     }
   };
 
-  loadDates = () => {
+  loadDates = async () => {
     let formatCalendarDate = moment.utc(this.state.date).format("L");
 
     let pack = { day: formatCalendarDate };
-    API.getAppointmentsByDate(pack)
+
+    let res = API.getAppointmentsByDate(pack)
       .then((res) => {
-        console.log(res);
         this.setState({
           //Luego cambiar esto para tomar en cuenta multiples
           //serviceios
@@ -117,7 +126,7 @@ class Appointments extends Component {
         });
       })
       .catch((err) => {
-        console.log("bazinga!");
+        console.log(err);
       });
   };
 

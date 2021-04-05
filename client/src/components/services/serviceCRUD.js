@@ -1,6 +1,5 @@
 import React from "react";
 import Actions from "../general/crudActions";
-import { services } from "../test json/services.json";
 
 function ServiceCRUD(props) {
   console.log(props.services);

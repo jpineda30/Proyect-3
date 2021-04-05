@@ -26,22 +26,19 @@ function SignUp(props) {
         //validate if user already exists
         API.createUser(data.user, data.pass1, data.email)
           .then((response) => {
-            console.log(response);
-            console.log(props);
-            //if success
+            props.message("success", "User created");
             props.close();
-            //props.history.push("/home");
-            //else
-            //error message
           })
           .catch((error) => {
             console.log(error);
+
+            // props.message("error", error);
           });
       } else {
-        alert("validation password does not match");
+        props.message("error", "Password does not match");
       }
     } else {
-      alert("validation no empty fields");
+      props.message("error", "You must enter all the fields");
     }
   };
 
