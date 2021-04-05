@@ -69,7 +69,7 @@ class Appointments extends Component {
               close={this.closeModal}
               name={"edition"}
               info={day}
-              day={day.day}
+              day={this.state.date}
               reload={this.loadDates}
             ></CreateMod>
           ),
@@ -83,7 +83,7 @@ class Appointments extends Component {
               message={this.sendMessage}
               close={this.closeModal}
               name="creation"
-              day={day}
+              day={this.state.date}
               reload={this.loadDates}
             ></CreateMod>
           ),

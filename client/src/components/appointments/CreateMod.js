@@ -3,18 +3,29 @@ import ServiceList from "./serviceList";
 import PatientList from "./patientList";
 import moment from "moment";
 import API from "../../utils/API-";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 /* import { useStoreContext } from "../../utils/globalState"; */
 
 function CreateMod(props) {
-  console.log(props);
   // date
 
+  const [startDate, setStartDate] = useState(props.day);
+
   let id = "";
+
   if (props.info) {
     id = props.info._id;
   }
 
-  let formatCalendarDate = moment.utc(props.day).format("L");
+  var visible = "hidden";
+
+  if (props.name == "edition") {
+    visible = "visible";
+  }
+
+  let formatCalendarDate = moment(props.day).format("L");
 
   //ids
 
@@ -56,7 +67,9 @@ function CreateMod(props) {
       patientInput.current.value = props.info.patient;
       setService(props.info.serviceId);
       setPatient(props.info.patientId);
-    }
+
+      //console.log(moment(props.day).format("DD MM YYYY").replaceAll(" ", "/"));
+    } //
   }, []);
 
   const saveAppointment = () => {
@@ -77,7 +90,7 @@ function CreateMod(props) {
       } else {
         let pack = {
           _id: id,
-          day: formatCalendarDate,
+          day: moment(startDate).format("L"),
           patient: patient,
           service: service,
           start: startTime.current.value,
@@ -155,7 +168,13 @@ function CreateMod(props) {
 
   return (
     <div className="modal-child flex-col">
-      <h1 className="size4">Appointment {props.name}</h1>
+      <div className="flex-row flex-between flex-acenter fw">
+        <h1 className="size4">Appointment {props.name}</h1>
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+        />
+      </div>
 
       <div className="flex-row my-1 flex-wrap">
         <div flex-col p-1>
