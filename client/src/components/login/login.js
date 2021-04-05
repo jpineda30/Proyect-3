@@ -16,11 +16,11 @@ function LogIn(props) {
   const validateUser = async () => {
     if (user != "" && password != "") {
       var response = await API.login(user, password);
-
-      if (response.data.username) {
+      console.log(response);
+      if (response.data.success) {
         login(response.data._id);
       } else {
-        console.log("you should kill yourself");
+        props.message("error", response.data.message);
       }
       //login(user,password)
     } else {

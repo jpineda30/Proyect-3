@@ -972,4 +972,23 @@ color: rgb(6, 75, 0);
   .hour-slot{
     width: 90vw;
   }
+
+ 
+
+  .react-calendar__month-view__days .button{
+    width: 75px !important;
+  }
+
+  .button{
+    width: 75px !important;
+  }
+
+  .calendar{
+    width: 100vw;
+  }
+
+  .react-calendar{
+    width: 95vw;
+  }
+  
 }

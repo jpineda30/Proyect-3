@@ -63,6 +63,8 @@ class Appointments extends Component {
               message={this.sendMessage}
               close={this.closeModal}
               name={"edition"}
+              info={day}
+              day={day.day}
             ></CreateMod>
           ),
         });
@@ -107,6 +109,7 @@ class Appointments extends Component {
     let formatCalendarDate = moment.utc(this.state.date).format("L");
 
     let pack = { day: formatCalendarDate };
+
     API.getAppointmentsByDate(pack)
       .then((res) => {
         console.log(res);

@@ -6,7 +6,13 @@ import API from "../../utils/API-";
 /* import { useStoreContext } from "../../utils/globalState"; */
 
 function CreateMod(props) {
+  console.log(props);
   // date
+
+  let id = "";
+  if (props.info) {
+    id = props.info._id;
+  }
 
   let formatCalendarDate = moment.utc(props.day).format("L");
 
@@ -42,6 +48,13 @@ function CreateMod(props) {
       setPatients(res.data);
       setPatientsTemp(res.data);
     });
+
+    if (props.name == "edition") {
+      startTime.current.value = props.info.start;
+      endTime.current.value = props.info.end;
+      serviceInput.current.value = props.info.service;
+      patientInput.current.value = props.info.patient;
+    }
   }, []);
 
   const saveAppointment = () => {
@@ -61,22 +74,21 @@ function CreateMod(props) {
         );
       } else {
         let pack = {
+          _id: id,
           day: formatCalendarDate,
           patient: patient,
           service: service,
           start: startTime.current.value,
           end: endTime.current.value,
         };
-        if (props.type == "create") {
+        if (props.name == "creation") {
           API.createAppointment(pack);
           props.message("success", "Appointment saved");
           props.close();
-        } else if (props.type == "edit") {
-          /*props.message(
-            "success",
-            "Appointment saved"
-          );
-          props.close();*/
+        } else if (props.name == "edition") {
+          API.updateAppointment(pack);
+          props.message("success", "Appointment saved");
+          props.close();
         }
       }
     } else {

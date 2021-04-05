@@ -39,6 +39,7 @@ function WorkDay(props) {
         <div className="flex-col p-1 dates-scroll">
           {props.slots
             ? props.slots.map((appointment) => {
+                console.log(appointment);
                 return (
                   <Slot
                     appointmentId={appointment._id}
@@ -53,6 +54,8 @@ function WorkDay(props) {
                     start={appointment.startT}
                     end={appointment.endT}
                     message={props.message}
+                    _id={appointment._id}
+                    date={props.date}
                   />
                 );
               })

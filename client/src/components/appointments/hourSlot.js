@@ -2,7 +2,15 @@ import React from "react";
 
 function HourSlot(props) {
   function onEdit() {
-    props.open("edit");
+    let pack = {
+      day: props.date,
+      _id: props._id,
+      start: props.start,
+      end: props.end,
+      service: props.service,
+      patient: props.patient,
+    };
+    props.open("edit", pack);
   }
 
   function onDelete() {
