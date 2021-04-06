@@ -195,7 +195,7 @@ function CreateMod(props) {
 
   return (
     <div className="modal-child flex-col">
-      <div className="flex-row flex-between flex-acenter fw">
+      <div className="flex-row flex-between flex-acenter fw flex-wrap">
         <h1 className="size4">Appointment {props.name}</h1>
         <DatePicker
           className={visible}

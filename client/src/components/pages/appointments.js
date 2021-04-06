@@ -182,7 +182,7 @@ class Appointments extends Component {
     return (
       <>
         <Menu />
-        <div className="flex-col scroll">
+        <div className="flex-col content">
           <div className="flex-col flex-center">
             <h1>Appointments</h1>
 
