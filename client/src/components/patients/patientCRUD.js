@@ -7,12 +7,12 @@ function PatientCRUD(props) {
     <div>
       <div className="is-table radius1">
         <div className="is-row is-header flex-row">
-          <div></div>
-          <div>Name</div>
+          <div className="space"></div>
+          <div className="mobil-off">Name</div>
           <div className="mobil-off">Last Name</div>
           <div className="mobil-off">E-mail</div>
-          <div className="mobil-off">Phone</div>
-          <div className="mobil-off">Observations</div>
+          <div className="mobil-off phone">Phone</div>
+          <div className="mobil-off observations">Observations</div>
         </div>
 
         {props.patients.map((patient) => {
@@ -27,9 +27,11 @@ function PatientCRUD(props) {
 
                 <div className="mobil-off">{patient.email}</div>
 
-                <div className="mobil-off">{patient.phone_number}</div>
+                <div className="mobil-off phone">{patient.phone_number}</div>
 
-                <div className="mobil-off">{patient.observations}</div>
+                <div className="mobil-off observations">
+                  {patient.observations}
+                </div>
 
                 <Actions
                   status={props.status}

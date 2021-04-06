@@ -88,8 +88,8 @@ function Services() {
     <>
       <Menu />
       <div className="content flex-col flex-center">
-        <div className="flex-col crud-body">
-          <div className="titles">
+        <div className="flex-col crud-body flex-acenter">
+          <div className="titles flex-row flex-between flex-acenter">
             <h1>Services</h1>
             <AddBtn action={toggleModalCrud} />
           </div>
