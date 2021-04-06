@@ -46,9 +46,11 @@ function WorkDay(props) {
                     open={props.open}
                     close={props.close}
                     patient={
-                      appointment.patient.first_name +
-                      " " +
-                      appointment.patient.last_name
+                      appointment.patient
+                        ? appointment.patient.first_name +
+                          " " +
+                          appointment.patient.last_name
+                        : ""
                     }
                     service={appointment.service[0].name}
                     start={appointment.startT}
@@ -56,7 +58,9 @@ function WorkDay(props) {
                     message={props.message}
                     _id={appointment._id}
                     date={props.date}
-                    patientId={appointment.patient._id}
+                    patientId={
+                      appointment.patient ? appointment.patient._id : ""
+                    }
                     serviceId={appointment.service[0]._id}
                   />
                 );

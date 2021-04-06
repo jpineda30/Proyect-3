@@ -979,6 +979,8 @@ color: rgb(6, 75, 0);
     
     width: 0 !important;
     visibility: hidden;
+    padding: 0;
+    margin: 0;
   }
 
     
@@ -992,8 +994,11 @@ color: rgb(6, 75, 0);
   }
 
   .fa-trash-alt, .fa-eye, .fa-edit{
-    width: 50px;
-    line-height: 40px;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    margin: 1px;
+    line-height: 30px;
     text-align: center;
   }
 
@@ -1002,7 +1007,7 @@ color: rgb(6, 75, 0);
   }
 
   .is-row-child{
-  
+    
   }
 
   button{

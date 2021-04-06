@@ -14,7 +14,7 @@ function CrudActions(props) {
   }
 
   return (
-    <div className="flex-row flex-around">
+    <div className="flex-row flex-around flex-center">
       <i onClick={onView} className="fas fa-eye fa-2x"></i>
       <i onClick={onEdit} className="far fa-edit fa-2x"></i>
       <i onClick={onDelete} className="fas fa-trash-alt fa-2x"></i>
