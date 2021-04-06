@@ -16,17 +16,15 @@ function LogIn(props) {
   const validateUser = async () => {
     if (user != "" && password != "") {
       var response = await API.login(user, password);
-
       console.log(response);
-
-      if (response.data.username) {
+      if (response.data.success) {
         login(response.data._id);
       } else {
-        alert("you should kill yourself");
+        props.message("error", response.data.message);
       }
       //login(user,password)
     } else {
-      alert("no empty fields");
+      props.message("error", "You must enter user and password");
     }
   };
 

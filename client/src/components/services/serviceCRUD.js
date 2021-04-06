@@ -7,11 +7,11 @@ function ServiceCRUD(props) {
     <div>
       <div className="is-table radius1">
         <div className="is-header flex-row">
-          <div></div>
-          <div>Name</div>
-          <div>Cost</div>
-          <div>Description</div>
-          <div>Actions</div>
+          <div className="mobil-off"></div>
+          <div className="is-row-child">Name</div>
+          <div className="mobil-off">Cost</div>
+          <div className="mobil-off">Description</div>
+          <div className="is-row-child">Actions</div>
         </div>
 
         {props.services.map((service) => {
@@ -19,10 +19,12 @@ function ServiceCRUD(props) {
             <div>
               <div className="is-row flex-row">
                 <div className="first"></div>
-                <div>{service.name}</div>
-                <div>{service.price}</div>
-                <div>
-                  <div className="hoverDetails">{service.details}</div>
+                <div className="is-row-child">{service.name}</div>
+                <div className="mobil-off">{service.price}</div>
+                <div className="mobil-off">
+                  <div className="hoverDetails mobil-off">
+                    {service.details}
+                  </div>
                 </div>
                 <Actions
                   status={props.status}

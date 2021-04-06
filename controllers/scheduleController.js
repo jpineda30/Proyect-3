@@ -35,7 +35,6 @@ module.exports = {
   },
 
   create: function (req, res) {
-    console.log(req.body);
     let { start: startT, end: endT, day, patient, service } = req.body;
 
     Schedule.create({
@@ -51,6 +50,30 @@ module.exports = {
       start: startTime.current.value,
       end: endTime.current.value, */
     })
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => {
+        res.status(422).json(err);
+      });
+  },
+  Update: function (req, res) {
+    let { start: startT, end: endT, day, patient, service, _id } = req.body;
+    console.log(req.body);
+    Schedule.updateOne(
+      { _id },
+      {
+        startT,
+        endT,
+        day,
+        patient,
+        service,
+        //Here goes the schedule obj
+        /*       day: props.day,
+      patient: patient,
+      service: service,
+      start: startTime.current.value,
+      end: endTime.current.value, */
+      }
+    )
       .then((dbModel) => res.json(dbModel))
       .catch((err) => {
         res.status(422).json(err);

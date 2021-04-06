@@ -9,10 +9,10 @@ function PatientCRUD(props) {
         <div className="is-row is-header flex-row">
           <div></div>
           <div>Name</div>
-          <div>Last Name</div>
-          <div>E-mail</div>
-          <div>Phone</div>
-          <div>Observations</div>
+          <div className="mobil-off">Last Name</div>
+          <div className="mobil-off">E-mail</div>
+          <div className="mobil-off">Phone</div>
+          <div className="mobil-off">Observations</div>
         </div>
 
         {props.patients.map((patient) => {
@@ -21,15 +21,15 @@ function PatientCRUD(props) {
               <div className="is-row flex-row">
                 <div className="first"></div>
 
-                <div>{patient.first_name}</div>
+                <div className="is-row-child">{patient.first_name}</div>
 
-                <div>{patient.last_name}</div>
+                <div className="is-row-child">{patient.last_name}</div>
 
-                <div>{patient.email}</div>
+                <div className="mobil-off">{patient.email}</div>
 
-                <div>{patient.phone_number}</div>
+                <div className="mobil-off">{patient.phone_number}</div>
 
-                <div>{patient.observations}</div>
+                <div className="mobil-off">{patient.observations}</div>
 
                 <Actions
                   status={props.status}
