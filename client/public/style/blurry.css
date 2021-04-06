@@ -974,6 +974,8 @@ header {
   .mobil-off {
     width: 0 !important;
     visibility: hidden;
+    padding: 0;
+    margin: 0;
   }
 
   .is-row .first {
@@ -988,8 +990,11 @@ header {
   .fa-trash-alt,
   .fa-eye,
   .fa-edit {
-    width: 50px;
-    line-height: 40px;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    margin: 1px;
+    line-height: 30px;
     text-align: center;
   }
 
@@ -997,8 +1002,9 @@ header {
     width: 5px !important;
   }
 
-  .is-row-child {
-  }
+  /*   .is-row-child{
+    width: auto;
+  } */
 
   button {
     width: 15vw;
