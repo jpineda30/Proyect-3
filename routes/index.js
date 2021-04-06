@@ -4,15 +4,11 @@ const apiR = require("./api");
 router.use("/api", apiR);
 
 // If no API routes are hit, send the React app
-router.use(function(req, res) {
-    res.json("Mala ruta..");
-  });
-  
-  
-
+router.use(function (req, res) {
+  res.json("Mala ruta..");
+});
 
 module.exports = router;
-
 
 // const router = require("express").Router();
 // const booksController = require("../../controllers/booksController");

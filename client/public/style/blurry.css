@@ -521,11 +521,11 @@ header {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.is-row div div{
+.is-row div div {
   transition: 0.3s;
 }
 
-.is-row div div:hover  {
+.is-row div div:hover {
   z-index: 99;
   border-radius: 8px;
   height: max-content;
@@ -541,7 +541,8 @@ header {
   color: grey;
 }
 
-.is-row-child,.mobil-off {
+.is-row-child,
+.mobil-off {
   width: 150px;
 
   overflow: hidden;
@@ -783,11 +784,10 @@ header {
 .sright {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
- 
+
   min-height: 84px !important;
   text-align: center;
   line-height: 76px;
-  
 }
 
 .sleft {
@@ -914,124 +914,114 @@ header {
   background-color: rgb(115, 27, 197);
 }
 
-.dates-scroll{
+.dates-scroll {
   max-height: 65vh;
   overflow-y: hidden;
   overflow: overlay;
-  
 }
 
 .dates-scroll::-webkit-scrollbar {
   width: 10px;
 }
 
-
-.message{
+.message {
   width: 100vw;
-  min-height:15px;
+  min-height: 15px;
   padding: 3px;
-  transition: .3s;
+  transition: 0.3s;
   position: fixed;
   bottom: 0;
   right: 0;
-  z-index:999999 ;
+  z-index: 999999;
 }
 
-.message p{
+.message p {
   width: 100vw;
   line-height: 10px;
-  transition: .3s;
-  
- 
- 
+  transition: 0.3s;
+
   padding: 5px;
   margin-left: 10px;
 }
 
-.error{
-    background-color: rgb(231, 153, 153);
+.error {
+  background-color: rgb(231, 153, 153);
 }
 
-.error p{
+.error p {
   color: rgb(53, 0, 0);
 }
 
-.success{
+.success {
   background-color: rgb(134, 179, 136);
 }
 
-.success p{
-color: rgb(6, 75, 0);
+.success p {
+  color: rgb(6, 75, 0);
 }
 
-@media screen and (max-width: 500px){
-  .mobil-text{
+@media screen and (max-width: 500px) {
+  .mobil-text {
     font-size: 15px;
   }
-  .p1{
+  .p1 {
     padding: 1px;
   }
-  .hour-slot{
+  .hour-slot {
     width: 90vw;
   }
 
-  .mobil-off{
-    
+  .mobil-off {
     width: 0 !important;
     visibility: hidden;
   }
 
-    
   .is-row .first {
     margin-right: 10px;
   }
 
-  .is-row{
+  .is-row {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
   }
 
-  .fa-trash-alt, .fa-eye, .fa-edit{
+  .fa-trash-alt,
+  .fa-eye,
+  .fa-edit {
     width: 50px;
     line-height: 40px;
     text-align: center;
   }
 
-  .first{
+  .first {
     width: 5px !important;
   }
 
-  .is-row-child{
-  
+  .is-row-child {
   }
 
-  button{
+  button {
     width: 15vw;
   }
 
-    .size4{
-      font-size: 13px;
-    }
+  .size4 {
+    font-size: 13px;
+  }
 
-    .modal-child{
-      width: 95vw;
-      height: 90vh;
-      top: -20px;
-      padding: 3px;
-    }
+  .modal-child {
+    width: 95vw;
+    height: 90vh;
+    top: -20px;
+    padding: 3px;
+  }
 
-    .modal{
-      background-color: blueviolet;
-    }
+  .modal {
+    background-color: blueviolet;
+  }
 
-    h1{
-      font-size: 20px;
-      padding: 3px;
-      margin: 0;
-    }
-   
-   
-
-
-  
+  h1 {
+    font-size: 20px;
+    padding: 3px;
+    margin: 0;
+  }
 }
