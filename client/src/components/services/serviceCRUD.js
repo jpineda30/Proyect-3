@@ -6,9 +6,9 @@ function ServiceCRUD(props) {
   return (
     <div>
       <div className="is-table radius1">
-        <div className="is-header flex-row">
-          <div className="mobil-off"></div>
-          <div className="is-row-child">Name</div>
+        <div className="is-header flex-row flex-around">
+          <div className="space"></div>
+          <div className="is-row-child extra">Name</div>
           <div className="mobil-off">Cost</div>
           <div className="mobil-off">Description</div>
           <div className="is-row-child">Actions</div>
@@ -19,7 +19,7 @@ function ServiceCRUD(props) {
             <div>
               <div className="is-row flex-row">
                 <div className="first"></div>
-                <div className="is-row-child">{service.name}</div>
+                <div className="is-row-child extra">{service.name}</div>
                 <div className="mobil-off">{service.price}</div>
                 <div className="mobil-off">
                   <div className="hoverDetails mobil-off">
