@@ -95,7 +95,7 @@ function Patients() {
       <Menu />
       <div className="content flex-col flex-center">
         <div className="flex-col crud-body">
-          <div className="titles">
+          <div className="titles flex-row flex-between flex-acenter">
             <h1>Patients</h1>
             <AddBtn action={toggleModalCrud} />
           </div>
