@@ -4,7 +4,7 @@ import Pdf from "react-to-pdf";
 const ref = React.createRef();
 
 function ViewPatMod(props) {
-  console.log("estamos tratando de ver" + props);
+  console.log("Patient: " + props);
   console.log(props);
   // VIEW PATIENTS BI ID
   /*   getById(); */
@@ -26,7 +26,7 @@ function ViewPatMod(props) {
         </Pdf>
       </div>
 
-      <div ref={ref}>
+      <div ref={ref} className="modalPatient">
         <h1>Patient {props.type}</h1>
         <div className="flex-col ">
           <label className="">Patient Name</label>
