@@ -18,15 +18,13 @@
 
 ## ​
 
+<img src="client/public/img/logo5-name.png" width="300"/>
 ​
 
 ## Description and User's Story
 
 ​
-
-​
-​
-`AS a Medical Specialty Clinic, WE NEED an appointment management system, that ALLOWS us to CREATE a doctor user that is able to CREATE and EDIT new patient records and, SET appointments for different tratments in a calendar that belogns to each treating physician. `
+`AS a Medical Specialty Clinic, WE NEED an appointment management system, that ALLOWS us to CREATE a doctor user that is able to CREATE, EDIT and DELETE new patient records and, SET appointments for different treatments in a calendar that belogns to each treating physician. `
 ​
 
 ​
@@ -44,11 +42,11 @@ Currently, the system offers the following _features_:
 ​
 
 - Users can create their own single user profile (first and last name, email, and password) and log in into the system, with his own user an password.
-- Logged in users (email and password) can create a new patient profile and input their personal information and clinical history (such as first and last name, email, phone number; sex, age, previous diseases; current medication, allergies, and general observations).
+- Logged in users (email and password) can create a new patient profile and input their personal information and clinical history (such as first and last name, email, phone number, sex, age, current diseases; current medication, allergies, and general observations).
 - After setting the profile of a patient, the user can create an appointment (date, start and end time of appointment, and patient's name) and set a service treatment for that patient.
 - The calendar tool allows users to filter appointments by date.
-- Users can also add service treatments in a separate section. They can add a new service by adding the information and costs of said service.
-- The app allows editing information of patients, services, and appointments.
+- Users can also add service treatments in a separate section. They can add a new treatment by adding the information and costs of said service.
+- The app allows create, editing, deliting information of patients, services, and appointments.
   ​
 
 ## ​
@@ -58,8 +56,9 @@ Currently, the system offers the following _features_:
 ## List of Dependencies and Libraries
 
 ​
-The application was designed and build bay react creat an app, programmed through a combination of _JavaScript_, _pure HTML_, _pure CSS_, one third-party _CSS framework_, and several _Node.js CLI_ Dependencies and _NPM_ libraries. The application is fully functional and hosted in a _Heroku_ external server.
+The application was designed and build by _Creat React App_, programmed through a combination of _JavaScript_ hosted on several _React_ _NPM_ libraries, _pure HTML_, _pure CSS_, one third-party _CSS framework_, and backed by _MongoDB_ and _NoSQL_ Database that uses json*like documents. The application is fully functional and hosted in a \_Heroku* external server.
 ​
+
 The Full-Stack breakdown of the application is as follows:
 ​
 
@@ -71,10 +70,7 @@ The Full-Stack breakdown of the application is as follows:
   ​
 - [Express](https://www.npmjs.com/package/express) is a NodeJS-based npm web framework library. It was integrated into JavaScript in order to handle HTTP requests from the database schemas.
   ​
-
-  ​
-
-- Oracle's [Mongo](https://www.mongodb.com/) and [Mongoose](https://www.npmjs.com/package/mongoose) are one of the most widely used database services in Full-Stack web development. We used MongoDB Atlas workbench to develop the database that serves as the basis for the management system and the automatic creation of tables and ID elements. it can handle several new dependencies
+- [MongoDB](https://www.mongodb.com/) and [Mongoose](https://www.npmjs.com/package/mongoose) are one of the most widely used database services in Full-Stack web development. We used MongoDB Atlas workbench to develop the database that serves as the basis for the management system and the automatic creation of tables and ID elements. it can handle several new dependencies
   ​
 - []()
   ​
@@ -85,7 +81,10 @@ The Full-Stack breakdown of the application is as follows:
 - [BcryptJS](https://www.npmjs.com/package/bcrypt) is an extension library that, when implemented, automatically hashes/encrypts passwords in a database. This application integrates Bcrypt in the authentication process and sends a hashed/encrypted password when a new user is registered to the database.
   ​
 - [Moment.js](https://www.npmjs.com/package/bcrypt) is a basic date-time library tool that parses and generates time data into JavaScript. Moment.js was used in this application to generate the basic Calendar tool in the Appointments section.
-  ​
+
+- [react-to-pdf](https://www.npmjs.com/package/react-to-pdf) is a basic npm tool to Easily create pdf documents from React components.
+
+- ​
 
 ## ​
 
@@ -99,11 +98,11 @@ If you are interested in running **EMed** locally, you can follow these steps:
 
 1. Clone or download the repo.
    ​
-2. Using your terminal, navigate into the main repository and run `npm install` in order to install all npm and NodeJS dependencies and libraries (you may also need to install MySQL or change the database dialect of the schema file).
+2. Using your terminal, navigate into the main repository, and run `npm install` in order to install all npm and React dependencies and libraries, you also have to run `npm install` on the client folder (you may also need to install MongoDB or change the database dialect of the schema file).
    ​
 3. Open your preferred code editor, navigate into the configuration folder and add your local server credentials in the development object (username, password, and local host).
    ​
-4. After everything is set, you can then run the application `server.js` using Node in your terminal. After, navigate to your localhost connection on your preferred web browser.
+4. After everything is set, you can then run the application `server.js` using the _npm start_ comand in your terminal. After, navigate to your localhost connection on your preferred web browser.
    ​
    Or, alternatively, you can use the demo page we deployed on a [Heroku]() external server. You can access the functional app [here]().
    ​
@@ -116,39 +115,34 @@ If you are interested in running **EMed** locally, you can follow these steps:
 
 ​
 
-1. Navigate to main page `localhost:[yourlocalhost]/` and click **Profile** on the left navigation bar.
-   ​
-2. The site will send you to the User creation page. Type your info and click the **Sign Up** button.
+Navigate to main page `localhost:[yourlocalhost]/` and click **Profile** on the left navigation bar.
+​
+The site will send you to the User creation page. Type your info and click the **Sign Up** button.
 
 <img src="" width="300"/>
 
-​ 3. If the user was created successfully, the page will then send you to the **Login** page. Input your credentials and click the **Login** button.
+​If the user was created successfully, the page will then send you to the **Login** page. Input your credentials and click the **Login** button.
 ​
 
 <img src="" width="250"/>
 
-​ 4. After logging in, you can create a patient by clicking **Patients** on the navigation bar.
-​ 5. In the **Patients** page, you can add a new patient by clicking the **Create** button.
-​ 6. Fill in the form all the patient's information and clinical history. Then, click the **Save** button.
+​After logging in, you can create a patient by clicking **Patients** on the navigation bar.
+​In the **Patients** page, you can add a new patient by clicking the **Create** button.
+​Fill in the form all the patient's information and clinical history. Then, click the **Save** button.
+You can always view, edit, or delete a patient using the buttons on the right side.
 
 <img src="" width="300"/>
  
 ​
-7. You can always view, edit, or delete a patient using the buttons on the right side.
- 
-<img src="" width="350"/>
- 
 ​
-8. You can set an appointment in the **Appointments** section. There, select a date using the dropdown calendar tool, then click the **Create** button to set an appointment for that date.
+You can set an appointment in the **Appointments** section. There, select a date choosing a particular date on the main calendar, then using the dropdown calendar tool to schedule an hour to start and end times, choose the patient and the treatment to be provided, click the **Save** button to set an appointment for that date.
+You can also edit, or delete an appointment
 
 <img src="" width="350"/>
 
-​ 9. In the form, select start and end times for the appointment, and type the name of the patient and the service provided. Don't forget to click **Save** after you're done.
+​
 
-<img src="" width="350"/>
-
-​ 10. By selecting different dates on the calendar, you can filter the appointments for each date. Remember that you can also edit an appointment's information (time, service and/or name of the patient).
-​ 11. The **Services** page has the same functionalities as the **Patients**/**Appointments** section. The main difference is that you can add a price for the service provided.
+​The **Services** page has the same functionalities as the **Patients**/**Appointments** section.
 
 <img src="" width="400"/>
 
@@ -188,7 +182,7 @@ The following Gif provides a demonstration of **EMed's** functionalities:
 
 ​
 This project is not currently looking for contributors.
-If you're experiencing any issues with the code, feel free to contact us through GitHub or raise an [issue]() in the original repository.
+If you're experiencing any issues with the code, feel free to contact us through GitHub or raise an [issue](https://github.com/jpineda30/Proyect-3) in the original repository.
 ​
 
 ## ​
@@ -202,13 +196,15 @@ These are some improved functionalities we want to add to the project in the nea
 ​
 ​
 
-- visualizer so users can access patients' documents (for example, reports or X-Ray charts).
+- Extend the database so users can access patients' documents (for example, interconsultations with an another specialist, lab results, reports or X-Ray charts).
   ​
 - Create a payment and balance system for appointments showing patients' current or pending payments and total balance owed.
   ​
-- Integrate medical inventory to services: costs of materials needed for treatments, status of available materials, and capacity to order/reorder more inventory.
+- Integrate medical inventory to services: costs of materials needed for treatments, alert status of available materials, and capacity to order/reorder more inventory.
   ​
 - Integrate an email/calendar system for patients: send email remainders to patients about upcoming appointments and develop a connection to a calendar API that can help patients integrate their appointments to their schedules.
+
+- A public web page link to the app for the patients can create their own appointments and is connected to the app database to check if there are dates available.
   ​
   ​
 
@@ -222,10 +218,9 @@ These are some improved functionalities we want to add to the project in the nea
 This project was conceived, developed, and coded by:
 ​
 
-- **Alhelí Miranda Campos** [Github: AlheliMi](https://github.com/AlheliMi)
 - **José Pineda Esquer** [Github: jpineda30](https://github.com/jpineda30)
 - **Rodrigo Sánchez** [Github: ibmug ](https://github.com/ibmug)
-
+- **Alhelí Miranda Campos** [Github: AlheliMi](https://github.com/AlheliMi)
   ​
 
   We would like to give special thanks to our Full-Stack Web Development Bootcamp instructors, Diana (main instructor) and Fernanda (TA), for their invaluable help in the building process of the app

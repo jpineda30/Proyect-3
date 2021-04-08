@@ -522,11 +522,11 @@ header {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.is-row div div{
+.is-row div div {
   transition: 0.3s;
 }
 
-.is-row div div:hover  {
+.is-row div div:hover {
   z-index: 99;
   border-radius: 8px;
   height: max-content;
@@ -542,7 +542,8 @@ header {
   color: grey;
 }
 
-.is-row-child,.mobil-off {
+.is-row-child,
+.mobil-off {
   max-width: 150px;
   min-width: none;
 
@@ -568,7 +569,7 @@ header {
   margin-right: 5px;
 }
 
-.space{
+.space {
   width: 25px;
 }
 
@@ -594,7 +595,6 @@ header {
   transition: 0.3s;
 }
 
-
 .fa-trash-alt {
   background-color: rgb(152, 150, 158);
   border-right-color: rgba(32, 32, 32, 0.452);
@@ -614,10 +614,37 @@ header {
   background-color: rgb(170, 77, 15);
 }
 
-.modal-child-scroll {
-  background-color: rgb(233, 223, 243);
+.modalPatient {
+  margin-top: 25px;
+  margin-right: 25px;
+}
+
+.is-header-Patient {
+  font-size: x-large;
+  border-top-style: solid;
+  border-top-color: rgba(102, 100, 100, 0.993);
+  border-top-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(102, 100, 100, 0.993);
+  border-bottom-width: 3px;
+}
+
+.is-header-Chart {
+  font-size: large;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(102, 100, 100, 0.993);
+  border-bottom-width: 3px;
+}
+
+.marginTop {
+  margin-top: 30px;
+}
+
+.modalChart-child-scroll {
+  background-color: rgb(214, 198, 234) !important;
   padding: 20px;
-  width: 600px;
+  width: 50vw !important;
+  height: 80vh;
   border-radius: 15px;
   transition: 0.5s;
   overflow: scroll;
@@ -625,27 +652,108 @@ header {
   scroll-padding-top: 15px;
   scroll-margin-top: 30px;
   top: 15px;
+  padding-right: 25px;
 }
 
-.modal-child-scroll h1,
-.modal-child-scroll div,
-.modal-child-scroll p,
-.modal-child-scroll label {
+.containt {
+  margin-left: 25px;
+  margin-right: 35px;
+}
+
+strong {
+  font-size: small;
+}
+
+.patient-info {
+  border-bottom-style: ridge;
+  border-bottom-color: rgba(255, 255, 255, 0.39);
+  border-block-color: rgb(75, 81, 95);
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.39);
+  border-top-width: 1px;
+}
+
+.buttonPDF-blue-medium {
+  height: 30px;
+  width: 150px;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+  background-color: rgb(157, 137, 214);
+  /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+  border-bottom-style: solid;
+  border-block-color: rgb(75, 81, 95);
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.39);
+  border-top-width: 1px;
+  z-index: 1;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.buttonPDF-blue-medium:hover {
+  background-color: rgb(130, 105, 197);
+}
+
+.modal-child-scroll {
+  padding: 20px;
+  width: 50vw !important;
+  height: 80vh;
+  border-radius: 15px;
+  transition: 0.5s;
+  overflow: scroll;
+  overflow-x: hidden;
+  scroll-padding-top: 15px;
+  scroll-margin-top: 30px;
+  top: 15px;
+  background-color: rgba(53, 45, 61, 1);
+  width: max-content;
+}
+
+.text-is-white {
+  color: rgb(255, 255, 255) !important;
+}
+
+.modalChart-child-scroll h1,
+.modalChart-child-scroll div,
+.modalChart-child-scroll p,
+.modalChart-child-scroll label {
   color: rgb(0, 0, 0);
   margin-left: 15px;
 }
 
+.modalChart-child-scroll::-webkit-scrollbar-track {
+  background: #74747400;
+  border-radius: 10px;
+  top: 15px;
+}
 .modal-child-scroll::-webkit-scrollbar-track {
   background: #74747400;
   border-radius: 10px;
   top: 15px;
 }
 
+.modalChart-child-scroll::-webkit-scrollbar {
+  width: 10px;
+  top: 10px;
+}
 .modal-child-scroll::-webkit-scrollbar {
   width: 10px;
   top: 10px;
 }
 
+.modalChart-child-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    rgba(231, 201, 201, 0),
+    rgba(170, 114, 235, 0.513),
+    rgba(0, 0, 0, 0)
+  );
+  border-radius: 10px;
+  margin-top: 20px;
+}
 .modal-child-scroll::-webkit-scrollbar-thumb {
   background: linear-gradient(
     to bottom,
@@ -675,7 +783,7 @@ header {
 .titles {
   padding: 15px;
   padding-bottom: 0;
-  max-height:30px ;
+  max-height: 30px;
   width: 100%;
 }
 
@@ -793,11 +901,10 @@ header {
 .sright {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
- 
+
   min-height: 84px !important;
   text-align: center;
   line-height: 76px;
-  
 }
 
 .sleft {
@@ -883,7 +990,6 @@ header {
   overflow-y: scroll;
   overflow-x: hidden;
   top: 0;
-
 }
 
 .floating-list {
@@ -925,97 +1031,90 @@ header {
   background-color: rgb(115, 27, 197);
 }
 
-.dates-scroll{
+.dates-scroll {
   max-height: 65vh;
   overflow-y: hidden;
   overflow: overlay;
-  
 }
 
 .dates-scroll::-webkit-scrollbar {
   width: 10px;
 }
 
-
-.message{
+.message {
   width: 100vw;
-  min-height:15px;
+  min-height: 15px;
   padding: 3px;
-  transition: .3s;
+  transition: 0.3s;
   position: fixed;
   bottom: 0;
   right: 0;
-  z-index:999999 ;
+  z-index: 999999;
 }
 
-.message p{
+.message p {
   width: 100vw;
   line-height: 10px;
-  transition: .3s;
-  
- 
- 
+  transition: 0.3s;
+
   padding: 5px;
   margin-left: 10px;
 }
 
-.error{
-    background-color: rgb(231, 153, 153);
+.error {
+  background-color: rgb(231, 153, 153);
 }
 
-.error p{
+.error p {
   color: rgb(53, 0, 0);
 }
 
-.success{
+.success {
   background-color: rgb(134, 179, 136);
 }
 
-.success p{
-color: rgb(6, 75, 0);
+.success p {
+  color: rgb(6, 75, 0);
 }
 
-.is-row-child{
+.is-row-child {
   padding: 0;
   margin: 0;
   min-width: 150px;
   max-width: 150px;
- 
 }
 
-.mobil-off{
+.mobil-off {
   padding: 0;
   margin: 0;
   min-width: 150px;
   max-width: 150px;
-
- 
 }
 
-@media screen and (max-width: 800px){
-  .mobil-text{
+@media screen and (max-width: 800px) {
+  .mobil-text {
     font-size: 15px;
     padding: 0;
   }
-  .p1{
+  .p1 {
     padding: 1px;
   }
-  .hour-slot{
+  .hour-slot {
     width: 50vw;
   }
 
-
-    
   .is-row .first {
     margin-right: 3px;
   }
 
-  .is-row{
+  .is-row {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
   }
 
-  .fa-trash-alt, .fa-eye, .fa-edit{
+  .fa-trash-alt,
+  .fa-eye,
+  .fa-edit {
     width: 6vw;
     height: 6vw;
     padding: 3px;
@@ -1025,109 +1124,99 @@ color: rgb(6, 75, 0);
     font-size: 25px;
   }
 
-  .first{
+  .first {
     width: 5px !important;
-    
   }
 
-
-
-  .is-row-child{
+  .is-row-child {
     padding: 0;
     margin: 0;
     min-width: 18vw;
     max-width: none;
-   
   }
 
- .mobil-off{
+  .mobil-off {
     padding: 0;
     margin: 0;
     width: 20vw;
-  
-   
   }
 
-  .phone, .observations{
+  .phone,
+  .observations {
     visibility: hidden;
-    
+
     width: 1px !important;
   }
 
-  button{
+  button {
     width: 15vw;
   }
 
-    .size4{
-      font-size: 13px;
-    }
+  .size4 {
+    font-size: 13px;
+  }
 
-    .modal-child{
-      width: 95vw;
-      height: 90vh;
-      top: -20px;
-      padding: 3px;
-    }
+  .modal-child {
+    width: 95vw;
+    height: 90vh;
+    top: -20px;
+    padding: 3px;
+  }
 
-   
-    .modal{
-      background-color: blueviolet;
-    }
+  .modal {
+    background-color: blueviolet;
+  }
 
-    h1{
-      font-size: 20px;
-      padding: 3px;
-      margin: 0;
-    }
-   
-    .button-medium{
-      margin: 0;
-    }
+  h1 {
+    font-size: 20px;
+    padding: 3px;
+    margin: 0;
+  }
 
-    .titles{
-      width: 80vw;
-    }
-   
-    .extra{
-      max-width: 60vw !important;
-    }
+  .button-medium {
+    margin: 0;
+  }
 
+  .titles {
+    width: 80vw;
+  }
 
-
-  
+  .extra {
+    max-width: 60vw !important;
+  }
 }
 
-@media screen and (max-width: 500px){
-  .mobil-text{
+@media screen and (max-width: 500px) {
+  .mobil-text {
     font-size: 15px;
     padding: 0;
   }
-  .p1{
+  .p1 {
     padding: 1px;
   }
-  .hour-slot{
+  .hour-slot {
     width: 90vw;
   }
 
-  .mobil-off{
-    
+  .mobil-off {
     width: 0 !important;
     visibility: hidden;
     padding: 0;
     margin: 0;
   }
 
-    
   .is-row .first {
     margin-right: 3px;
   }
 
-  .is-row{
+  .is-row {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
   }
 
-  .fa-trash-alt, .fa-eye, .fa-edit{
+  .fa-trash-alt,
+  .fa-eye,
+  .fa-edit {
     width: 8vw;
     height: 8vw;
     padding: 3px;
@@ -1137,100 +1226,91 @@ color: rgb(6, 75, 0);
     font-size: 25px;
   }
 
-  .first{
+  .first {
     width: 5px !important;
   }
 
-  .is-row-child{
+  .is-row-child {
     padding: 0;
     margin: 0;
     min-width: 29vw;
     max-width: none;
-   
   }
 
-  button{
+  button {
     width: 15vw;
   }
 
-    .size4{
-      font-size: 13px;
-    }
+  .size4 {
+    font-size: 13px;
+  }
 
-    .modal-child{
-      width: 95vw;
-      height: 90vh;
-      top: -20px;
-      padding: 3px;
-    }
+  .modal-child {
+    width: 95vw;
+    height: 90vh;
+    top: -20px;
+    padding: 3px;
+  }
 
-   
-    .modal{
-      background-color: blueviolet;
-    }
+  .modal {
+    background-color: blueviolet;
+  }
 
-    h1{
-      font-size: 20px;
-      padding: 3px;
-      margin: 0;
-    }
-   
-    .button-medium{
-      margin: 0;
-    }
+  h1 {
+    font-size: 20px;
+    padding: 3px;
+    margin: 0;
+  }
 
-    .titles{
-      width: 80vw;
-    }
-   
-    .extra{
-      max-width: 60vw !important;
-    }
+  .button-medium {
+    margin: 0;
+  }
 
-    .mobil-off{
-    
-    
-      max-width: 1px;
-      min-width: 1px;
-      visibility: hidden;
-      padding: 0;
-      margin: 0;
-    }
-  
-    .space{
-      width: 1px;
-    }
+  .titles {
+    width: 80vw;
+  }
 
+  .extra {
+    max-width: 60vw !important;
+  }
 
+  .mobil-off {
+    max-width: 1px;
+    min-width: 1px;
+    visibility: hidden;
+    padding: 0;
+    margin: 0;
+  }
 
-  
+  .space {
+    width: 1px;
+  }
 }
 
-@media screen and (max-width: 320px){
-  .mobil-text{
+@media screen and (max-width: 320px) {
+  .mobil-text {
     font-size: 12px;
     padding: 0;
   }
-  .p1{
+  .p1 {
     padding: 1px;
   }
-  .hour-slot{
+  .hour-slot {
     width: 90vw;
   }
 
- 
-
-    
   .is-row .first {
     margin-right: 3px;
   }
 
-  .is-row{
+  .is-row {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
   }
 
-  .fa-trash-alt, .fa-eye, .fa-edit{
+  .fa-trash-alt,
+  .fa-eye,
+  .fa-edit {
     width: 25px;
     height: 25px;
     padding: 3px;
@@ -1240,20 +1320,17 @@ color: rgb(6, 75, 0);
     font-size: 20px;
   }
 
-  .first{
+  .first {
     width: 3px !important;
   }
 
-  .is-row-child{
+  .is-row-child {
     padding: 0;
     margin: 0;
     min-width: 10vw;
-   
   }
 
-  .mobil-off{
-    
-    
+  .mobil-off {
     max-width: 1px;
     min-width: 1px;
     visibility: hidden;
@@ -1261,62 +1338,68 @@ color: rgb(6, 75, 0);
     margin: 0;
   }
 
-  .space{
+  .space {
     width: 1px;
   }
 
-  button{
+  button {
     width: 10vw;
   }
 
-    .size4{
-      font-size: 10px;
-    }
+  .size4 {
+    font-size: 10px;
+  }
 
-    .modal-child{
-      width: 95vw;
-      height: 90vh;
-      top: -20px;
-      padding: 3px;
-    }
+  .modal-child {
+    width: 95vw;
+    height: 90vh;
+    top: -20px;
+    padding: 3px;
+  }
 
-    .extra{
-      width: 50vw;
-    }
+  .extra {
+    width: 50vw;
+  }
 
-    .modal{
-      background-color: blueviolet;
-    }
+  .modal {
+    background-color: blueviolet;
+  }
 
-    h1{
-      font-size: 20px;
-      padding: 3px;
-      margin: 0;
-    }
-   
-    .button-medium{
-      margin: 0;
-    }
+  h1 {
+    font-size: 20px;
+    padding: 3px;
+    margin: 0;
+  }
 
-    .titles{
-      width: 80vw;
-    }
-   
-    .work-day{
-      min-width: 300px;
-    }
+  .button-medium {
+    margin: 0;
+  }
 
-    .menu a{
-      font-size: 10px;
-      max-width: 50px;
-      margin: 0;
-      padding:9px;
-      
-    }
-    .menu{
-      padding-bottom: 12px;
-    }
+  .titles {
+    width: 80vw;
+  }
 
+  .work-day {
+    min-width: 300px;
+  }
 
-  
+  .menu a {
+    font-size: 10px;
+    max-width: 50px;
+    margin: 0;
+    padding: 9px;
+  }
+  .menu {
+    padding-bottom: 12px;
+  }
+
+  .modal {
+    background-color: blueviolet;
+  }
+
+  h1 {
+    font-size: 20px;
+    padding: 3px;
+    margin: 0;
+  }
 }
