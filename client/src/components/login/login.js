@@ -3,6 +3,7 @@ import { useStoreContext } from "../../utils/globalState";
 import Logo from "../general/logo";
 import Redirect from "react-router-dom";
 import API from "../../utils/API-";
+import { withRouter } from "react-router-dom";
 
 function LogIn(props) {
   //let user = useRef();
@@ -16,9 +17,10 @@ function LogIn(props) {
   const validateUser = async () => {
     if (user != "" && password != "") {
       var response = await API.login(user, password);
-      console.log(response);
+
       if (response.data.success) {
-        login(response.data._id);
+        login(response.data);
+        props.history.push("/appointments");
       } else {
         props.message("error", response.data.message);
       }
@@ -61,4 +63,4 @@ function LogIn(props) {
   );
 }
 
-export default LogIn;
+export default withRouter(LogIn);

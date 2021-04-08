@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import API from "../../utils/API-";
-import { withRouter } from "react-router-dom";
 
-function SignUp(props) {
+function UserUpdate(props) {
   let user = useRef();
   let email = useRef();
+  let firstName = useRef();
+  let lastName = useRef();
   let pass1 = useRef();
   let pass2 = useRef();
 
@@ -14,11 +15,15 @@ function SignUp(props) {
       email: email.current.value,
       pass1: pass1.current.value,
       pass2: pass2.current.value,
+      firstName: firstName.current.value,
+      lastName: lastName.current.value,
     };
 
     if (
       data.user != "" &&
       data.email != "" &&
+      data.firstName != "" &&
+      data.lastName != "" &&
       data.pass1 != "" &&
       data.pass2 != ""
     ) {
@@ -47,6 +52,12 @@ function SignUp(props) {
       <label>User Name</label>
       <input ref={user} type="text" />
 
+      <label>First Name</label>
+      <input ref={firstName} type="text" />
+
+      <label>Last Name</label>
+      <input ref={lastName} type="text" />
+
       <label>Email</label>
       <input ref={email} type="text" />
 
@@ -68,4 +79,4 @@ function SignUp(props) {
   );
 }
 
-export default SignUp;
+export default UserUpdate;
