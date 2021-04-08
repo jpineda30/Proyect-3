@@ -33,6 +33,7 @@ module.exports = {
     // 	.then((dbModel) => res.json(dbModel))
     // 	.catch((err) => res.status(422).json(err));
   },
+  findAppointmentByInfo: function (q) {},
 
   create: function (req, res) {
     let { start: startT, end: endT, day, patient, service } = req.body;
@@ -79,6 +80,7 @@ module.exports = {
         res.status(422).json(err);
       });
   },
+
   delete: function (req, res) {
     console.log("Deleting Appointment: ");
     console.log(req.body);

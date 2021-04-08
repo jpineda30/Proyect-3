@@ -3,6 +3,8 @@ import Home from "../pages/home";
 import Patients from "../pages/patients";
 import Services from "../pages/services";
 import Appointments from "../pages/appointments";
+import User from "../pages/user";
+
 import {
   Redirect,
   BrowserRouter as Router,
@@ -23,7 +25,7 @@ function Wrapper(props) {
       <Router>
         <Switch>
           <Route exact path="/">
-            {isLogged ? <Redirect to="/appointments" /> : main}
+            {isLogged ? <User /> : main}
           </Route>
 
           <Route exact path="/services">

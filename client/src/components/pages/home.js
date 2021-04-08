@@ -49,7 +49,7 @@ function Home(props) {
     //     ...state,
     //     isLogged:false
     // })
-    props.history.push("/home");
+    props.history.push("/");
   };
 
   const sendMessage = (type, text) => {
@@ -83,6 +83,7 @@ function Home(props) {
         login={login}
         logout={logout}
         message={sendMessage}
+        history={props.history}
       />
       <MyModal
         message={sendMessage}
