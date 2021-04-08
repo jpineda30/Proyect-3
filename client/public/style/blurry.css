@@ -615,14 +615,35 @@ header {
 }
 
 .modalPatient {
-  padding-left: 20px;
-  padding-top: 25px;
+  margin-top: 25px;
+  margin-right: 25px;
 }
 
-.modal-child-scroll {
+.is-header-Patient {
+  font-size: x-large;
+  border-top-style: solid;
+  border-top-color: rgba(102, 100, 100, 0.993);
+  border-top-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(102, 100, 100, 0.993);
+  border-bottom-width: 3px;
+}
+
+.is-header-Chart {
+  font-size: large;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(102, 100, 100, 0.993);
+  border-bottom-width: 3px;
+}
+
+.marginTop {
+  margin-top: 30px;
+}
+
+.modalChart-child-scroll {
   background-color: rgb(214, 198, 234) !important;
   padding: 20px;
-  width: 70vw !important;
+  width: 50vw !important;
   height: 80vh;
   border-radius: 15px;
   transition: 0.5s;
@@ -631,27 +652,108 @@ header {
   scroll-padding-top: 15px;
   scroll-margin-top: 30px;
   top: 15px;
+  padding-right: 25px;
 }
 
-.modal-child-scroll h1,
-.modal-child-scroll div,
-.modal-child-scroll p,
-.modal-child-scroll label {
+.containt {
+  margin-left: 25px;
+  margin-right: 35px;
+}
+
+strong {
+  font-size: small;
+}
+
+.patient-info {
+  border-bottom-style: ridge;
+  border-bottom-color: rgba(255, 255, 255, 0.39);
+  border-block-color: rgb(75, 81, 95);
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.39);
+  border-top-width: 1px;
+}
+
+.buttonPDF-blue-medium {
+  height: 30px;
+  width: 150px;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+  background-color: rgb(157, 137, 214);
+  /*box-shadow: rgba(128, 128, 128, 0.308) 5px 0px 0px 0px ;*/
+  border-bottom-style: solid;
+  border-block-color: rgb(75, 81, 95);
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.39);
+  border-top-width: 1px;
+  z-index: 1;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.buttonPDF-blue-medium:hover {
+  background-color: rgb(130, 105, 197);
+}
+
+.modal-child-scroll {
+  padding: 20px;
+  width: 50vw !important;
+  height: 80vh;
+  border-radius: 15px;
+  transition: 0.5s;
+  overflow: scroll;
+  overflow-x: hidden;
+  scroll-padding-top: 15px;
+  scroll-margin-top: 30px;
+  top: 15px;
+  background-color: rgba(53, 45, 61, 1);
+  width: max-content;
+}
+
+.text-is-white {
+  color: rgb(255, 255, 255) !important;
+}
+
+.modalChart-child-scroll h1,
+.modalChart-child-scroll div,
+.modalChart-child-scroll p,
+.modalChart-child-scroll label {
   color: rgb(0, 0, 0);
   margin-left: 15px;
 }
 
+.modalChart-child-scroll::-webkit-scrollbar-track {
+  background: #74747400;
+  border-radius: 10px;
+  top: 15px;
+}
 .modal-child-scroll::-webkit-scrollbar-track {
   background: #74747400;
   border-radius: 10px;
   top: 15px;
 }
 
+.modalChart-child-scroll::-webkit-scrollbar {
+  width: 10px;
+  top: 10px;
+}
 .modal-child-scroll::-webkit-scrollbar {
   width: 10px;
   top: 10px;
 }
 
+.modalChart-child-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    rgba(231, 201, 201, 0),
+    rgba(170, 114, 235, 0.513),
+    rgba(0, 0, 0, 0)
+  );
+  border-radius: 10px;
+  margin-top: 20px;
+}
 .modal-child-scroll::-webkit-scrollbar-thumb {
   background: linear-gradient(
     to bottom,

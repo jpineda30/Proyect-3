@@ -3,7 +3,7 @@ import React from "react";
 function Logo(props) {
   return (
     <>
-      <div className="flex-col flex-center mb-1">
+      <div className="flex-center flex-col  mb-1">
         <div className="logo"></div>
         <div className="flex-row">
           <h1 className="text-logo">e</h1>

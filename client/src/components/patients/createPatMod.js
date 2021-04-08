@@ -91,109 +91,116 @@ function CreatePatMod(props) {
   };
 
   return (
-    <div className="flex-col flex-left modal-child-scroll">
-      <h1>Patient {props.type}</h1>
-      <div className="flex-col ">
-        <label className="">Patient Name</label>
-        <input
-          type="text"
-          ref={patientName}
-          placeholder="Patient name"
-          disabled={edition}
-        />
-      </div>
-
-      <div className="flex-col ">
-        <label className="">Patient Last Name</label>
-        <input
-          type="text"
-          ref={patientLastName}
-          placeholder="Patient last name"
-          disabled={edition}
-        />
-      </div>
-
-      <div className="flex-col ">
-        <label className="">email</label>
-        <input
-          type="email"
-          ref={patientEmail}
-          placeholder="my.e.mail@mail.com"
-          disabled={edition}
-        />
-      </div>
-
-      <div className="flex-col  ">
-        <label className="">Phone Number</label>
-        <input
-          type="number"
-          ref={patientPhone}
-          placeholder="5555555555"
-          disabled={edition}
-        />
-      </div>
-
-      <div className="flex-col my-1 ">
-        <label className="">Age</label>
-        <input
-          type="number"
-          ref={patientAge}
-          placeholder="09"
-          disabled={edition}
-        />
-      </div>
-
-      <div className="flex-col ">
-        <label className="">Sex</label>
-        <input type="text" ref={patientSex} placeholder="" disabled={edition} />
-      </div>
-
-      <div className="flex-col ">
-        <label className="">Current Diseases</label>
-        <input
-          className="height50"
-          type="text"
-          ref={patientChart}
-          disabled={edition}
-        />
-      </div>
-
-      <div className="flex-col ">
-        <label className="">Current Medication</label>
-        <input
-          className="height50"
-          type="text"
-          ref={patientMedication}
-          disabled={edition}
-        />
-      </div>
-
-      <div className="flex-col ">
-        <label className="">Allergies</label>
-        <input
-          className="height50"
-          type="text"
-          ref={patientAllergies}
-          disabled={edition}
-        />
-      </div>
-
-      <div className="flex-col ">
-        <label className="">Observations</label>
-        <input
-          className="height50"
-          type="text"
-          ref={patientObservations}
-          disabled={edition}
-        />
-      </div>
-
-      <div className="flex-row flex-center">
-        <div className={visibility + " button-small"} onClick={savePatient}>
-          Save
+    <div className="modal-child-scroll">
+      <div className="flex-col flex-left ">
+        <h1>Patient {props.type}</h1>
+        <div className="flex-col ">
+          <label className="">Patient Name</label>
+          <input
+            type="text"
+            ref={patientName}
+            placeholder="Patient name"
+            disabled={edition}
+          />
         </div>
-        <div className="button-small" onClick={props.close}>
-          Cancel
+
+        <div className="flex-col ">
+          <label className="">Patient Last Name</label>
+          <input
+            type="text"
+            ref={patientLastName}
+            placeholder="Patient last name"
+            disabled={edition}
+          />
+        </div>
+
+        <div className="flex-col ">
+          <label className="">email</label>
+          <input
+            type="email"
+            ref={patientEmail}
+            placeholder="my.e.mail@mail.com"
+            disabled={edition}
+          />
+        </div>
+
+        <div className="flex-col  ">
+          <label className="">Phone Number</label>
+          <input
+            type="number"
+            ref={patientPhone}
+            placeholder="5555555555"
+            disabled={edition}
+          />
+        </div>
+
+        <div className="flex-col my-1 ">
+          <label className="">Age</label>
+          <input
+            type="number"
+            ref={patientAge}
+            placeholder="09"
+            disabled={edition}
+          />
+        </div>
+
+        <div className="flex-col ">
+          <label className="">Sex</label>
+          <input
+            type="text"
+            ref={patientSex}
+            placeholder=""
+            disabled={edition}
+          />
+        </div>
+
+        <div className="flex-col ">
+          <label className="">Current Diseases</label>
+          <input
+            className="height50"
+            type="text"
+            ref={patientChart}
+            disabled={edition}
+          />
+        </div>
+
+        <div className="flex-col ">
+          <label className="">Current Medication</label>
+          <input
+            className="height50"
+            type="text"
+            ref={patientMedication}
+            disabled={edition}
+          />
+        </div>
+
+        <div className="flex-col ">
+          <label className="">Allergies</label>
+          <input
+            className="height50"
+            type="text"
+            ref={patientAllergies}
+            disabled={edition}
+          />
+        </div>
+
+        <div className="flex-col ">
+          <label className="">Observations</label>
+          <input
+            className="height50"
+            type="text"
+            ref={patientObservations}
+            disabled={edition}
+          />
+        </div>
+
+        <div className="flex-row flex-center">
+          <div className={visibility + " button-small"} onClick={savePatient}>
+            Save
+          </div>
+          <div className="button-small" onClick={props.close}>
+            Cancel
+          </div>
         </div>
       </div>
     </div>

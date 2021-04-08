@@ -49,9 +49,27 @@
   justify-content: center;
 }
 
+.flex-evenly {
+  display: space-evenly;
+}
+
+.flex-inline {
+  display: inline-flex;
+}
+
 .flex-left {
   display: flex;
   justify-content: left;
+}
+
+.flex-to-right {
+  margin-left: auto;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end;
+  justify-items: right;
 }
 
 .flex-acenter {
