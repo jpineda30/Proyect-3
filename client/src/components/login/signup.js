@@ -27,22 +27,38 @@ function UserUpdate(props) {
       data.pass1 != "" &&
       data.pass2 != ""
     ) {
-      if (data.pass1 === data.pass2) {
-        API.createUser(data.user, data.pass1, data.email)
-          .then((response) => {
-            props.message("success", "User created");
-            props.close();
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+      if (!validateEmail(data.email)) {
+        props.message("error", "Enter a valid email");
       } else {
-        props.message("error", "Password does not match");
+        if (data.pass1.length < 6) {
+          props.message("error", "Password must be at least 6 characters long");
+        } else {
+          if (data.pass1 === data.pass2) {
+            //validate if user already exists
+            API.createUser(data.user, data.pass1, data.email)
+              .then((response) => {
+                props.message("success", "User created");
+                props.close();
+              })
+              .catch((error) => {
+                console.log(error);
+
+                // props.message("error", error);
+              });
+          } else {
+            props.message("error", "Password does not match");
+          }
+        }
       }
     } else {
       props.message("error", "You must enter all the fields");
     }
   };
+
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
 
   return (
     <div className="modal-child flex-col flex-center p-3">

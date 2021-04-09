@@ -58,25 +58,30 @@ class Appointments extends Component {
     });
   };
 
-  validateDate = (start, end) => {
+  validateDate = (start, end, id) => {
+    console.log(id);
     let i = 0;
     let error = false;
 
-    for (i = 0; i < this.state.slots.length; i++) {
+    let temporalSlots = this.state.slots.filter((slot) => {
+      return slot._id != id;
+    });
+
+    for (i = 0; i < temporalSlots.length; i++) {
       if (
-        start.isBefore(moment(this.state.slots[i].startT, "h:mma")) &&
-        end.isBefore(moment(this.state.slots[i].startT, "h:mma"))
+        start.isBefore(moment(temporalSlots[i].startT, "h:mma")) &&
+        end.isBefore(moment(temporalSlots[i].startT, "h:mma"))
       ) {
       } else {
-        if (end.isSame(moment(this.state.slots[i].startT, "h:mma"))) {
+        if (end.isSame(moment(temporalSlots[i].startT, "h:mma"))) {
         } else {
           if (
-            start.isAfter(moment(this.state.slots[i].endT, "h:mma")) &&
-            end.isAfter(moment(this.state.slots[i].endT, "h:mma"))
+            start.isAfter(moment(temporalSlots[i].endT, "h:mma")) &&
+            end.isAfter(moment(temporalSlots[i].endT, "h:mma"))
           ) {
             console.log("2");
           } else {
-            if (start.isSame(moment(this.state.slots[i].endT, "h:mma"))) {
+            if (start.isSame(moment(temporalSlots[i].endT, "h:mma"))) {
             } else {
               error = true;
             }

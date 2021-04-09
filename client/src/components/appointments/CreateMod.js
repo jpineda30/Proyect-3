@@ -5,6 +5,7 @@ import moment from "moment";
 import API from "../../utils/API-";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import AddToCalendar from "./addToCalendar";
 
 function CreateMod(props) {
   const [startDate, setStartDate] = useState(props.day);
@@ -66,8 +67,8 @@ function CreateMod(props) {
     }
   }, []);
 
-  const validation = async (start, end) => {
-    let status = await props.validate(start, end);
+  const validation = async (start, end, id) => {
+    let status = await props.validate(start, end, id);
     return status;
   };
 
@@ -100,7 +101,7 @@ function CreateMod(props) {
           start: startTime.current.value,
           end: endTime.current.value,
         };
-        console.log(pack);
+
         if (props.name == "creation") {
           validation(start, end).then((response) => {
             if (response) {
@@ -113,7 +114,7 @@ function CreateMod(props) {
             }
           });
         } else if (props.name == "edition") {
-          validation(start, end).then((response) => {
+          validation(start, end, pack._id).then((response) => {
             if (response) {
               props.message("error", "Overlaping slots");
             } else {

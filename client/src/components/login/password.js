@@ -17,7 +17,12 @@ function Password(props) {
       <input ref={pass2} type="password" />
 
       <div className="flex-row ">
-        <div className="button-purple-medium radius1 m-1">Save </div>
+        <div
+          className="button-purple-medium radius1 m-1"
+          onClick={() => props.message("warning", "In development")}
+        >
+          Save{" "}
+        </div>
         <div className="button-blue-medium m-1 radius1" onClick={props.close}>
           Cancel{" "}
         </div>

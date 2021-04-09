@@ -42,6 +42,11 @@ function CreatePatMod(props) {
     patientObservations.current.value = props.ide.object.observations;
   };
 
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
   const savePatient = () => {
     let patient = {
       _id: props.ide ? props.ide.object._id : "",
@@ -68,19 +73,26 @@ function CreatePatMod(props) {
       patient.medication != "" &&
       patient.observations != ""
     ) {
-      if (props.type == "create") {
-        API.createPatient(patient).then((patient) => {
-          props.addPatient(patient.data);
-        });
-        props.close();
-      } else if (props.type == "update") {
-      } else if (props.type == "edit") {
-        API.updatePatient(patient).then((response) => {
-          props.reload();
+      if (!validateEmail(patient.email)) {
+        props.message("error", "Enter a valid email");
+      } else {
+        if (props.type == "create") {
+          API.createPatient(patient).then((patient) => {
+            props.addPatient(patient.data);
+          });
           props.close();
-        });
-      } else if (props.type === "view") {
-        return ViewPatMod(props);
+        } else if (props.type == "update") {
+          //update patient
+        } else if (props.type == "edit") {
+          API.updatePatient(patient).then((response) => {
+            console.log("you are editing a Patient " + response);
+            props.reload();
+            props.close();
+          });
+        } else if (props.type === "view") {
+          return ViewPatMod(props);
+          //Patients Chart view
+        }
       }
     } else {
       alert("you can´t leave empty inputs");
