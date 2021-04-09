@@ -10,11 +10,9 @@ var fs = require("fs");
 var morgan = require("morgan");
 var path = require("path");
 const app = express();
-/* var cors = require('cors') */
 
 const PORT = process.env.PORT || 3001;
-//app.use(cors())
-// Define middleware here
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -24,14 +22,12 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-///Set up logging:
 var accessLogStream = fs.createWriteStream(path.join(__dirname, "access.log"), {
   flags: "a",
 });
-// setup the logger
+
 app.use(morgan("combined", { stream: accessLogStream }));
 
-//Set a mongo connection.
 const uri =
   "mongodb+srv://" +
   process.env.DB_USER +
@@ -44,17 +40,12 @@ try {
   console.log(error);
 }
 
-// Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
+
 app.use(routes);
 
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/doctorsDB");
-
-// Start the API server
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });

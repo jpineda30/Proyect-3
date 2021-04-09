@@ -6,11 +6,7 @@ import API from "../../utils/API-";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-/* import { useStoreContext } from "../../utils/globalState"; */
-
 function CreateMod(props) {
-  // date
-
   const [startDate, setStartDate] = useState(props.day);
 
   let id = "";
@@ -67,9 +63,7 @@ function CreateMod(props) {
       patientInput.current.value = props.info.patient;
       setService(props.info.serviceId);
       setPatient(props.info.patientId);
-
-      //console.log(moment(props.day).format("DD MM YYYY").replaceAll(" ", "/"));
-    } //
+    }
   }, []);
 
   const validation = async (start, end) => {
@@ -190,8 +184,6 @@ function CreateMod(props) {
   const setPatientName = (val) => {
     patientInput.current.value = val;
   };
-
-  //const saveInput = ()=>{}
 
   return (
     <div className="modal-child flex-col">

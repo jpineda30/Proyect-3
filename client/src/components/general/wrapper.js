@@ -18,8 +18,6 @@ function Wrapper(props) {
 
   const main = () => <Home userState={props.isLogged} />;
 
-  console.log(isLogged);
-
   return (
     <>
       <Router>
@@ -39,12 +37,6 @@ function Wrapper(props) {
           <Route exact path="/patients">
             {isLogged ? <Patients></Patients> : <Redirect to="/" />}
           </Route>
-
-          {/* <Route exact path="/" component={main}/>
-            <Route exact path="/home" component={main}/>
-            <Route exact path="/services" component={validation(Services)} />
-            <Route exact path="/appointments" component={validation(Appointments)} />
-            <Route exact path="/patients" component={validation(Patients)} /> */}
         </Switch>
       </Router>
     </>

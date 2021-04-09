@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import API from "../../utils/API-";
 
 function Password(props) {
   let currPass = useRef();

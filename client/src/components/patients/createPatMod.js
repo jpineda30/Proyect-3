@@ -74,16 +74,13 @@ function CreatePatMod(props) {
         });
         props.close();
       } else if (props.type == "update") {
-        //update patient
       } else if (props.type == "edit") {
         API.updatePatient(patient).then((response) => {
-          console.log("you are editing a Patient " + response);
           props.reload();
           props.close();
         });
       } else if (props.type === "view") {
         return ViewPatMod(props);
-        //Patients Chart view
       }
     } else {
       alert("you can´t leave empty inputs");

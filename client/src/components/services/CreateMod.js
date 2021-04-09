@@ -14,7 +14,6 @@ function CreateMod(props) {
   }
 
   useEffect(() => {
-    console.log(props);
     if (props.type == "edit" || props.type == "view") {
       getById();
     }
@@ -41,15 +40,12 @@ function CreateMod(props) {
         });
         props.close();
       } else if (props.type == "update") {
-        //update service
       } else if (props.type == "edit") {
         API.updateService(service).then((response) => {
-          console.log(response);
           props.reload();
           props.close();
         });
       } else {
-        //view
       }
     } else {
       alert("Empty inputs lazy ass");

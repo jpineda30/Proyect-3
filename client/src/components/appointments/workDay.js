@@ -1,32 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Slot from "./hourSlot";
 import AddBtn2 from "../general/AddBtn2";
-import API from "../../utils/API-";
-import moment from "moment";
 
 function WorkDay(props) {
   const [appointments, setAppointments] = useState([]);
   console.log(props);
-  // console.log(props.date);
-
-  useEffect(() => {
-    //get props.date and find in data base
-    /* API.getAppByID().then((result) => {
-      setAppointments(result);
-    });*/
-    // if (props.date !== null) {
-    //   let formatCalendarDate = moment.utc(props.date).format("L");
-    //   //console.log(formatCalendarDate);
-    //   let body = {
-    //     day: formatCalendarDate,
-    //   };
-    //   API.getAppointmentsByDate(body).then((res) => {
-    //     //	console.log("INSIDE APPOINTMENTSBYDATE");
-    //     // console.log(res);
-    //     setAppointments(res.data);
-    //   });
-    // }
-  }, []);
 
   return (
     <div>
@@ -39,7 +17,6 @@ function WorkDay(props) {
         <div className="flex-col p-1 dates-scroll">
           {props.slots
             ? props.slots.map((appointment) => {
-                console.log(appointment);
                 return (
                   <Slot
                     appointmentId={appointment._id}
@@ -66,14 +43,6 @@ function WorkDay(props) {
                 );
               })
             : null}
-          {/* <Slot
-						open={props.open}
-						close={props.close}
-						patient={"Marcela Dupeyron"}
-						service={"Head amputation"}
-						start={"10:00 AM"}
-						end={"11:00 AM"}
-					/> */}
         </div>
       </div>
     </div>

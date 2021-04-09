@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Menu from "../general/menu";
 import MyModal from "../general/Modal";
-import API from "../../utils/API-";
 import Message from "../general/message";
 import { useStoreContext } from "../../utils/globalState";
 import Password from "../login/password";
@@ -24,9 +23,6 @@ function User() {
   const openModal = () => {
     setModal(true);
   };
-
-  //import Message from "../general/message";
-  //message={sendMessage}
 
   const [message, setMessage] = useState(<Message />);
   const [messageState, setMessageStatus] = useState(false);
