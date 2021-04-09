@@ -153,8 +153,6 @@ class Appointments extends Component {
     let res = API.getAppointmentsByDate(pack)
       .then((res) => {
         this.setState({
-          //Luego cambiar esto para tomar en cuenta multiples
-          //serviceios
           slots: res.data,
         });
         console.log(this.state.slots);

@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 
 function ServiceList(props) {
-  //const saveInput = ()=>{}
   const setService = (e) => {
     props.set(e.target.id);
     props.setName(e.target.innerHTML);

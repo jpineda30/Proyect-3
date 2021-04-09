@@ -31,14 +31,12 @@ const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
 
   const login = (user) => {
-    console.log(user);
     dispatch({ type: "LOGIN", data: { user } });
   };
 
   const logout = () => {
     dispatch({ type: "LOGOUT" });
   };
-  console.log(state);
   return (
     <Provider
       value={{

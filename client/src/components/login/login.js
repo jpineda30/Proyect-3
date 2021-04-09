@@ -1,14 +1,10 @@
 import React, { useRef, useState } from "react";
 import { useStoreContext } from "../../utils/globalState";
 import Logo from "../general/logo";
-import Redirect from "react-router-dom";
 import API from "../../utils/API-";
 import { withRouter } from "react-router-dom";
 
 function LogIn(props) {
-  //let user = useRef();
-  //let Password = useRef();
-
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
@@ -24,7 +20,6 @@ function LogIn(props) {
       } else {
         props.message("error", response.data.message);
       }
-      //login(user,password)
     } else {
       props.message("error", "You must enter user and password");
     }

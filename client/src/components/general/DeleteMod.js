@@ -1,21 +1,12 @@
 import React from "react";
 import api from "../../utils/API-";
 
-// function handleClick(props) {
-// 	//props.toggle;
-// 	api.deleteService(props.ide).then((res) => {
-// 		props.close();
-// 	});
-// }
-
 function DeleteMod(props) {
   const handleClick = () => {
-    console.log(props);
     switch (props.name) {
       case "service":
         api.deleteService(props.ide).then((res) => {
           if (props.message) props.message("success", props.name + " deleted");
-
           props.close();
           props.reload();
         });

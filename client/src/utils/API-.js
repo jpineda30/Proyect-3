@@ -1,11 +1,10 @@
 import axios from "axios";
 
 export default {
-  // Gets all posts
   getUser: function () {
     return axios.get("/api/users");
   },
-  // Gets the post with the given id
+
   createUser: function (username, password, email) {
     return axios.post("/api/users/signup", {
       username: username,
@@ -40,8 +39,6 @@ export default {
   },
 
   updateService: function (body) {
-    console.log(body);
-
     return axios.post("api/service/update", {
       _id: body._id,
       name: body.name,
@@ -80,8 +77,6 @@ export default {
   },
 
   updatePatient: function (body) {
-    console.log(body);
-
     return axios.post("api/patient/update", {
       _id: body._id,
       first_name: body.first_name,
@@ -102,13 +97,14 @@ export default {
       _id: body,
     });
   },
+
   //////APPOINTMENTS//////////
+
   createAppointment: function (body) {
     return axios.post("api/appointment/create", body);
   },
   updateAppointment: function (body) {
     return axios.post("api/appointment/update", body);
-    console.log(body);
   },
   getAppointmentsByDate: function (body) {
     return axios.post("api/appointment/day", body);

@@ -28,7 +28,6 @@ function UserUpdate(props) {
       data.pass2 != ""
     ) {
       if (data.pass1 === data.pass2) {
-        //validate if user already exists
         API.createUser(data.user, data.pass1, data.email)
           .then((response) => {
             props.message("success", "User created");
@@ -36,8 +35,6 @@ function UserUpdate(props) {
           })
           .catch((error) => {
             console.log(error);
-
-            // props.message("error", error);
           });
       } else {
         props.message("error", "Password does not match");

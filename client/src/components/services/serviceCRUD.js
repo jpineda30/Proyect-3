@@ -2,7 +2,6 @@ import React from "react";
 import Actions from "../general/crudActions";
 
 function ServiceCRUD(props) {
-  console.log(props.services);
   return (
     <div>
       <div className="is-table radius1">

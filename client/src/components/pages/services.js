@@ -29,9 +29,6 @@ function Services() {
 
   ////////////////message handling
 
-  //import Message from "../general/message";
-  //message={sendMessage}
-
   const [message, setMessage] = useState(<Message />);
   const [messageState, setMessageStatus] = useState(false);
 
@@ -110,95 +107,5 @@ function Services() {
     </>
   );
 }
-
-// class Services extends Component{
-
-//     constructor(){
-//         super()
-//         this.state= {
-//             crudActive:false,
-//             action:<CreateMod close={this.closeModal}></CreateMod>,
-//             services:[]
-//         }
-//     }
-
-//     componentWillMount(){
-//         //Modal.setAppElement("CreateMod");
-//         //Load Services
-//         API.getServices().then(res=> {
-
-//             this.setState({services:res.data});
-//             //*May not return all the services.
-//             console.log(this.state.services);
-//         });
-//     }
-
-//     toggleModalCrud= (param)=>{
-
-//         switch (param) {
-//             case "edit":
-//                 this.setState({
-//                     crudActive:!this.state.crudActive,
-//                     action: <CreateMod close={this.closeModal} type={param}></CreateMod>
-//                 })
-//                 break;
-//              case "create":
-//                 this.setState({
-//                     crudActive:!this.state.crudActive,
-//                     action: <CreateMod close={this.closeModal} type={param}></CreateMod>
-//                 })
-//                 break;
-//                 case "delete":
-//                     this.setState({
-//                         crudActive:!this.state.crudActive,
-//                         action: <DeleteMod close={this.closeModal} name={"service"}></DeleteMod>
-//                     })
-//                     break;
-//                   default:
-
-//                         this.setState({
-//                             crudActive:!this.state.crudActive,
-//                             action: <CreateMod close={this.closeModal} type={param}></CreateMod>
-//                         })
-//                         break;
-//         }
-
-//     }
-
-//     closeModal = ()=>{
-//         this.setState({
-//             crudActive:false,
-
-//         })
-//     }
-
-//     getServices = ()=>{
-
-//     }
-
-//    render(){
-
-//        return <>
-//        <Menu/>
-//         <div className="content flex-col flex-center">
-
-//        <div className="flex-col crud-body">
-
-//            <div className="titles">
-//                <h1>Services</h1>
-//                <AddBtn action={this.toggleModalCrud}/>
-
-//            </div>
-//            <ServiceCRUD status ={this.state.crudActive} toggle={this.toggleModalCrud} services = {this.state.services} />
-//            <MyModal status ={this.state.crudActive} toggle={this.toggleModalCrud} type={this.state.action} close={this.closeModal}/>
-
-//    </div>
-
-// </div>
-
-// </>
-
-//    }
-// }
 
 export default Services;

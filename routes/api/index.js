@@ -5,8 +5,6 @@ const serviceRoutes = require("./service");
 const patientRoutes = require("./patients");
 const { route } = require("./users");
 
-//UserRoutes
-
 router.use("/users", userRoutes);
 router.use("/appointment", appointmentRoutes);
 router.use("/service", serviceRoutes);

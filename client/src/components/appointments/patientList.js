@@ -1,8 +1,6 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 
 function PatientList(props) {
-  //const saveInput = ()=>{}
-
   const setPatient = (e) => {
     props.set(e.target.id);
     props.setName(e.target.innerHTML);
