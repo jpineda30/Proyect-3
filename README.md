@@ -1,4 +1,4 @@
-# <img src="client/public/img/logo4.png" width="50"/> Medical Appointment Managing System
+# <img src="client/public/img/logo5.png" width="50"/> Medical Appointment Managing System
 
 ---
 
