@@ -59,7 +59,10 @@ function User() {
           <input ref={email} type="text" />
 
           <div className="flex-row ">
-            <div className="button-purple-medium radius1 m-1">
+            <div
+              className="button-purple-medium radius1 m-1"
+              onClick={() => sendMessage("warning", "in development")}
+            >
               Save changes{" "}
             </div>
             <div className="button-blue-medium m-1 radius1" onClick={openModal}>
@@ -72,7 +75,7 @@ function User() {
         <MyModal
           status={modal}
           close={closeModal}
-          type={<Password close={closeModal} />}
+          type={<Password close={closeModal} message={sendMessage} />}
         />
       </div>
     </>
