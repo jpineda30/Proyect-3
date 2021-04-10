@@ -56,15 +56,13 @@ Currently, the system offers the following _features_:
 ## List of Dependencies and Libraries
 
 ​
-The application was designed and build by _Creat React App_, programmed through a combination of _JavaScript_ hosted on several _React_ _NPM_ libraries, _pure HTML_, _pure CSS_, one third-party _CSS framework_, and backed by _MongoDB_ and _NoSQL_ Database that uses json*like documents. The application is fully functional and hosted in a \_Heroku* external server.
+The application was designed and build by _Creat React App_, programmed through a combination of _JavaScript_ hosted on several _React_ _NPM_ libraries, _pure HTML_, _pure CSS_, and backed by _MongoDB_ _Mongoose, \_NoSQL_ Database that uses json-like documents. The application is fully functional and hosted in a _Heroku_ external server.
 ​
 
 The Full-Stack breakdown of the application is as follows:
 ​
 
 - [Create React App](https://create-react-app.dev/) is an app that help you builds the initials steps and structure to create a React app.
-
-- [Bulma](https://bulma.io/) is an open-source free CSS framework for HTML. The framework was used in the overall design of the website and its different sections.
   ​
 - [NodeJS](https://nodejs.org/en/) is one of the most widely used local server environments for JavaScript programming. NodeJS was used for local server-testing and to handle server and database connections.
   ​
@@ -72,7 +70,9 @@ The Full-Stack breakdown of the application is as follows:
   ​
 - [MongoDB](https://www.mongodb.com/) and [Mongoose](https://www.npmjs.com/package/mongoose) are one of the most widely used database services in Full-Stack web development. We used MongoDB Atlas workbench to develop the database that serves as the basis for the management system and the automatic creation of tables and ID elements. it can handle several new dependencies
   ​
-- []()
+- [Axios](https://www.npmjs.com/package/axios) is a Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser that also supports the ES6 Promise API.
+
+- [Moment.js](https://momentjs.com/) is a JavaScript library which helps is parsing, validating, manipulating and displaying date/time in JavaScript in a very easy way
   ​
 - [Passport](https://www.npmjs.com/package/passport) and [Passport-Local](https://www.npmjs.com/package/passport-local) are Express-based library tools to integrate user authentication into script frameworks. Passport handles authentication, while Passport-Local focuses on authenticating events using an email and a password. These two dependencies are the basis for the Login/SignUp features of this application.
   ​
@@ -80,9 +80,11 @@ The Full-Stack breakdown of the application is as follows:
   ​
 - [BcryptJS](https://www.npmjs.com/package/bcrypt) is an extension library that, when implemented, automatically hashes/encrypts passwords in a database. This application integrates Bcrypt in the authentication process and sends a hashed/encrypted password when a new user is registered to the database.
   ​
-- [Moment.js](https://www.npmjs.com/package/bcrypt) is a basic date-time library tool that parses and generates time data into JavaScript. Moment.js was used in this application to generate the basic Calendar tool in the Appointments section.
+- [DatePicker](https://www.npmjs.com/package/js-datepicker) JavaScript DatePicker is a lightweight and mobile-friendly control that allows end users to enter or select a date value. It has month, year, and decade view options to quickly navigate to the desired date. It supports minimum dates, maximum dates, and disabled dates to restrict the date selection.
 
 - [react-to-pdf](https://www.npmjs.com/package/react-to-pdf) is a basic npm tool to Easily create pdf documents from React components.
+
+- [Heroku](https://dashboard.heroku.com/) is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps. The Heroku experience provides services, tools, workflows, and polyglot support—all designed to enhance developer productivity.
 
 - ​
 
@@ -104,7 +106,7 @@ If you are interested in running **EMed** locally, you can follow these steps:
    ​
 4. After everything is set, you can then run the application `server.js` using the _npm start_ comand in your terminal. After, navigate to your localhost connection on your preferred web browser.
    ​
-   Or, alternatively, you can use the demo page we deployed on a [Heroku]() external server. You can access the functional app [here]().
+   Or, alternatively, you can use the demo page we deployed on a [Heroku](https://ibmug-emed.herokuapp.com/) external server. You can access the functional app [here](https://github.com/jpineda30/Proyect-3).
    ​
 
 ## ​
@@ -119,32 +121,38 @@ Navigate to main page `localhost:[yourlocalhost]/` and click **Profile** on the 
 ​
 The site will send you to the User creation page. Type your info and click the **Sign Up** button.
 
-<img src="" width="300"/>
+<img src="client/public/img/login.png" width="200"/>
+<img src="client/public/img/userlogin.png" width="200"/>
 
 ​If the user was created successfully, the page will then send you to the **Login** page. Input your credentials and click the **Login** button.
 ​
 
-<img src="" width="250"/>
+​After logging in, will be redirect to **Appointments** section; you can set an appointment in there, select a date choosing a particular date on the main calendar, then using the modal calendar tool to schedule an hour to start and end times, choose the patient and the treatment to be provided, click the **Save** button to set an appointment for that date.
+You can also edit, or delete an appointment
 
-​After logging in, you can create a patient by clicking **Patients** on the navigation bar.
+<img src="client/public/img/appointment.png" width="350"/>
+
+You can create a patient by clicking **Patients** on the navigation bar.
 ​In the **Patients** page, you can add a new patient by clicking the **Create** button.
 ​Fill in the form all the patient's information and clinical history. Then, click the **Save** button.
 You can always view, edit, or delete a patient using the buttons on the right side.
 
-<img src="" width="300"/>
+<img src="client/public/img/patients.png" width="300"/>
  
 ​
 ​
-You can set an appointment in the **Appointments** section. There, select a date choosing a particular date on the main calendar, then using the dropdown calendar tool to schedule an hour to start and end times, choose the patient and the treatment to be provided, click the **Save** button to set an appointment for that date.
-You can also edit, or delete an appointment
-
-<img src="" width="350"/>
 
 ​
 
 ​The **Services** page has the same functionalities as the **Patients**/**Appointments** section.
 
-<img src="" width="400"/>
+<img src="client/public/img/services.png" width="400"/>
+
+you can go to the **user** page that let you manage and change your credentials
+
+<img src="client/public/img/user.png" width="400"/>
+
+And if you wish you can Logout the app
 
 ## ​
 
