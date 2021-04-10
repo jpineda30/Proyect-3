@@ -76,7 +76,7 @@ a {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  z-index: 5;
+  /*z-index: 5;*/
 }
 
 .card1 {
@@ -149,7 +149,7 @@ button {
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
   border-color: rgba(255, 255, 255, 0.109);
-  z-index: 1;
+  
   transition: 0.3s;
   border-radius: 5px;
 }
@@ -176,7 +176,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+  
   transition: 0.3s;
   border-radius: 10px;
 }
@@ -195,7 +195,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+  
   transition: 0.3s;
   border-radius: 10px;
   text-align: center;
@@ -215,7 +215,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+  
   transition: 0.3s;
   border-radius: 10px;
   text-align: center;
@@ -234,7 +234,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+
   transition: 0.3s;
   border-radius: 10px;
   text-align: center;
@@ -265,7 +265,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+  
   transition: 0.3s;
 }
 
@@ -282,7 +282,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+
   transition: 0.3s;
   text-align: center;
   line-height: normal;
@@ -301,7 +301,8 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+
+
   transition: 0.3s;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -325,7 +326,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+ 
   transition: 0.3s;
   text-align: center;
 }
@@ -343,7 +344,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+
   transition: 0.3s;
   text-align: center;
 }
@@ -361,7 +362,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+
   transition: 0.3s;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -380,7 +381,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+
   transition: 0.3s;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -407,7 +408,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+
   transition: 0.3s;
 }
 
@@ -424,7 +425,7 @@ button:focus {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+
   transition: 0.3s;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
@@ -684,7 +685,7 @@ strong {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+  
   transition: 0.3s;
   text-align: center;
 }
@@ -879,7 +880,7 @@ strong {
   border-top-style: solid;
   border-top-color: rgba(255, 255, 255, 0.39);
   border-top-width: 1px;
-  z-index: 1;
+  
   transition: 0.3s;
   text-align: center;
 }
@@ -1002,7 +1003,7 @@ strong {
   overflow: auto;
 
   max-height: 200px;
-  z-index: 9998;
+  
 }
 
 .violet {
@@ -1015,10 +1016,11 @@ strong {
 
 .floating-list-wraper {
   height: 0px;
+  z-index: 1;
 }
 
 .floating-list p {
-  z-index: 9999;
+ 
   height: 15px;
   padding: 5px;
   margin: 0;
@@ -1076,6 +1078,15 @@ strong {
 .success p {
   color: rgb(6, 75, 0);
 }
+
+.warning {
+  background-color: rgb(255, 206, 72);
+}
+
+.warning p {
+  color: rgb(255, 60, 0);
+}
+
 
 .is-row-child {
   padding: 0;
@@ -1403,3 +1414,17 @@ strong {
     margin: 0;
   }
 }
+
+
+/* Create a custom checkbox */
+.checkbox2 {
+  
+  height: 25px;
+  width: 25px;
+  background-color: rgba(98, 12, 84, 0.582) !important;
+  border-radius: 20%;
+}
+
+/* On mouse-over, add a grey background color */
+ .checkbox2:hover {
+  background-color: rgba(98, 12, 84, 0.8)}
