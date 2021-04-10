@@ -30,7 +30,7 @@ function WorkDay(props) {
                         : ""
                     }
                     service={
-                      appointment.service ? appointment.service.name : ""
+                      appointment.service[0] ? appointment.service[0].name : ""
                     }
                     start={appointment.startT}
                     end={appointment.endT}
@@ -41,7 +41,7 @@ function WorkDay(props) {
                       appointment.patient ? appointment.patient._id : ""
                     }
                     serviceId={
-                      appointment.service ? appointment.service._id : ""
+                      appointment.service[0] ? appointment.service[0]._id : ""
                     }
                   />
                 );
