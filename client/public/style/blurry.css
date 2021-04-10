@@ -184,7 +184,7 @@ button:focus {
 
 .button-medium {
   height: 20px;
-  width: 100px;
+  width: 110px;
   padding: 10px;
   margin: 20px;
   color: rgb(255, 255, 255);
@@ -272,7 +272,7 @@ button:focus {
 
 .button-blue-medium {
   height: 25px;
-  width: 100px;
+  width: 110px;
   padding: 10px;
   color: white;
   background-color: rgb(107, 68, 216);
@@ -334,7 +334,7 @@ button:focus {
 
 .button-purple-medium {
   height: 25px;
-  width: 100px;
+  width: 110px;
   padding: 10px;
   color: rgb(255, 255, 255);
   background-color: rgba(106, 7, 136, 0.6);

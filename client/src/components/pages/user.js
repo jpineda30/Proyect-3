@@ -66,7 +66,7 @@ function User() {
               Save changes{" "}
             </div>
             <div className="button-blue-medium m-1 radius1" onClick={openModal}>
-              Change password{" "}
+              New Password{" "}
             </div>
           </div>
         </div>
