@@ -38,7 +38,9 @@ function WorkDay(props) {
                     patientId={
                       appointment.patient ? appointment.patient._id : ""
                     }
-                    serviceId={appointment.service[0]._id}
+                    serviceId={
+                      appointment.service ? appointment.service._id : ""
+                    }
                   />
                 );
               })
