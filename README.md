@@ -86,8 +86,6 @@ The Full-Stack breakdown of the application is as follows:
 
 - [Heroku](https://dashboard.heroku.com/) is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps. The Heroku experience provides services, tools, workflows, and polyglot support—all designed to enhance developer productivity.
 
-- ​
-
 ## ​
 
 ​
@@ -106,7 +104,7 @@ If you are interested in running **EMed** locally, you can follow these steps:
    ​
 4. After everything is set, you can then run the application `server.js` using the _npm start_ comand in your terminal. After, navigate to your localhost connection on your preferred web browser.
    ​
-   Or, alternatively, you can use the demo page we deployed on a [Heroku](https://ibmug-emed.herokuapp.com/) external server. You can access the functional app [here](https://github.com/jpineda30/Proyect-3).
+   Or, alternatively, you can use the demo page we deployed on a [Heroku](https://ibmug-emed.herokuapp.com/) external server. You can access the gitHib repsitory [here](https://github.com/jpineda30/Proyect-3).
    ​
 
 ## ​
