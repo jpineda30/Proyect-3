@@ -22,12 +22,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-var accessLogStream = fs.createWriteStream(path.join(__dirname, "access.log"), {
-  flags: "a",
-});
-
-app.use(morgan("combined", { stream: accessLogStream }));
-
 const uri =
   "mongodb+srv://" +
   process.env.DB_USER +

@@ -155,10 +155,17 @@ class Appointments extends Component {
 
     let pack = { day: formatCalendarDate };
 
-    let res = API.getAppointmentsByDate(pack)
+    API.getAppointmentsByDate(pack)
       .then((res) => {
         this.setState({
-          slots: res.data,
+          // slots: res.data,
+          slots: res.data.sort((a, b) => {
+            if (b.startT > a.startT) {
+              return -1;
+            } else {
+              return 1;
+            }
+          }),
         });
         console.log(this.state.slots);
       })

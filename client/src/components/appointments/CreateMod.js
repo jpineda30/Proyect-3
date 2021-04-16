@@ -107,10 +107,11 @@ function CreateMod(props) {
             if (response) {
               props.message("error", "Overlaping slots");
             } else {
-              API.createAppointment(pack);
-              props.reload();
-              props.message("success", "Appointment saved");
-              props.close();
+              API.createAppointment(pack).then(() => {
+                props.reload();
+                props.message("success", "Appointment saved");
+                props.close();
+              });
             }
           });
         } else if (props.name == "edition") {
