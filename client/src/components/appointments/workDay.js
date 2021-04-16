@@ -29,7 +29,9 @@ function WorkDay(props) {
                           appointment.patient.last_name
                         : ""
                     }
-                    service={appointment.service[0].name}
+                    service={
+                      appointment.service[0] ? appointment.service[0].name : ""
+                    }
                     start={appointment.startT}
                     end={appointment.endT}
                     message={props.message}
@@ -38,7 +40,9 @@ function WorkDay(props) {
                     patientId={
                       appointment.patient ? appointment.patient._id : ""
                     }
-                    serviceId={appointment.service[0]._id}
+                    serviceId={
+                      appointment.service[0] ? appointment.service[0]._id : ""
+                    }
                   />
                 );
               })

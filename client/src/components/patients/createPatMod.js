@@ -23,7 +23,6 @@ function CreatePatMod(props) {
   }
 
   useEffect(() => {
-    console.log("patients = " + props);
     if (props.type == "edit" || props.type == "view") {
       getById();
     }
