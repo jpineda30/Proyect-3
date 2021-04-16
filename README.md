@@ -161,7 +161,7 @@ And if you wish you can Logout the app
 ​
 The following Gif provides a demonstration of **EMed's** functionalities:
 ​
-![App Demo]()
+![App Demo](client/public/img/emed.gif)
 ​
 
 ## ​
