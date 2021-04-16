@@ -29,7 +29,7 @@ function PatientCRUD(props) {
 
                 <div className="mobil-off phone">{patient.phone_number}</div>
 
-                <div className="mobil-off observations">
+                <div className="hoverDetails mobil-off observations">
                   {patient.observations}
                 </div>
 
